@@ -108,6 +108,57 @@
 			color: rgba(255, 255, 255, 0.55);
 		}
 
+		.edit-titles {
+			position: fixed;
+			top: 14px;
+			right: 14px;
+			z-index: 60;
+			padding: 8px 14px;
+			border: 1px solid rgba(255, 255, 255, 0.28);
+			border-radius: 999px;
+			background: rgba(12, 16, 22, 0.72);
+			color: #fff;
+			font-size: 13px;
+			font-weight: 600;
+			cursor: pointer;
+			backdrop-filter: blur(8px);
+		}
+
+		.edit-titles:hover,
+		.edit-titles.active {
+			border-color: rgba(255, 255, 255, 0.5);
+			background: rgba(59, 111, 182, 0.85);
+		}
+
+		.title-input {
+			display: block;
+			width: 100%;
+			padding: 4px 8px;
+			border: 1px solid rgba(255, 255, 255, 0.35);
+			border-radius: 6px;
+			background: rgba(255, 255, 255, 0.08);
+			color: #fff;
+			font: inherit;
+		}
+
+		.edit-toast {
+			position: fixed;
+			top: 14px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 70;
+			padding: 9px 18px;
+			border-radius: 999px;
+			background: rgba(12, 16, 22, 0.9);
+			color: #fff;
+			font-size: 14px;
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+		}
+
+		.edit-toast[hidden] {
+			display: none;
+		}
+
 		/* 底部标签栏（桌面隐藏） */
 		.bottom-tabs {
 			display: none;
@@ -270,6 +321,8 @@
 			<!--KNOWLEDGE_PANELS_END-->
 		</section>
 	</main>
+	<button id="editTitlesBtn" class="edit-titles" type="button">✏️ 编辑标题</button>
+	<div id="editToast" class="edit-toast" hidden></div>
 	<nav class="bottom-tabs" aria-label="Mobile navigation">
 		<button class="active" data-view="home"><span class="tab-icon">🏠</span><span class="tab-label">主页</span></button>
 		<button data-view="games"><span class="tab-icon">🎮</span><span class="tab-label">Games</span></button>
@@ -284,6 +337,68 @@
 				document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('active', p.dataset.view === view));
 				window.scrollTo(0, 0);
 			});
+		});
+
+		// 知识库链接标题编辑（可持久化到服务端）
+		const editBtn = document.getElementById('editTitlesBtn');
+		const editToast = document.getElementById('editToast');
+		let editing = false;
+
+		function showEditToast(msg) {
+			editToast.textContent = msg;
+			editToast.hidden = false;
+			clearTimeout(showEditToast._t);
+			showEditToast._t = setTimeout(() => { editToast.hidden = true; }, 2400);
+		}
+
+		function enterEditMode() {
+			editing = true;
+			editBtn.classList.add('active');
+			editBtn.textContent = '💾 保存标题';
+			document.querySelectorAll('a[data-path]').forEach((a) => {
+				const name = a.querySelector('.name');
+				if (!name) return;
+				const input = document.createElement('input');
+				input.className = 'title-input';
+				input.value = name.textContent;
+				input.dataset.path = a.dataset.path;
+				input.dataset.orig = name.textContent;
+				name.replaceWith(input);
+			});
+		}
+
+		function exitEditMode(save) {
+			editing = false;
+			editBtn.classList.remove('active');
+			editBtn.textContent = '✏️ 编辑标题';
+			const inputs = document.querySelectorAll('.title-input');
+			if (!save) {
+				inputs.forEach((i) => {
+					const span = document.createElement('span');
+					span.className = 'name';
+					span.textContent = i.dataset.orig;
+					i.replaceWith(span);
+				});
+				return;
+			}
+			const payload = {};
+			inputs.forEach((i) => {
+				const v = i.value.trim();
+				if (v) payload[i.dataset.path] = v;
+			});
+			fetch('/api/homepage/titles', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload),
+			})
+				.then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+				.then(() => { showEditToast('标题已保存 ✓'); setTimeout(() => location.reload(), 700); })
+				.catch((e) => showEditToast('保存失败: ' + e.message));
+		}
+
+		editBtn.addEventListener('click', () => {
+			if (editing) exitEditMode(true);
+			else enterEditMode();
 		});
 	</script>
 </body>
