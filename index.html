@@ -103,6 +103,11 @@
 			overflow-wrap: anywhere;
 		}
 
+		.panel-empty {
+			margin: 0;
+			color: rgba(255, 255, 255, 0.55);
+		}
+
 		/* 底部标签栏（桌面隐藏） */
 		.bottom-tabs {
 			display: none;
@@ -158,16 +163,30 @@
 			}
 
 			.bottom-tabs button {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 3px;
 				flex: 1;
 				max-width: 220px;
-				padding: 12px 8px;
+				padding: 8px 4px;
 				border: 1px solid rgba(255, 255, 255, 0.16);
 				border-radius: 10px;
 				background: transparent;
 				color: rgba(255, 255, 255, 0.72);
-				font-size: 14px;
-				font-weight: 600;
 				cursor: pointer;
+			}
+
+			.bottom-tabs .tab-icon {
+				font-size: 20px;
+				line-height: 1;
+			}
+
+			.bottom-tabs .tab-label {
+				font-size: 11px;
+				font-weight: 600;
+				line-height: 1.1;
 			}
 
 			.bottom-tabs button.active {
@@ -188,6 +207,10 @@
 
 			.url {
 				font-size: 12px;
+			}
+
+			.bottom-tabs .tab-label {
+				display: none;
 			}
 		}
 	</style>
@@ -243,41 +266,15 @@
 					</a>
 				</nav>
 			</section>
-			<section class="panel" data-view="travel">
-				<h2>Travel Guides</h2>
-				<nav class="links" aria-label="Travel guides">
-					<a href="https://www.yangxiaoze.cc/guides/travel/bay-area-markets-parks-trails.html">
-						<span class="name">Bay Area Markets, Parks & Trails</span>
-						<span class="url">/guides/travel/bay-area-markets-parks-trails.html</span>
-					</a>
-					<a href="https://www.yangxiaoze.cc/guides/travel/los-angeles-markets-parks-trails.html">
-						<span class="name">Los Angeles Markets, Parks & Trails</span>
-						<span class="url">/guides/travel/los-angeles-markets-parks-trails.html</span>
-					</a>
-					<a href="https://www.yangxiaoze.cc/guides/travel/bay-area-to-la-road-trip-top-100.html">
-						<span class="name">湾区到洛杉矶 Road Trip Top 100</span>
-						<span class="url">/guides/travel/bay-area-to-la-road-trip-top-100.html</span>
-					</a>
-					<a href="https://www.yangxiaoze.cc/guides/travel/bay-area-to-seattle-road-trip-top-100.html">
-						<span class="name">湾区到西雅图 Road Trip Top 100</span>
-						<span class="url">/guides/travel/bay-area-to-seattle-road-trip-top-100.html</span>
-					</a>
-					<a href="https://www.yangxiaoze.cc/guides/travel/extended-western-us-grand-circle-seasonal-top-attractions.html">
-						<span class="name">扩展美西大环线｜四季 Top 景点</span>
-						<span class="url">/guides/travel/extended-western-us-grand-circle-seasonal-top-attractions.html</span>
-					</a>
-					<a href="https://www.yangxiaoze.cc/guides/travel/mount-shasta-3day-weekend-guide.html">
-						<span class="name">Mount Shasta 3 天周末玩法</span>
-						<span class="url">/guides/travel/mount-shasta-3day-weekend-guide.html</span>
-					</a>
-				</nav>
-			</section>
+			<!--KNOWLEDGE_PANELS_START-->
+			<!--KNOWLEDGE_PANELS_END-->
 		</section>
 	</main>
 	<nav class="bottom-tabs" aria-label="Mobile navigation">
-		<button class="active" data-view="home">主页</button>
-		<button data-view="games">Games</button>
-		<button data-view="travel">Travel Guides</button>
+		<button class="active" data-view="home"><span class="tab-icon">🏠</span><span class="tab-label">主页</span></button>
+		<button data-view="games"><span class="tab-icon">🎮</span><span class="tab-label">Games</span></button>
+		<!--KNOWLEDGE_TABS_START-->
+		<!--KNOWLEDGE_TABS_END-->
 	</nav>
 	<script>
 		document.querySelectorAll('.bottom-tabs button').forEach((btn) => {
