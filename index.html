@@ -103,10 +103,18 @@
 			overflow-wrap: anywhere;
 		}
 
+		/* 底部标签栏（桌面隐藏） */
+		.bottom-tabs {
+			display: none;
+		}
+
 		/* 小屏适配 */
 		@media (max-width: 720px) {
 			.home {
-				padding: max(28px, env(safe-area-inset-top, 0px) + 16px) 18px max(28px, env(safe-area-inset-bottom, 0px) + 16px);
+				padding-top: max(28px, env(safe-area-inset-top, 0px) + 16px);
+				padding-left: 18px;
+				padding-right: 18px;
+				padding-bottom: calc(max(28px, env(safe-area-inset-bottom, 0px) + 16px) + 76px);
 			}
 
 			p {
@@ -126,6 +134,46 @@
 			h2 {
 				font-size: 20px;
 				margin: 26px 0 12px;
+			}
+
+			/* 手机端：只显示当前面板 */
+			.panel:not(.active) {
+				display: none;
+			}
+
+			/* 底部标签栏 */
+			.bottom-tabs {
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 50;
+				display: flex;
+				gap: 6px;
+				justify-content: space-around;
+				padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
+				border-top: 1px solid rgba(255, 255, 255, 0.14);
+				background: rgba(10, 14, 20, 0.85);
+				backdrop-filter: blur(14px);
+			}
+
+			.bottom-tabs button {
+				flex: 1;
+				max-width: 220px;
+				padding: 12px 8px;
+				border: 1px solid rgba(255, 255, 255, 0.16);
+				border-radius: 10px;
+				background: transparent;
+				color: rgba(255, 255, 255, 0.72);
+				font-size: 14px;
+				font-weight: 600;
+				cursor: pointer;
+			}
+
+			.bottom-tabs button.active {
+				border-color: rgba(255, 255, 255, 0.4);
+				background: rgba(255, 255, 255, 0.16);
+				color: #fff;
 			}
 		}
 
@@ -148,83 +196,103 @@
 <body class="main">
 	<main class="home">
 		<section class="content" aria-labelledby="page-title">
-			<h1 id="page-title">yangxiaoze.cc</h1>
-			<p>Local tools and projects published through the Cloudflare tunnel.</p>
-			<nav class="links" aria-label="Services">
-				<a href="https://geacron.yangxiaoze.cc">
-					<span class="name">GeaCron</span>
-					<span class="url">geacron.yangxiaoze.cc</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/workout">
-					<span class="name">Workout</span>
-					<span class="url">www.yangxiaoze.cc/workout</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/guides/inflorescence-encyclopedia.html">
-					<span class="name">植物花序小百科</span>
-					<span class="url">/guides/inflorescence-encyclopedia.html</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/videos" target="_blank" rel="noopener">
-					<span class="name">Videos</span>
-					<span class="url">www.yangxiaoze.cc/videos</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/books" target="_blank" rel="noopener">
-					<span class="name">Books</span>
-					<span class="url">www.yangxiaoze.cc/books</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/pictures" target="_blank" rel="noopener">
-					<span class="name">Pictures</span>
-					<span class="url">www.yangxiaoze.cc/pictures</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/music" target="_blank" rel="noopener">
-					<span class="name">Music</span>
-					<span class="url">www.yangxiaoze.cc/music</span>
-				</a>
-			</nav>
-			<h2>Games</h2>
-			<nav class="links" aria-label="Games">
-				<a href="https://friends.yangxiaoze.cc">
-					<span class="name">Friends</span>
-					<span class="url">friends.yangxiaoze.cc</span>
-				</a>
-				<a href="https://guandan.yangxiaoze.cc">
-					<span class="name">Guandan</span>
-					<span class="url">guandan.yangxiaoze.cc</span>
-				</a>
-				<a href="https://shengji.yangxiaoze.cc">
-					<span class="name">Shengji</span>
-					<span class="url">shengji.yangxiaoze.cc</span>
-				</a>
-			</nav>
-			<h2>Travel Guides</h2>
-			<nav class="links" aria-label="Travel guides">
-				<a href="https://www.yangxiaoze.cc/guides/bay-area-markets-parks-trails.html">
-					<span class="name">Bay Area Markets, Parks & Trails</span>
-					<span class="url">/guides/bay-area-markets-parks-trails.html</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/guides/los-angeles-markets-parks-trails.html">
-					<span class="name">Los Angeles Markets, Parks & Trails</span>
-					<span class="url">/guides/los-angeles-markets-parks-trails.html</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/guides/bay-area-to-la-road-trip-top-100.html">
-					<span class="name">湾区到洛杉矶 Road Trip Top 100</span>
-					<span class="url">/guides/bay-area-to-la-road-trip-top-100.html</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/guides/bay-area-to-seattle-road-trip-top-100.html">
-					<span class="name">湾区到西雅图 Road Trip Top 100</span>
-					<span class="url">/guides/bay-area-to-seattle-road-trip-top-100.html</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/guides/extended-western-us-grand-circle-seasonal-top-attractions.html">
-					<span class="name">扩展美西大环线｜四季 Top 景点</span>
-					<span class="url">/guides/extended-western-us-grand-circle-seasonal-top-attractions.html</span>
-				</a>
-				<a href="https://www.yangxiaoze.cc/guides/mount-shasta-3day-weekend-guide.html">
-					<span class="name">Mount Shasta 3 天周末玩法</span>
-					<span class="url">/guides/mount-shasta-3day-weekend-guide.html</span>
-				</a>
-			</nav>
+			<section class="panel active" data-view="home">
+				<h1 id="page-title">yangxiaoze.cc</h1>
+				<p>Local tools and projects published through the Cloudflare tunnel.</p>
+				<nav class="links" aria-label="Services">
+					<a href="https://geacron.yangxiaoze.cc">
+						<span class="name">GeaCron</span>
+						<span class="url">geacron.yangxiaoze.cc</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/workout">
+						<span class="name">Workout</span>
+						<span class="url">www.yangxiaoze.cc/workout</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/guides/inflorescence-encyclopedia.html">
+						<span class="name">植物花序小百科</span>
+						<span class="url">/guides/inflorescence-encyclopedia.html</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/videos" target="_blank" rel="noopener">
+						<span class="name">Videos</span>
+						<span class="url">www.yangxiaoze.cc/videos</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/books" target="_blank" rel="noopener">
+						<span class="name">Books</span>
+						<span class="url">www.yangxiaoze.cc/books</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/pictures" target="_blank" rel="noopener">
+						<span class="name">Pictures</span>
+						<span class="url">www.yangxiaoze.cc/pictures</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/music" target="_blank" rel="noopener">
+						<span class="name">Music</span>
+						<span class="url">www.yangxiaoze.cc/music</span>
+					</a>
+				</nav>
+			</section>
+			<section class="panel" data-view="games">
+				<h2>Games</h2>
+				<nav class="links" aria-label="Games">
+					<a href="https://friends.yangxiaoze.cc">
+						<span class="name">Friends</span>
+						<span class="url">friends.yangxiaoze.cc</span>
+					</a>
+					<a href="https://guandan.yangxiaoze.cc">
+						<span class="name">Guandan</span>
+						<span class="url">guandan.yangxiaoze.cc</span>
+					</a>
+					<a href="https://shengji.yangxiaoze.cc">
+						<span class="name">Shengji</span>
+						<span class="url">shengji.yangxiaoze.cc</span>
+					</a>
+				</nav>
+			</section>
+			<section class="panel" data-view="travel">
+				<h2>Travel Guides</h2>
+				<nav class="links" aria-label="Travel guides">
+					<a href="https://www.yangxiaoze.cc/guides/bay-area-markets-parks-trails.html">
+						<span class="name">Bay Area Markets, Parks & Trails</span>
+						<span class="url">/guides/bay-area-markets-parks-trails.html</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/guides/los-angeles-markets-parks-trails.html">
+						<span class="name">Los Angeles Markets, Parks & Trails</span>
+						<span class="url">/guides/los-angeles-markets-parks-trails.html</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/guides/bay-area-to-la-road-trip-top-100.html">
+						<span class="name">湾区到洛杉矶 Road Trip Top 100</span>
+						<span class="url">/guides/bay-area-to-la-road-trip-top-100.html</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/guides/bay-area-to-seattle-road-trip-top-100.html">
+						<span class="name">湾区到西雅图 Road Trip Top 100</span>
+						<span class="url">/guides/bay-area-to-seattle-road-trip-top-100.html</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/guides/extended-western-us-grand-circle-seasonal-top-attractions.html">
+						<span class="name">扩展美西大环线｜四季 Top 景点</span>
+						<span class="url">/guides/extended-western-us-grand-circle-seasonal-top-attractions.html</span>
+					</a>
+					<a href="https://www.yangxiaoze.cc/guides/mount-shasta-3day-weekend-guide.html">
+						<span class="name">Mount Shasta 3 天周末玩法</span>
+						<span class="url">/guides/mount-shasta-3day-weekend-guide.html</span>
+					</a>
+				</nav>
+			</section>
 		</section>
 	</main>
-
+	<nav class="bottom-tabs" aria-label="Mobile navigation">
+		<button class="active" data-view="home">主页</button>
+		<button data-view="games">Games</button>
+		<button data-view="travel">Travel Guides</button>
+	</nav>
+	<script>
+		document.querySelectorAll('.bottom-tabs button').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const view = btn.dataset.view;
+				document.querySelectorAll('.bottom-tabs button').forEach((b) => b.classList.toggle('active', b === btn));
+				document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('active', p.dataset.view === view));
+				window.scrollTo(0, 0);
+			});
+		});
+	</script>
 </body>
 
 </html>
