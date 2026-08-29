@@ -1,0 +1,1472 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mount Shasta 3 天周末度假指南：周六出发、周一下午返程，18 个精选独家停靠点 + 3 日行程安排。">
+  <title>Mount Shasta 3 天周末玩法指南</title>
+  <link rel="icon" href="/guides/travel-favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/guides/travel-favicon.png">
+  <link rel="apple-touch-icon" href="/guides/travel-apple-touch-icon.png">
+  <style>
+    :root {
+      --ink: #1d2a2b;
+      --muted: #5f6f6e;
+      --paper: #f4f2ea;
+      --surface: #fffdf8;
+      --line: #d8d3c4;
+      --ocean: #176b78;
+      --forest: #356849;
+      --sun: #e8a838;
+      --volcano: #7a4a3a;
+      --danger: #a7462c;
+      --shadow: 0 12px 32px rgb(24 48 45 / 10%);
+      --radius: 1.1rem;
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid #0b7189;
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: .75rem;
+      left: .75rem;
+      padding: .6rem 1rem;
+      background: #fff;
+      transform: translateY(-180%);
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    .hero {
+      padding: clamp(3.5rem, 9vw, 7rem) 0 3rem;
+      color: #fff;
+      background: linear-gradient(135deg, #223b46, #176b78 55%, #d68d31);
+    }
+
+    .hero__inner {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 16ch;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: clamp(2.5rem, 7vw, 5.2rem);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .hero p {
+      max-width: 66ch;
+      margin: 1.3rem 0 0;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgb(255 255 255 / 88%);
+    }
+
+    .hero__facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.6rem;
+    }
+
+    .hero__facts span {
+      padding: .45rem .8rem;
+      border: 1px solid rgb(255 255 255 / 38%);
+      border-radius: 99px;
+      background: rgb(255 255 255 / 10%);
+    }
+
+    .status {
+      padding: 1rem 0;
+      color: #472d17;
+      background: #f9df9e;
+    }
+
+    .status p {
+      margin: 0;
+    }
+
+    .status strong {
+      color: #472d17;
+    }
+
+    .status a {
+      font-weight: 750;
+    }
+
+    section {
+      padding: clamp(2.5rem, 6vw, 5rem) 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 .35rem;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .route-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: .75rem;
+    }
+
+    .route-button {
+      min-height: 6rem;
+      padding: 1rem;
+      text-align: left;
+      color: #fff;
+      border: 0;
+      border-radius: .9rem;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .route-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgb(24 48 45 / 18%);
+    }
+
+    .route-button strong,
+    .route-button span {
+      display: block;
+    }
+
+    .route-button strong {
+      font-size: 1.02rem;
+    }
+
+    .route-button span {
+      margin-top: .2rem;
+      font-size: .82rem;
+      opacity: .85;
+    }
+
+    [data-area="base"] {
+      --area: #176b78;
+    }
+
+    [data-area="mccloud"] {
+      --area: #356849;
+    }
+
+    [data-area="dunsmuir"] {
+      --area: #8b5b2f;
+    }
+
+    [data-area="weed"] {
+      --area: #7a4a3a;
+    }
+
+    [data-area="lake"] {
+      --area: #2c6f8f;
+    }
+
+    [data-area="castles"] {
+      --area: #76539a;
+    }
+
+    [data-area="daytrip"] {
+      --area: #9c455f;
+    }
+
+    .route-button[data-area] {
+      background: var(--area);
+    }
+
+    .filters {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      padding: 1rem 0;
+      border-block: 1px solid var(--line);
+      background: rgb(244 242 234 / 95%);
+      backdrop-filter: blur(12px);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 2fr) repeat(7, minmax(105px, 1fr));
+      gap: .65rem;
+    }
+
+    .control {
+      min-width: 0;
+    }
+
+    .control label {
+      display: block;
+      margin-bottom: .25rem;
+      font-size: .76rem;
+      font-weight: 750;
+      color: var(--muted);
+    }
+
+    .control input,
+    .control select {
+      width: 100%;
+      min-height: 2.7rem;
+      padding: .55rem .65rem;
+      color: var(--ink);
+      border: 1px solid #b8b3a8;
+      border-radius: .55rem;
+      background: #fff;
+    }
+
+    .filter-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .7rem;
+      margin-top: .8rem;
+    }
+
+    .filter-actions button {
+      padding: .55rem .9rem;
+      border: 1px solid #9da7a3;
+      border-radius: 99px;
+      color: var(--ink);
+      background: var(--surface);
+    }
+
+    .check {
+      display: inline-flex;
+      gap: .45rem;
+      align-items: center;
+    }
+
+    .results-section {
+      padding-top: 2.5rem;
+    }
+
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .results-header h2 {
+      margin: 0;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+    }
+
+    #resultCount {
+      color: var(--muted);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 1.15rem;
+      margin-top: 1.4rem;
+    }
+
+    .place-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--area, var(--ocean));
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .place-card__media {
+      position: relative;
+      display: block;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #d8dfd8;
+    }
+
+    .place-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .place-card:hover .place-card__media img {
+      transform: scale(1.025);
+    }
+
+    .image-fallback {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      place-content: center;
+      padding: 1.5rem;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(145deg, var(--area, #176b78), #1d2a2b);
+    }
+
+    .image-credit {
+      position: absolute;
+      right: .5rem;
+      bottom: .5rem;
+      max-width: calc(100% - 1rem);
+      padding: .25rem .45rem;
+      border-radius: .3rem;
+      color: #fff;
+      background: rgb(0 0 0 / 65%);
+      font-size: .68rem;
+    }
+
+    .place-card__body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 1.1rem;
+    }
+
+    .card-meta,
+    .route-labels,
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      align-items: center;
+    }
+
+    .rank {
+      font-weight: 850;
+      color: var(--area, var(--ocean));
+    }
+
+    .unique-badge {
+      padding: .18rem .5rem;
+      border-radius: 99px;
+      color: #fff;
+      background: var(--sun);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .route-label {
+      padding: .18rem .5rem;
+      border-radius: 99px;
+      color: #fff;
+      background: var(--area, var(--ocean));
+      font-size: .74rem;
+      font-weight: 750;
+    }
+
+    .day-label {
+      padding: .18rem .5rem;
+      border-radius: 99px;
+      color: #fff;
+      background: #4e5f6d;
+      font-size: .74rem;
+      font-weight: 750;
+    }
+
+    .place-card h3 {
+      margin: .7rem 0 0;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    .place-card h3 span {
+      display: block;
+      margin-top: .15rem;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    .feature {
+      margin: .8rem 0;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6rem .9rem;
+      margin: 0;
+    }
+
+    .details div {
+      min-width: 0;
+    }
+
+    .details dt {
+      font-size: .72rem;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .details dd {
+      margin: .08rem 0 0;
+      font-size: .88rem;
+      overflow-wrap: anywhere;
+    }
+
+    .card-actions {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    .card-actions a,
+    .favorite-button {
+      padding: .43rem .62rem;
+      border: 1px solid #adb7b3;
+      border-radius: .45rem;
+      text-decoration: none;
+      background: #fff;
+      font-size: .8rem;
+    }
+
+    .card-actions a:first-child {
+      color: #fff;
+      border-color: var(--area, var(--ocean));
+      background: var(--area, var(--ocean));
+    }
+
+    .favorite-button {
+      margin-left: auto;
+      color: var(--ink);
+    }
+
+    .empty-state {
+      margin-top: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      border: 1px dashed #999;
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .empty-state[hidden] {
+      display: none;
+    }
+
+    .itineraries {
+      background: #1d2a2b;
+      color: #fff;
+    }
+
+    .itineraries .section-heading p {
+      color: rgb(255 255 255 / 72%);
+    }
+
+    .itinerary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .itinerary {
+      padding: 1.2rem;
+      border: 1px solid rgb(255 255 255 / 22%);
+      border-radius: .9rem;
+      background: rgb(255 255 255 / 7%);
+    }
+
+    .itinerary h3 {
+      margin: 0;
+    }
+
+    .itinerary__pace {
+      margin: .25rem 0 1rem;
+      color: rgb(255 255 255 / 72%);
+    }
+
+    .itinerary ol {
+      display: grid;
+      gap: .7rem;
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .itinerary li {
+      padding-left: .2rem;
+    }
+
+    .itinerary li strong {
+      color: #ffd27a;
+    }
+
+    .itinerary__decision {
+      margin: 1rem 0 0;
+      padding: .8rem;
+      border-left: 4px solid var(--sun);
+      background: rgb(0 0 0 / 18%);
+    }
+
+    .safety-guide {
+      margin-top: 1.2rem;
+      padding: 1.2rem;
+      border: 1px solid rgb(255 255 255 / 22%);
+      border-radius: .9rem;
+      background: rgb(0 0 0 / 18%);
+    }
+
+    .safety-guide h3 {
+      margin-top: 0;
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem 1.2rem;
+      margin: 0;
+    }
+
+    .safety-grid div {
+      min-width: 0;
+    }
+
+    .safety-grid dt {
+      font-weight: 850;
+      color: #ffd27a;
+    }
+
+    .safety-grid dd {
+      margin: .15rem 0 0;
+      color: rgb(255 255 255 / 82%);
+    }
+
+    .safety-guide a {
+      font-weight: 750;
+    }
+
+    .methodology {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+    }
+
+    .methodology h2 {
+      font-family: Georgia, "Songti SC", serif;
+    }
+
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    @media (max-width: 1100px) {
+      .filter-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .safety-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .itinerary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .container {
+        width: min(100% - 1.25rem, 1180px);
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .filter-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .control:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .results-header {
+        display: block;
+      }
+
+      .safety-grid,
+      .methodology {
+        grid-template-columns: 1fr;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        position: static;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        font-size: 10pt;
+      }
+
+      .skip-link,
+      .status,
+      .routes-section,
+      .filters,
+      .itineraries,
+      .methodology-section,
+      footer,
+      .card-actions {
+        display: none !important;
+      }
+
+      .hero {
+        padding: 1rem 0;
+        color: #000;
+        background: #fff;
+      }
+
+      .hero h1 {
+        max-width: none;
+        font-size: 3rem;
+      }
+
+      .hero p,
+      .hero__facts span {
+        color: #000;
+      }
+
+      .card-grid {
+        display: block;
+      }
+
+      .place-card {
+        display: grid;
+        grid-template-columns: 28% 1fr;
+        margin: 0 0 .8rem;
+        break-inside: avoid;
+        box-shadow: none;
+      }
+
+      .place-card__media {
+        width: auto;
+        min-height: 12rem;
+        margin: 0;
+        aspect-ratio: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#resultsHeading">跳至景点列表</a>
+  <header class="hero">
+    <div class="container hero__inner">
+      <h1>Mount Shasta 3 天周末玩法指南</h1>
+      <p>周六出发、周一下午返程：瀑布、火山、溶洞、高山湖与铁路小镇的 18 个精选停靠点，优先收录别处难复制的"独家"体验，每处都附详细推荐理由。</p>
+      <div class="hero__facts" aria-label="行程摘要">
+        <span>出发 8/29（周六）</span><span>3 天 · 湾区往返</span><span>I-5 北上约 4.5–5h</span><span>周一下午返程</span><span>18
+          个精选点</span><span>资料核对 2026-08-28</span>
+      </div>
+    </div>
+  </header>
+  <aside class="status" aria-label="出发前提醒">
+    <div class="container">
+      <p><strong>本周末重点复查：</strong>① Burney Falls 夏季周末（5/15–9/27）需提前预约日间停车（$10/车），周六去务必先订票；② 8 月是火灾/烟雾高发季，出发前查 <a
+          href="https://www.fs.usda.gov/alerts/stnf/alerts-notices" target="_blank"
+          rel="noopener noreferrer">Shasta-Trinity 林务局公告</a> 与 <a href="https://quickmap.dot.ca.gov/" target="_blank"
+          rel="noopener noreferrer">Caltrans QuickMap</a>（I-5/89/97）；③ Mossbrae Falls 需沿铁路轨道行走，出发前确认当地通行告示；④ Everitt
+        Memorial Hwy（往 Bunny Flat）与 Castle Lake 盘山路况、以及高海拔防晒补水。</p>
+    </div>
+  </aside>
+  <main>
+    <section class="routes-section" aria-labelledby="routesHeading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="routesHeading">按区域快速选择</h2>
+          <p>七个地理分区覆盖整个 Shasta 地区；点击按钮即可按区域筛选景点。</p>
+        </div>
+        <div id="routeSummary" class="route-summary" aria-label="区域总览"></div>
+      </div>
+    </section>
+    <section class="filters" aria-label="筛选景点">
+      <div class="container">
+        <div class="filter-grid">
+          <div class="control"><label for="searchInput">关键词</label><input id="searchInput" type="search"
+              placeholder="搜索景点、特色或设施"></div>
+          <div class="control"><label for="areaFilter">区域</label><select id="areaFilter">
+              <option value="">全部区域</option>
+            </select></div>
+          <div class="control"><label for="dayFilter">推荐日程</label><select id="dayFilter">
+              <option value="">全部</option>
+              <option value="D1">第 1 天</option>
+              <option value="D2">第 2 天</option>
+              <option value="D3">第 3 天</option>
+              <option value="flex">弹性机动</option>
+            </select></div>
+          <div class="control"><label for="typeFilter">景点类型</label><select id="typeFilter">
+              <option value="">全部类型</option>
+              <option value="waterfall">瀑布·水景</option>
+              <option value="peak">山峰·步道</option>
+              <option value="cave">洞穴·地质</option>
+              <option value="lake">湖泊</option>
+              <option value="town">小镇·文化</option>
+              <option value="park">州立/国家公园</option>
+            </select></div>
+          <div class="control"><label for="feeFilter">费用</label><select id="feeFilter">
+              <option value="">全部</option>
+              <option value="free">免费</option>
+              <option value="paid">付费</option>
+            </select></div>
+          <div class="control"><label for="durationFilter">停留时长</label><select id="durationFilter">
+              <option value="">不限</option>
+              <option value="short">60 分钟内</option>
+              <option value="medium">61–120 分钟</option>
+              <option value="long">120 分钟以上</option>
+            </select></div>
+          <div class="control"><label for="sortOrder">排序</label><select id="sortOrder">
+              <option value="rank">综合推荐</option>
+              <option value="day">按日程</option>
+              <option value="duration">停留时长</option>
+              <option value="area">按区域</option>
+            </select></div>
+        </div>
+        <div class="filter-actions">
+          <label class="check"><input id="uniqueOnly" type="checkbox"> 仅看 ✦ 独家特色</label>
+          <label class="check"><input id="savedOnly" type="checkbox"> 仅看收藏</label>
+          <button id="resetButton" type="button">清除筛选</button>
+          <button id="printButton" type="button">打印当前结果</button>
+        </div>
+      </div>
+    </section>
+    <section class="results-section" aria-labelledby="resultsHeading">
+      <div class="container">
+        <div class="results-header">
+          <h2 id="resultsHeading" tabindex="-1">精选停靠点</h2>
+          <p id="resultCount" role="status" aria-live="polite">正在整理 18 个景点…</p>
+        </div>
+        <div id="results" class="card-grid"></div>
+        <div id="emptyState" class="empty-state" hidden><strong>没有符合条件的景点</strong>
+          <p>试着减少筛选条件或清除搜索关键词。</p>
+        </div>
+      </div>
+    </section>
+    <section class="itineraries" aria-labelledby="itineraryHeading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="itineraryHeading">3 天行程安排</h2>
+          <p>以"每天一个主题"设计，节奏宽松、可随时互换；所有景点详情见上方卡片。</p>
+        </div>
+        <div class="itinerary-grid">
+          <article class="itinerary">
+            <h3>Day 1 · 周六 8/29 — 出发与安顿（南区轻松站）</h3>
+            <p class="itinerary__pace">湾区 → I-5 北上约 4.5–5h → Dunsmuir → Mount Shasta 镇</p>
+            <ol>
+              <li><strong>上午 8 点前出发</strong>，I-5 一路向北；Redding 前加油/午餐。</li>
+              <li><strong>下午 1 点前后到 Dunsmuir 出口</strong>：Hedge Creek Falls（可走到瀑布背后，30 分钟）→ 市区 Railroad Park + 车站（45 分钟）。
+              </li>
+              <li><strong>傍晚入住 Mount Shasta 镇</strong>，Lake Siskiyou 环湖看雪山日落（10 分钟车程）。</li>
+              <li><strong>晚上</strong>：镇里晚餐，逛 Sisson Museum / 水晶小店（营业时间短，顺路看）。</li>
+            </ol>
+            <p class="itinerary__decision"><strong>备选</strong>：若到得早，可把 Black Butte 日落（约 1 小时往返）从 Day 2 挪来 Day 1。</p>
+          </article>
+          <article class="itinerary">
+            <h3>Day 2 · 周日 8/30 — 瀑布 + 高山（全天主菜）</h3>
+            <p class="itinerary__pace">McCloud 河谷 → 山脚高山区（二选一）</p>
+            <ol>
+              <li><strong>上午</strong>：McCloud Falls 三叠瀑（3.2 mi 环线，约 2 小时）→ McCloud 镇咖啡/冰淇淋（30 分钟）。</li>
+              <li><strong>下午（体力型）</strong>：Bunny Flat → Panther Meadows 神圣草甸 → Heart Lake（2–3 小时），回程顺路 Sacramento
+                河源头短环线。</li>
+              <li><strong>或下午（休闲型）</strong>：Castle Lake 高山湖 + 游泳（1.5 mi 缓坡），或 Castle Crags 花岗岩尖峰 Vista Point。</li>
+              <li><strong>傍晚</strong>：Shasta 镇晚餐；想拍"雪山倒影"就再去一次 Lake Siskiyou 黄昏。</li>
+            </ol>
+            <p class="itinerary__decision"><strong>机动</strong>：Mossbrae Falls（沿铁轨，需自行评估安全）可插在上午或下午空档；Lava Beds 距此
+              1.5h，本行程建议留给下次。</p>
+          </article>
+          <article class="itinerary">
+            <h3>Day 3 · 周一 8/31 — 最后一站 + 返程</h3>
+            <p class="itinerary__pace">上午一站（顺路往南）→ 中午上 I-5 → 傍晚到家</p>
+            <ol>
+              <li><strong>选项 A（顺路、风雨无阻）</strong>：Lake Shasta Caverns 最早一班船（约 9:00，全程约 2h，含船+巴士+溶洞导览），出来正好往南开。</li>
+              <li><strong>选项 B（更惊艳、绕一点）</strong>：Burney Falls（<strong>周一无需预约</strong>，$10/车，1.2 mi 环线约 1–1.5h）——走 89/299
+                回 I-5 会多绕约 1 小时。</li>
+              <li><strong>中午 12:00–1:00 前</strong>上 I-5 向南，途中 Redding 午餐。</li>
+              <li><strong>下午</strong>：一路返程，傍晚前到家。</li>
+            </ol>
+            <p class="itinerary__decision"><strong>取舍建议</strong>：时间紧张选 A；想要"此行最难忘的一张照片"选 B（周一正好不用抢预约）。</p>
+          </article>
+        </div>
+        <div class="safety-guide">
+          <h3>安全与行前清单</h3>
+          <dl class="safety-grid">
+            <div>
+              <dt>道路与天气</dt>
+              <dd>出发前查 <a href="https://quickmap.dot.ca.gov/" target="_blank" rel="noopener noreferrer">Caltrans
+                  QuickMap</a>（I-5/89/97）与 <a href="https://www.fs.usda.gov/alerts/stnf/alerts-notices" target="_blank"
+                  rel="noopener noreferrer">Shasta-Trinity 林务局公告</a>；8 月需留意野火与烟雾。</dd>
+            </div>
+            <div>
+              <dt>Burney Falls 预约</dt>
+              <dd>2026 夏季周末（5/15–9/27）须在 <a href="https://www.parks.ca.gov/?page_id=455" target="_blank"
+                  rel="noopener noreferrer">官网</a> 提前预约日间停车；周六去请先订票，否则可能满员拒入。</dd>
+            </div>
+            <div>
+              <dt>铁路与瀑布安全</dt>
+              <dd>Mossbrae Falls 需沿铁路行走，确认告示后谨慎通行、不逗留；瀑布边湿滑，不翻越护栏、不靠近崖缘。</dd>
+            </div>
+            <div>
+              <dt>洞穴与手电</dt>
+              <dd>Pluto's Cave / Lava Beds 进洞自带手电与头盔（当地也可租）；溶洞内恒温湿滑，穿防滑鞋。</dd>
+            </div>
+            <div>
+              <dt>高海拔与防晒</dt>
+              <dd>Bunny Flat 7000 ft+、黑峰顶 6300 ft+，补水防晒、分层穿衣；Everitt Memorial Hwy 冬季封路、夏季午后可能有雷雨。</dd>
+            </div>
+            <div>
+              <dt>野生动物与火源</dt>
+              <dd>不喂食、保持距离；林区禁火季遵守规则，野餐后清理；遇烟雾恶化立即撤至低海拔。</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="methodology-section" aria-labelledby="methodHeading">
+      <div class="container methodology">
+        <div>
+          <h2 id="methodHeading">筛选与排序方法</h2>
+          <p>18 个点以"独家程度、景观/历史价值、停留回报、顺路性"综合排序，优先收录别处难复制的体验（✦ 独家特色）。卡片上的地图、官网与深度文章链接供实时查证，本页不缓存外部平台分数。</p>
+        </div>
+        <div>
+          <h2>来源与时效</h2>
+          <p>道路、门票、预约和开放规则优先参考 Caltrans、加州州立公园、NPS、USFS 与目的地官网；所有会变化的信息（预约、封路、火险）都应在出发前复查。图片来自 Wikimedia
+            Commons，加载失败时显示文字占位。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">Mount Shasta 3 天周末玩法指南 · 单文件景点指南 · 2026-08-28 整理 · 不提供实时路况或开放保证</div>
+  </footer>
+  <script>
+    const places = [
+      {
+        "id": "SH001", "rank": 1, "area": "mccloud", "day": "D2", "nameZh": "McCloud Falls 三叠瀑",
+        "nameEn": "McCloud River Falls", "unique": true, "type": "waterfall", "subtype": "三段式河畔步道",
+        "seasons": ["summer", "fall"], "bestMonths": "6–10 月", "bestTime": "上午 9–11 点（人少、光线好）",
+        "durationMinutes": 120,
+        "feature": "一条约 3.2 英里的河畔步道串起 Upper / Middle / Lower 三座风格迥异的瀑布：Lower 是整面弧形岩壁的壮观水帘（落差约 45 英尺、可下到潭边），Middle 隐在丛林里、能在浅滩石台上近距离听水声，Upper 是层层叠叠的阶梯状跌水。全美能靠一条平缓、浓荫步道一次看齐三种瀑布形态的地方非常少——这就是本行程「最具性价比的独家体验」。",
+        "address": "Lower Falls Rd, McCloud, CA", "lat": 41.2387, "lng": -122.0017,
+        "parking": "三个瀑布各有小型停车区；Lower 停车位最抢手，早到为佳。", "fees": "免费（Shasta-Trinity 国家林）。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.fs.usda.gov/recarea/stnf/recarea/?recid=44322",
+        "articleUrl": "https://en.wikipedia.org/wiki/McCloud_River",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/McCloud_river_Middle_Falls.jpg/1280px-McCloud_river_Middle_Falls.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McCloud_river_Middle_Falls.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH002", "rank": 2, "area": "dunsmuir", "day": "D1", "nameZh": "Hedge Creek Falls",
+        "nameEn": "Hedge Creek Falls", "unique": true, "type": "waterfall", "subtype": "可走进瀑布背后的洞穴",
+        "seasons": ["summer", "fall"], "bestMonths": "全年", "bestTime": "上午或下午顺路 30 分钟",
+        "durationMinutes": 30,
+        "feature": "全加州少有的「可走到瀑布背后」的洞穴瀑布：约 40 英尺高的水幕下有一个浅岩洞，你能站在瀑布内侧、透过水帘往外看——「水帘洞」视角在别处几乎找不到。紧挨 I-5 的 Dunsmuir 出口、全程不到 0.1 英里徒步，是北上路上最省力却最出片的一站。",
+        "address": "Dunsmuir Ave & Siskiyou Ave, Dunsmuir, CA", "lat": 41.2069, "lng": -122.2761,
+        "parking": "入口旁小停车场，约 $3 现金停车（自助缴费）。", "fees": "小额停车费。",
+        "reservation": "无需预约。", "feeCategory": "paid",
+        "officialUrl": "https://www.visitdunsmuir.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Hedge_Creek_Falls",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Hedge_Creek_falls.jpg/1280px-Hedge_Creek_falls.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hedge_Creek_falls.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH003", "rank": 3, "area": "daytrip", "day": "D3", "nameZh": "Burney Falls 伯尼瀑布",
+        "nameEn": "McArthur-Burney Falls Memorial State Park", "unique": true, "type": "waterfall", "subtype": "罗斯福赞誉的泉水瀑布",
+        "seasons": ["summer", "fall"], "bestMonths": "全年", "bestTime": "开园 8:00 或下午 4 点后（避开高峰）",
+        "durationMinutes": 90,
+        "feature": "罗斯福总统称之为「世界第八大奇迹」：129 英尺高的瀑布不是一条水流，而是整面被泉水从内部喂饱的玄武岩崖壁——每天约 1 亿加仑水从岩缝渗出，形成持续的「雾幕」，四季水量几乎不变。1.2 英里环线从观景台下到潭边再绕回，是此行「单点震撼力」最强的一站。",
+        "address": "24898 CA-89, Burney, CA", "lat": 41.0111, "lng": -121.6490,
+        "parking": "公园内停车；周末常满，早到或下午 4 点后。", "fees": "日间 $10/车。",
+        "reservation": "2026 夏季周末（5/15–9/27）须官网提前预约日间停车；周一无需预约。", "feeCategory": "paid",
+        "officialUrl": "https://www.parks.ca.gov/?page_id=455",
+        "articleUrl": "https://en.wikipedia.org/wiki/Burney_Falls",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/BurneyFalls.jpg/1280px-BurneyFalls.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:BurneyFalls.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH004", "rank": 4, "area": "dunsmuir", "day": "flex", "nameZh": "Mossbrae Falls",
+        "nameEn": "Mossbrae Falls", "unique": true, "type": "waterfall", "subtype": "铁轨旁的隐秘水帘",
+        "seasons": ["summer"], "bestMonths": "4–9 月", "bestTime": "清晨（光线斜照水帘）",
+        "durationMinutes": 90,
+        "feature": "网上无数「神图」的来源、到达方式却很「地下」的瀑布：从 Dunsmuir 附近沿老铁路路基徒步约 1.5 英里，几十缕水帘从约 50 英尺高的绿壁倾泻而下，像一面「水的窗帘」。没有正式步道标识、没有游客中心，属于真正的本地人私藏——正因如此也最独特。⚠️ 需沿铁路轨道行走，出发前务必确认通行告示、注意列车时刻。",
+        "address": "Scarlett Way, Dunsmuir, CA", "lat": 41.1956, "lng": -122.2780,
+        "parking": "在 Dunsmuir 北端路旁停车后沿铁轨步行前往。", "fees": "免费。",
+        "reservation": "无需预约；自行评估铁轨通行安全。", "feeCategory": "free",
+        "officialUrl": "https://www.visitdunsmuir.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Mossbrae_Falls",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Mossbrae_Falls.jpg/1280px-Mossbrae_Falls.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mossbrae_Falls.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH005", "rank": 5, "area": "lake", "day": "D3", "nameZh": "Lake Shasta Caverns 溶洞",
+        "nameEn": "Lake Shasta Caverns", "unique": true, "type": "cave", "subtype": "船+巴士+溶洞三段式",
+        "seasons": ["summer", "fall"], "bestMonths": "全年开放", "bestTime": "最早一班船（避开午后人流）",
+        "durationMinutes": 150,
+        "feature": "全美屈指可数的「先坐船、再坐巴士、再进洞」三段式溶洞：从 Shasta Lake 码头乘游艇横渡湖区，再乘陡峭巴士上山，进入约 2.5 亿年前古海床形成的白色大理石溶洞，钟乳石、石笋、石幔一应俱全，向导全程讲解。洞内常年约 58°F，是最不怕天气、最有「探险感」的一项，也是 Day 3 顺路往南回家的完美第一站。",
+        "address": "20359 Shasta Caverns Rd, O'Brien, CA", "lat": 40.8019, "lng": -122.3636,
+        "parking": "码头免费停车；巴士接驳。", "fees": "含船+巴士+导览，成人约 $30+（随季节浮动）。",
+        "reservation": "建议官网提前预订场次。", "feeCategory": "paid",
+        "officialUrl": "https://www.lakeshastacaverns.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Lake_Shasta_Caverns",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Shasta_Caverns4.JPG/1280px-Shasta_Caverns4.JPG",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Shasta_Caverns4.JPG",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH006", "rank": 6, "area": "castles", "day": "D2", "nameZh": "Castle Lake 高山斗湖",
+        "nameEn": "Castle Lake", "unique": true, "type": "lake", "subtype": "冰川刻出的高山湖",
+        "seasons": ["summer", "fall"], "bestMonths": "6–10 月", "bestTime": "午后（可游泳、光线最透）",
+        "durationMinutes": 120,
+        "feature": "冰川刻出的高山斗湖，碧绿色湖水倒映 Castle Crags 花岗岩尖峰；1.5 英里缓坡约 20 分钟就到，是这一带「性价比」最高的高山湖——能把车停到湖边的环线起点，走一小段就能跳进湖里游泳或躺平。夏天湖面平静、适合野餐看山发呆，全程无陡坡，老人小孩都能完成。",
+        "address": "Castle Lake Rd, Mount Shasta, CA", "lat": 41.2272, "lng": -122.3839,
+        "parking": "湖边停车场有限，早到为佳；通往湖区的盘山路弯多。", "fees": "免费。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.fs.usda.gov/recarea/stnf/recarea/?recid=44292",
+        "articleUrl": "https://en.wikipedia.org/wiki/Castle_Lake_(California)",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Castle_Lake_%28California%29_-_swimmer_with_Mt._Shasta_%28332269890%29.jpg/1280px-Castle_Lake_%28California%29_-_swimmer_with_Mt._Shasta_%28332269890%29.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Castle_Lake_(California)_-_swimmer_with_Mt._Shasta_(332269890).jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH007", "rank": 7, "area": "weed", "day": "flex", "nameZh": "Pluto's Cave 冥王星熔岩管",
+        "nameEn": "Pluto's Cave", "unique": true, "type": "cave", "subtype": "可徒手进入的火山熔岩管",
+        "seasons": ["summer"], "bestMonths": "5–10 月", "bestTime": "白天（进洞需自带手电）",
+        "durationMinutes": 45,
+        "feature": "一条可以直接走进的火山熔岩管：约 250 英尺长的管状洞穴由古代玄武岩熔岩流冷却形成，入口巨大、不需要专业装备（带手电即可），夏天地表 90°F 时洞里依然凉爽。全美能这样「徒手进火山内脏」的地方屈指可数，而且就在 US-97 路边——顺路 40 分钟就多一项独家体验。",
+        "address": "US-97, Grenada, CA", "lat": 41.5139, "lng": -122.2547,
+        "parking": "US-97 路边土路停车。", "fees": "免费。",
+        "reservation": "无需预约；进洞自带手电与防滑鞋。", "feeCategory": "free",
+        "officialUrl": "https://www.fs.usda.gov/recarea/stnf/recarea/?recid=44315",
+        "articleUrl": "https://en.wikipedia.org/wiki/Pluto%27s_Cave",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Plutos_cave_interior.jpg/1280px-Plutos_cave_interior.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Plutos_cave_interior.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH008", "rank": 8, "area": "base", "day": "D2", "nameZh": "Panther Meadows 神圣草甸",
+        "nameEn": "Panther Meadows & Bunny Flat", "unique": true, "type": "peak", "subtype": "高山草甸与冰川眺望",
+        "seasons": ["summer", "fall"], "bestMonths": "7–10 月", "bestTime": "上午（云少）",
+        "durationMinutes": 150,
+        "feature": "Everitt Memorial 公路把车直接带到约 7000 英尺的 Bunny Flat，再走约 20 分钟就是 Panther Meadows——当地 Wintu 部落视为神圣之地的草甸：夏末野花遍野、冰川融水在草甸中蜿蜒，头顶就是 Shasta 主峰与冰川。整个 Cascades 里「开车就能到这么高、又这么安静的高山草甸」非常少见，加上海拔体感，是此行最「站在云上」的一刻。",
+        "address": "Everitt Memorial Hwy, Mount Shasta, CA", "lat": 41.33, "lng": -122.243,
+        "parking": "Bunny Flat 停车场；夏季周末早到。", "fees": "免费。",
+        "reservation": "无需预约；出发前确认 Everitt Memorial Hwy 开放。", "feeCategory": "free",
+        "officialUrl": "https://www.fs.usda.gov/recarea/stnf/recarea/?recid=44308",
+        "articleUrl": "https://en.wikipedia.org/wiki/Mount_Shasta",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mount_Shasta_as_seen_from_Bunny_Flat.jpg/1280px-Mount_Shasta_as_seen_from_Bunny_Flat.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Shasta_as_seen_from_Bunny_Flat.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH009", "rank": 9, "area": "castles", "day": "flex", "nameZh": "Castle Crags 花岗岩尖峰",
+        "nameEn": "Castle Crags State Park", "unique": true, "type": "peak", "subtype": "PCT 标志性花岗岩尖峰",
+        "seasons": ["summer", "fall"], "bestMonths": "5–10 月", "bestTime": "上午（山体顺光）",
+        "durationMinutes": 120,
+        "feature": "约 6000 英尺高的白色花岗岩尖峰群，是太平洋山脊步道（PCT）的标志性路段：站在 Vista Point 就能看到一排「城堡尖塔」从森林里拔地而起，亿万年前岩浆冷却后的奇异地貌在整个北加都排得上号。Crags Trail 约 1.6 英里爬到岩壁脚下，能近距离抚摸这些花岗岩，也能远眺 Shasta 主峰。",
+        "address": "20022 Castle Creek Rd, Castella, CA", "lat": 41.178, "lng": -122.337,
+        "parking": "公园停车场；日间 $10/车。", "fees": "日间 $10/车。",
+        "reservation": "无需预约。", "feeCategory": "paid",
+        "officialUrl": "https://www.parks.ca.gov/?page_id=456",
+        "articleUrl": "https://en.wikipedia.org/wiki/Castle_Crags",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/CastleCrags.jpg/1280px-CastleCrags.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:CastleCrags.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH010", "rank": 10, "area": "weed", "day": "flex", "nameZh": "Black Butte 火山残塞",
+        "nameEn": "Black Butte", "unique": true, "type": "peak", "subtype": "火山喷发残留独峰",
+        "seasons": ["summer", "fall"], "bestMonths": "5–10 月", "bestTime": "日落前（360° 全景）",
+        "durationMinutes": 120,
+        "feature": "一座「火山喷发留下的残塞」：约 9500 年前喷发后，岩浆在火山口内凝固成独峰，从 I-5 老远就能看到它突兀地立在平地上。山顶步道约 1.5 英里、爬升约 500 英尺，站在约 6325 英尺的山顶能 360° 看 Mount Shasta 和 Shasta Valley——是拍「Shasta 大平顶 + 独峰」最出片的角度之一，知道的人远比看得到它的人少。",
+        "address": "Black Butte Trailhead, Weed, CA", "lat": 41.367, "lng": -122.345,
+        "parking": "US-97 旁土路停车场。", "fees": "免费。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.fs.usda.gov/recarea/stnf/recarea/?recid=44296",
+        "articleUrl": "https://en.wikipedia.org/wiki/Black_Butte_(Siskiyou_County,_California)",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Black_Butte_8-4-2007.jpg/1280px-Black_Butte_8-4-2007.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Black_Butte_8-4-2007.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH011", "rank": 11, "area": "base", "day": "D1", "nameZh": "Lake Siskiyou 雪山倒影湖",
+        "nameEn": "Lake Siskiyou", "unique": false, "type": "lake", "subtype": "Mt Shasta 倒影机位",
+        "seasons": ["summer"], "bestMonths": "6–10 月", "bestTime": "日落前 60–90 分钟",
+        "durationMinutes": 90,
+        "feature": "正对 Mount Shasta 的人工水库，是「雪山倒影」的最佳机位：傍晚金光打在雪峰上、湖面如镜，10 分钟车程从镇里就到。约 7 英里环湖步道平缓好走，还有游泳区和桨板出租——到了 Shasta 后最轻松的「安顿第一站」，适合第一天下午看日落、第二天傍晚再看一次。",
+        "address": "Lake Siskiyou Camp Resort, Mount Shasta, CA", "lat": 41.279, "lng": -122.335,
+        "parking": "湖畔停车场（日间约 $5–10）。", "fees": "日间停车小额收费；步道免费。",
+        "reservation": "无需预约。", "feeCategory": "paid",
+        "officialUrl": "https://www.lakesiskiyoucamp.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Lake_Siskiyou",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Lake_Siskiyou.jpg/1280px-Lake_Siskiyou.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Siskiyou.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH012", "rank": 12, "area": "base", "day": "D2", "nameZh": "Sacramento 河源头",
+        "nameEn": "Sacramento River Headwaters", "unique": false, "type": "waterfall", "subtype": "大河源头步道",
+        "seasons": ["summer"], "bestMonths": "6–10 月", "bestTime": "上午",
+        "durationMinutes": 60,
+        "feature": "加州最长的河流之一 Sacramento River，就从 Shasta 山脚的泉眼里冒出来：约 2 英里的源头环线带你走到泉眼边，看清澈的河水从碎石缝里涌出、汇成小溪一路向南。「一条大河从一滴水开始」的具象化体验，讲给朋友听很有画面感，且离 Bunny Flat 很近，可以和高山草甸同一天顺路完成。",
+        "address": "Everitt Memorial Hwy, Mount Shasta, CA", "lat": 41.328, "lng": -122.248,
+        "parking": "源头步道起点停车场。", "fees": "免费。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.fs.usda.gov/recarea/stnf/recarea/?recid=44309",
+        "articleUrl": "https://en.wikipedia.org/wiki/Sacramento_River",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Headwaters_of_the_Sacramento_River-spring-750px.JPG",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Headwaters_of_the_Sacramento_River-spring-750px.JPG",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH013", "rank": 13, "area": "daytrip", "day": "flex", "nameZh": "Lava Beds 熔岩洞群",
+        "nameEn": "Lava Beds National Monument", "unique": true, "type": "park", "subtype": "800+ 熔岩管洞穴",
+        "seasons": ["summer", "fall"], "bestMonths": "全年（冬季更冷）", "bestTime": "上午（洞内恒温，人多前）",
+        "durationMinutes": 240,
+        "feature": "全美规模最大的熔岩洞群之一：800+ 条熔岩管洞穴，其中 20 多条开放自助探洞（自带手电、带头盔即可），还能看 1872–73 年 Modoc War 的天然堡垒 Captain Jack's Stronghold 与岩画。距 Shasta 约 1.5 小时，对本次 3 天行程偏紧，适合作为「想再多走一点」的备选，或留给下次专门跑一趟。",
+        "address": "1 Indian Well Hqts, Tulelake, CA", "lat": 41.714, "lng": -121.5084,
+        "parking": "游客中心免费停车。", "fees": "入园 $25/车（7 天）；America the Beautiful 年票可用。",
+        "reservation": "无需预约；进洞自带手电/头盔（游客中心可租）。", "feeCategory": "paid",
+        "officialUrl": "https://www.nps.gov/labe/index.htm",
+        "articleUrl": "https://en.wikipedia.org/wiki/Lava_Beds_National_Monument",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lava_Beds_Cave_collapse_trench.jpg/1280px-Lava_Beds_Cave_collapse_trench.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lava_Beds_Cave_collapse_trench.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH014", "rank": 14, "area": "dunsmuir", "day": "D1", "nameZh": "Dunsmuir 铁路公园与市区",
+        "nameEn": "Dunsmuir Railroad Park & Downtown", "unique": false, "type": "town", "subtype": "铁路小镇 + 全美最好喝的水",
+        "seasons": ["summer"], "bestMonths": "全年", "bestTime": "下午（列车较密）",
+        "durationMinutes": 60,
+        "feature": "这座铁路小镇的中央车站旁就是露天 Railroad Park：能近距离看 Amtrak 和货运列车编组、逛小型铁路历史展示；镇上的自来水号称「全美最好喝」（Crystal Geyser 灌装水源地之一），随意拧开水龙头喝一口也是体验。加州的「铁路黄金时代」在这里还活着，是 Dunsmuir 最市井也最上镜的角落。",
+        "address": "5750 Sacramento Ave, Dunsmuir, CA", "lat": 41.2083, "lng": -122.2712,
+        "parking": "车站周边街边停车。", "fees": "免费；铁路模型博物馆小额门票。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.visitdunsmuir.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Dunsmuir,_California",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dunsmuir%2C_California.jpg/1280px-Dunsmuir%2C_California.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dunsmuir,_California.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH015", "rank": 15, "area": "base", "day": "D1", "nameZh": "Mount Shasta 镇 · Sisson Museum",
+        "nameEn": "Mount Shasta Town & Sisson Museum", "unique": false, "type": "town", "subtype": "水晶与玄学小镇",
+        "seasons": ["summer"], "bestMonths": "全年", "bestTime": "白天（小店 5 点前关门）",
+        "durationMinutes": 60,
+        "feature": "一个把「玄学」和「户外」混在一起的有趣小镇：镇上到处是水晶店、灵修书店和咖啡馆（自 1980 年代起就是著名的「能量中心」文化），同时又是登山者的大本营。Sisson Museum 免费看 1850 年代以来的伐木与登山史，半小时就能逛完——作为中转、补给和晚餐据点非常顺路。",
+        "address": "300 Pine St, Mount Shasta, CA", "lat": 41.3142, "lng": -122.3128,
+        "parking": "镇中心街边停车。", "fees": "Sisson Museum 免费（建议捐款）。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.sissonmuseum.org/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Sisson_Museum",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Building_-_Mount_Shasta_Sisson_Museum_-_DSC02788.JPG/1280px-Building_-_Mount_Shasta_Sisson_Museum_-_DSC02788.JPG",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Building_-_Mount_Shasta_Sisson_Museum_-_DSC02788.JPG",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH016", "rank": 16, "area": "mccloud", "day": "D2", "nameZh": "McCloud 伐木小镇",
+        "nameEn": "McCloud Town", "unique": false, "type": "town", "subtype": "百年伐木历史老街",
+        "seasons": ["summer"], "bestMonths": "全年", "bestTime": "午后",
+        "durationMinutes": 45,
+        "feature": "保存完好的百年伐木小镇：主街上是老式 Mercantile 商店、冰淇淋店和红木谷仓，镇中心还有 1897 年建的老水塔与当年铁路办公楼的钟楼。看完 McCloud Falls 顺路来喝杯咖啡、逛老街，是行程里最「慢」的半小时，也是小镇从「锯木厂时代」走到今天的活化石。",
+        "address": "Main St, McCloud, CA", "lat": 41.2557, "lng": -122.1385,
+        "parking": "主街免费街边停车。", "fees": "免费。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.visitmccloud.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/McCloud,_California",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/McCloud_HD.jpg/1280px-McCloud_HD.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McCloud_HD.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH017", "rank": 17, "area": "lake", "day": "D3", "nameZh": "Shasta Dam 大坝观景",
+        "nameEn": "Shasta Dam Overlook", "unique": false, "type": "lake", "subtype": "加州最大水库大坝",
+        "seasons": ["summer"], "bestMonths": "全年", "bestTime": "上午（顺路往南）",
+        "durationMinutes": 60,
+        "feature": "602 英尺高的 Shasta Dam 是加州最大的水库大坝（蓄水量在全美名列前茅）：站在坝顶观景台俯瞰碧绿的 Shasta Lake 与背后约 440 万英亩-英尺的水量，非常震撼。免费、有正规游客中心和免费导览（需提前登记）——「人类工程 vs 火山地貌」同框的机位在整个加州独一份，且就在回程 I-5 旁边，几乎零绕路。",
+        "address": "Shasta Dam Blvd, Shasta Lake, CA", "lat": 40.7182, "lng": -122.4192,
+        "parking": "游客中心免费停车。", "fees": "观景免费；导览免费（需登记）。",
+        "reservation": "免费导览建议提前登记。", "feeCategory": "free",
+        "officialUrl": "https://www.usbr.gov/mp/shad/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Shasta_Dam",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Shasta_Dam_in_California.jpg/1280px-Shasta_Dam_in_California.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Shasta_Dam_in_California.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      },
+      {
+        "id": "SH018", "rank": 18, "area": "weed", "day": "flex", "nameZh": "Weed 镇",
+        "nameEn": "Weed, California", "unique": false, "type": "town", "subtype": "镇名乌龙 + 山景",
+        "seasons": ["summer"], "bestMonths": "全年", "bestTime": "路过顺拍",
+        "durationMinutes": 30,
+        "feature": "镇名就叫 Weed（「杂草」）：相传 1890 年代建站时，为 Mount Shasta 山脚一桶面粉上的标签错拼成「Weed」而得名——这个乌龙故事本身就够出圈。镇上有巨型壁画和好笑的拍照打卡点，US-97 上回望 Shasta 主峰的角度也一流；对 3 天行程而言不是必去，但若走 US-97（往 Pluto's Cave 方向）顺路 20 分钟就是纯快乐。",
+        "address": "Main St, Weed, CA", "lat": 41.4229, "lng": -122.3855,
+        "parking": "镇中心免费停车。", "fees": "免费。",
+        "reservation": "无需预约。", "feeCategory": "free",
+        "officialUrl": "https://www.weedcity.com/",
+        "articleUrl": "https://en.wikipedia.org/wiki/Weed,_California",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Weed_CA.jpg/1280px-Weed_CA.jpg",
+        "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Weed_CA.jpg",
+        "imageCredit": "Wikimedia Commons", "verifiedOn": "2026-08-28"
+      }
+    ];
+
+    const areaDefinitions = [
+      { area: 'base', icon: '▲', title: '山脚·镇区', note: 'Shasta 镇与高山草甸' },
+      { area: 'mccloud', icon: '≋', title: 'McCloud 河谷', note: '三叠瀑与伐木小镇' },
+      { area: 'dunsmuir', icon: '🚂', title: 'Dunsmuir 铁路镇', note: '瀑布与铁路公园' },
+      { area: 'weed', icon: '◍', title: 'Weed·熔岩', note: '火山塞与熔岩管' },
+      { area: 'lake', icon: '∿', title: '湖区·溶洞', note: 'Shasta Lake 与溶洞' },
+      { area: 'castles', icon: '⛰', title: 'Castle Crags', note: '花岗岩尖峰' },
+      { area: 'daytrip', icon: '↗', title: '远程日游', note: 'Burney / Lava Beds' }
+    ];
+    const favoritesStorageKey = 'mount-shasta-3day-favorites-v1';
+    const dayLabels = { D1: '第 1 天', D2: '第 2 天', D3: '第 3 天', flex: '弹性' };
+    const typeLabels = { waterfall: '瀑布·水景', peak: '山峰·步道', cave: '洞穴·地质', lake: '湖泊', town: '小镇·文化', park: '州立/国家公园' };
+
+    function normalizeText(value) {
+      return String(value ?? '')
+        .normalize('NFKD')
+        .toLocaleLowerCase('zh-CN')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function buildMapUrl(place) {
+      const destination = `${Number(place.lat)},${Number(place.lng)}`;
+      return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}&travelmode=driving`;
+    }
+
+    function filterPlaces(records, state = {}) {
+      const query = normalizeText(state.query);
+      const favorites = state.favorites instanceof Set ? state.favorites : new Set(state.favorites || []);
+      return records.filter((place) => {
+        const searchable = normalizeText([
+          place.nameZh, place.nameEn, place.subtype, place.feature, place.parking, place.fees, place.reservation
+        ].join(' '));
+        const durationMatches = !state.duration
+          || (state.duration === 'short' && place.durationMinutes <= 60)
+          || (state.duration === 'medium' && place.durationMinutes > 60 && place.durationMinutes <= 120)
+          || (state.duration === 'long' && place.durationMinutes > 120);
+        return (!query || searchable.includes(query))
+          && (!state.area || place.area === state.area)
+          && (!state.day || place.day === state.day)
+          && (!state.type || place.type === state.type)
+          && (!state.feeCategory || place.feeCategory === state.feeCategory)
+          && durationMatches
+          && (!state.uniqueOnly || place.unique)
+          && (!state.savedOnly || favorites.has(place.id));
+      });
+    }
+
+    function sortPlaces(records, order = 'rank') {
+      const sorted = [...records];
+      if (order === 'day') {
+        const dayOrder = { D1: 1, D2: 2, D3: 3, flex: 4 };
+        return sorted.sort((a, b) => (dayOrder[a.day] - dayOrder[b.day]) || a.rank - b.rank);
+      }
+      if (order === 'duration') return sorted.sort((a, b) => a.durationMinutes - b.durationMinutes || a.rank - b.rank);
+      if (order === 'area') {
+        const areaOrder = {};
+        areaDefinitions.forEach((def, i) => { areaOrder[def.area] = i; });
+        return sorted.sort((a, b) => (areaOrder[a.area] - areaOrder[b.area]) || a.rank - b.rank);
+      }
+      return sorted.sort((a, b) => a.rank - b.rank);
+    }
+
+    function readFavorites() {
+      let stored;
+      try {
+        stored = JSON.parse(localStorage.getItem(favoritesStorageKey) || '[]');
+      } catch {
+        stored = [];
+      }
+      const validIds = new Set(places.map((place) => place.id));
+      const favorites = [...new Set(Array.isArray(stored) ? stored : [])]
+        .filter((id) => typeof id === 'string' && validIds.has(id));
+      try {
+        localStorage.setItem(favoritesStorageKey, JSON.stringify(favorites));
+      } catch {
+        // The guide still works when storage is unavailable.
+      }
+      return new Set(favorites);
+    }
+
+    let favoriteIds = readFavorites();
+
+    function currentState() {
+      return {
+        query: document.getElementById('searchInput').value,
+        area: document.getElementById('areaFilter').value,
+        day: document.getElementById('dayFilter').value,
+        type: document.getElementById('typeFilter').value,
+        feeCategory: document.getElementById('feeFilter').value,
+        duration: document.getElementById('durationFilter').value,
+        uniqueOnly: document.getElementById('uniqueOnly').checked,
+        savedOnly: document.getElementById('savedOnly').checked,
+        favorites: favoriteIds
+      };
+    }
+
+    function updateResults() {
+      const filtered = filterPlaces(places, currentState());
+      const order = document.getElementById('sortOrder').value;
+      renderPlaces(sortPlaces(filtered, order));
+    }
+
+    function makeElement(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+      return element;
+    }
+
+    function makeExternalLink(label, url) {
+      const link = makeElement('a', '', label);
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      return link;
+    }
+
+    function renderRouteSummary() {
+      const summary = document.getElementById('routeSummary');
+      const fragment = document.createDocumentFragment();
+      for (const route of areaDefinitions) {
+        const button = makeElement('button', 'route-button');
+        button.type = 'button';
+        button.dataset.area = route.area;
+        button.setAttribute('aria-label', `${route.title}：${route.note}`);
+        button.append(makeElement('strong', '', `${route.icon} ${route.title}`), makeElement('span', '', route.note));
+        button.addEventListener('click', () => {
+          const areaFilter = document.getElementById('areaFilter');
+          areaFilter.value = areaFilter.value === route.area ? '' : route.area;
+          updateResults();
+          document.getElementById('resultsHeading').scrollIntoView({ block: 'start' });
+        });
+        fragment.append(button);
+      }
+      summary.replaceChildren(fragment);
+    }
+
+    function addDetail(list, term, description) {
+      const wrapper = makeElement('div');
+      wrapper.append(makeElement('dt', '', term), makeElement('dd', '', description));
+      list.append(wrapper);
+    }
+
+    function createImage(place) {
+      const sourceLink = makeExternalLink('', place.imageSourceUrl);
+      sourceLink.className = 'place-card__media';
+      sourceLink.setAttribute('aria-label', `查看${place.nameZh}图片来源`);
+      const image = makeElement('img');
+      image.src = place.imageUrl;
+      image.alt = `${place.nameZh}（${place.nameEn}）`;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.addEventListener('error', () => {
+        const fallback = makeElement('span', 'image-fallback');
+        fallback.append(makeElement('strong', '', place.nameZh), makeElement('span', '', place.nameEn));
+        image.replaceWith(fallback);
+      }, { once: true });
+      sourceLink.append(image, makeElement('span', 'image-credit', place.imageCredit));
+      return sourceLink;
+    }
+
+    function createPlaceCard(place) {
+      const card = makeElement('article', 'place-card');
+      card.dataset.area = place.area;
+      card.dataset.placeId = place.id;
+      card.append(createImage(place));
+
+      const body = makeElement('div', 'place-card__body');
+      const meta = makeElement('div', 'card-meta');
+      meta.append(makeElement('span', 'rank', `#${place.rank}`));
+      const routeLabels = makeElement('span', 'route-labels');
+      routeLabels.append(makeElement('span', 'day-label', dayLabels[place.day] || place.day));
+      if (place.unique) routeLabels.append(makeElement('span', 'unique-badge', '✦ 独家特色'));
+      meta.append(routeLabels);
+      const heading = makeElement('h3', '', place.nameZh);
+      heading.append(makeElement('span', '', place.nameEn));
+      const details = makeElement('dl', 'details');
+      addDetail(details, '区域 / 类型', `${areaTitle(place.area)} · ${typeLabels[place.type]} · ${place.subtype}`);
+      addDetail(details, '最佳月份', place.bestMonths);
+      addDetail(details, '最佳时段', place.bestTime);
+      addDetail(details, '建议停留', `${place.durationMinutes} 分钟`);
+      addDetail(details, '停车', place.parking);
+      addDetail(details, '费用', place.fees);
+      addDetail(details, '预约', place.reservation);
+
+      body.append(meta, heading, makeElement('p', 'feature', place.feature), details);
+
+      const actions = makeElement('div', 'card-actions');
+      actions.append(
+        makeExternalLink('地图导航', buildMapUrl(place)),
+        makeExternalLink('官方网站', place.officialUrl),
+        makeExternalLink('深度文章', place.articleUrl)
+      );
+      const favorite = makeElement('button', 'favorite-button', '加入行程');
+      favorite.type = 'button';
+      favorite.dataset.placeId = place.id;
+      const isFavorite = favoriteIds.has(place.id);
+      favorite.setAttribute('aria-pressed', String(isFavorite));
+      favorite.textContent = isFavorite ? '已加入行程' : '加入行程';
+      favorite.addEventListener('click', () => toggleFavorite(place.id));
+      actions.append(favorite);
+      body.append(actions);
+      card.append(body);
+      return card;
+    }
+
+    function areaTitle(area) {
+      const def = areaDefinitions.find((d) => d.area === area);
+      return def ? def.title : area;
+    }
+
+    function renderPlaces(records) {
+      const results = document.getElementById('results');
+      const fragment = document.createDocumentFragment();
+      for (const place of records) fragment.append(createPlaceCard(place));
+      results.replaceChildren(fragment);
+      document.getElementById('resultCount').textContent = `显示 ${records.length} / ${places.length} 个景点`;
+      document.getElementById('emptyState').hidden = records.length !== 0;
+    }
+
+    function toggleFavorite(id) {
+      if (!places.some((place) => place.id === id)) return false;
+      const isSaved = favoriteIds.has(id);
+      if (isSaved) favoriteIds.delete(id);
+      else favoriteIds.add(id);
+      try {
+        localStorage.setItem(favoritesStorageKey, JSON.stringify([...favoriteIds]));
+      } catch {
+        // Keep the in-memory favorite state when storage is unavailable.
+      }
+      updateResults();
+      return !isSaved;
+    }
+
+    function resetFilters() {
+      for (const id of ['searchInput', 'areaFilter', 'dayFilter', 'typeFilter', 'feeFilter', 'durationFilter']) {
+        document.getElementById(id).value = '';
+      }
+      document.getElementById('sortOrder').value = 'rank';
+      document.getElementById('uniqueOnly').checked = false;
+      document.getElementById('savedOnly').checked = false;
+      updateResults();
+    }
+
+    function populateSelect(id, values) {
+      const select = document.getElementById(id);
+      for (const value of [...new Set(values)].sort((a, b) => a.localeCompare(b, 'zh-CN'))) {
+        const option = makeElement('option', '', value);
+        option.value = value;
+        select.append(option);
+      }
+    }
+
+    renderRouteSummary();
+    // 区域下拉用「代码=值、中文=显示」，与 place.area 匹配
+    for (const def of areaDefinitions) {
+      const option = makeElement('option', '', def.title);
+      option.value = def.area;
+      document.getElementById('areaFilter').append(option);
+    }
+    for (const id of ['areaFilter', 'dayFilter', 'typeFilter', 'feeFilter', 'durationFilter', 'sortOrder', 'uniqueOnly', 'savedOnly']) {
+      document.getElementById(id).addEventListener('change', updateResults);
+    }
+    document.getElementById('searchInput').addEventListener('input', updateResults);
+    document.getElementById('resetButton').addEventListener('click', resetFilters);
+    document.getElementById('printButton').addEventListener('click', () => window.print());
+    updateResults();
+  </script>
+</body>
+
+</html>
