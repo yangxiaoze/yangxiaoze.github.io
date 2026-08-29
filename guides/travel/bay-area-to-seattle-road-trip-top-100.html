@@ -1,0 +1,5131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="湾区到西雅图 CA-1、US-101、OR-101、I-5、WA-101 与 Cascades 的 100 个自驾停靠点。">
+  <title>湾区到西雅图 Road Trip Top 100</title>
+  <link rel="icon" href="/guides/travel/travel-favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/guides/travel/travel-favicon.png">
+  <link rel="apple-touch-icon" href="/guides/travel/travel-apple-touch-icon.png">
+  <style>
+    :root {
+      --ink: #18302d;
+      --muted: #61706c;
+      --paper: #f6f1e7;
+      --surface: #fffdf8;
+      --line: #d9d2c3;
+      --ocean: #176b78;
+      --forest: #356849;
+      --sun: #e8a838;
+      --danger: #a7462c;
+      --shadow: 0 12px 32px rgb(24 48 45 / 10%);
+      --radius: 1.1rem;
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); line-height: 1.65; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid #0b7189; outline-offset: 3px; }
+    .container { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+    .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .6rem 1rem; background: #fff; transform: translateY(-180%); }
+    .skip-link:focus { transform: none; }
+    .hero { padding: clamp(3.5rem, 9vw, 7rem) 0 3rem; color: #fff; background: linear-gradient(135deg, #153b3d, #176b78 60%, #d68d31); }
+    .hero__inner { max-width: 850px; }
+    .hero h1 { margin: 0; max-width: 15ch; font-family: Georgia, "Songti SC", serif; font-size: clamp(2.5rem, 7vw, 5.6rem); line-height: 1.03; letter-spacing: -.035em; }
+    .hero p { max-width: 65ch; margin: 1.3rem 0 0; font-size: clamp(1rem, 2vw, 1.25rem); color: rgb(255 255 255 / 88%); }
+    .hero__facts { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.6rem; }
+    .hero__facts span { padding: .45rem .8rem; border: 1px solid rgb(255 255 255 / 38%); border-radius: 99px; background: rgb(255 255 255 / 10%); }
+    .status { padding: 1rem 0; color: #472d17; background: #f9df9e; }
+    .status p { margin: 0; }
+    .status a { font-weight: 750; }
+    section { padding: clamp(2.5rem, 6vw, 5rem) 0; }
+    .section-heading { max-width: 720px; margin-bottom: 1.5rem; }
+    .section-heading h2 { margin: 0 0 .35rem; font-family: Georgia, "Songti SC", serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.15; }
+    .section-heading p { margin: 0; color: var(--muted); }
+    .route-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: .75rem; }
+    .route-button { min-height: 6.5rem; padding: 1rem; text-align: left; color: #fff; border: 0; border-radius: .9rem; box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease; }
+    .route-button:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgb(24 48 45 / 18%); }
+    .route-button strong, .route-button span { display: block; }
+    .route-button strong { font-size: 1.05rem; }
+    .route-button span { margin-top: .2rem; font-size: .84rem; opacity: .85; }
+    [data-corridor="CA-1"] { --corridor: #176b78; }
+    [data-corridor="US-101"] { --corridor: #356849; }
+    [data-corridor="OR-101"] { --corridor: #ad5b32; }
+    [data-corridor="I-5"] { --corridor: #8b6b27; }
+    [data-corridor="WA-101"] { --corridor: #76539a; }
+    [data-corridor="Cascades"] { --corridor: #9c455f; }
+    [data-corridor="Seattle"] { --corridor: #4e5f6d; }
+    .route-button[data-corridor] { background: var(--corridor); }
+    .filters { position: sticky; z-index: 20; top: 0; padding: 1rem 0; border-block: 1px solid var(--line); background: rgb(246 241 231 / 95%); backdrop-filter: blur(12px); }
+    .filter-grid { display: grid; grid-template-columns: minmax(220px, 2fr) repeat(8, minmax(105px, 1fr)); gap: .65rem; }
+    .control { min-width: 0; }
+    .control label { display: block; margin-bottom: .25rem; font-size: .76rem; font-weight: 750; color: var(--muted); }
+    .control input, .control select { width: 100%; min-height: 2.7rem; padding: .55rem .65rem; color: var(--ink); border: 1px solid #b8b3a8; border-radius: .55rem; background: #fff; }
+    .filter-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-top: .8rem; }
+    .filter-actions button { padding: .55rem .9rem; border: 1px solid #9da7a3; border-radius: 99px; color: var(--ink); background: var(--surface); }
+    .check { display: inline-flex; gap: .45rem; align-items: center; }
+    .results-section { padding-top: 2.5rem; }
+    .results-header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+    .results-header h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(1.7rem, 3vw, 2.4rem); }
+    #resultCount { color: var(--muted); }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1.15rem; margin-top: 1.4rem; }
+    .place-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-top: 5px solid var(--corridor, var(--ocean)); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+    .place-card__media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #d8dfd8; }
+    .place-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .place-card:hover .place-card__media img { transform: scale(1.025); }
+    .image-fallback { display: grid; width: 100%; height: 100%; place-content: center; padding: 1.5rem; text-align: center; color: #fff; background: linear-gradient(145deg, var(--corridor, #176b78), #18302d); }
+    .image-credit { position: absolute; right: .5rem; bottom: .5rem; max-width: calc(100% - 1rem); padding: .25rem .45rem; border-radius: .3rem; color: #fff; background: rgb(0 0 0 / 65%); font-size: .68rem; }
+    .place-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.1rem; }
+    .card-meta, .route-labels, .card-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .rank { font-weight: 850; color: var(--corridor, var(--ocean)); }
+    .route-label { padding: .18rem .5rem; border-radius: 99px; color: #fff; background: var(--corridor, var(--ocean)); font-size: .74rem; font-weight: 750; }
+    .place-card h3 { margin: .7rem 0 0; font-family: Georgia, "Songti SC", serif; font-size: 1.45rem; line-height: 1.2; }
+    .place-card h3 span { display: block; margin-top: .15rem; color: var(--muted); font-family: inherit; font-size: .9rem; font-weight: 500; }
+    .feature { margin: .8rem 0; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem .9rem; margin: 0; }
+    .details div { min-width: 0; }
+    .details dt { font-size: .72rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .details dd { margin: .08rem 0 0; font-size: .88rem; overflow-wrap: anywhere; }
+    .detour-note { margin: .8rem 0 0; padding: .7rem; border-left: 4px solid var(--corridor); background: #f3eadc; font-size: .86rem; }
+    .card-actions { margin-top: auto; padding-top: 1rem; }
+    .card-actions a, .favorite-button { padding: .43rem .62rem; border: 1px solid #adb7b3; border-radius: .45rem; text-decoration: none; background: #fff; font-size: .8rem; }
+    .card-actions a:first-child { color: #fff; border-color: var(--corridor, var(--ocean)); background: var(--corridor, var(--ocean)); }
+    .favorite-button { margin-left: auto; color: var(--ink); }
+    .empty-state { margin-top: 1.5rem; padding: 2rem; text-align: center; border: 1px dashed #999; border-radius: var(--radius); background: var(--surface); }
+    .empty-state[hidden] { display: none; }
+    .itineraries { background: #18302d; color: #fff; }
+    .itineraries .section-heading p { color: rgb(255 255 255 / 72%); }
+    .itinerary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .itinerary { padding: 1.2rem; border: 1px solid rgb(255 255 255 / 22%); border-radius: .9rem; background: rgb(255 255 255 / 7%); }
+    .itinerary h3 { margin: 0; }
+    .itinerary__pace { margin: .25rem 0 1rem; color: rgb(255 255 255 / 72%); }
+    .itinerary ol { display: grid; gap: .7rem; margin: 0; padding-left: 1.35rem; }
+    .itinerary li { padding-left: .2rem; }
+    .itinerary li strong { color: #ffd27a; }
+    .itinerary__decision { margin: 1rem 0 0; padding: .8rem; border-left: 4px solid var(--sun); background: rgb(0 0 0 / 18%); }
+    .safety-guide { margin-top: 1.2rem; padding: 1.2rem; border: 1px solid rgb(255 255 255 / 22%); border-radius: .9rem; background: rgb(0 0 0 / 18%); }
+    .safety-guide h3 { margin-top: 0; }
+    .safety-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem 1.2rem; margin: 0; }
+    .safety-grid div { min-width: 0; }
+    .safety-grid dt { font-weight: 850; color: #ffd27a; }
+    .safety-grid dd { margin: .15rem 0 0; color: rgb(255 255 255 / 82%); }
+    .safety-guide a { font-weight: 750; }
+    .methodology { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; }
+    .methodology h2 { font-family: Georgia, "Songti SC", serif; }
+    footer { padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); }
+    @media (max-width: 1100px) {
+      .filter-grid { grid-template-columns: repeat(4, 1fr); }
+      .safety-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      html { scroll-behavior: auto; }
+      .container { width: min(100% - 1.25rem, 1180px); }
+      .hero { padding-top: 3rem; }
+      .filter-grid { grid-template-columns: 1fr 1fr; }
+      .control:first-child { grid-column: 1 / -1; }
+      .results-header { display: block; }
+      .itinerary-grid, .safety-grid, .methodology { grid-template-columns: 1fr; }
+      .details { grid-template-columns: 1fr; }
+      .filters { position: static; }
+    }
+    @media print {
+      body { background: #fff; color: #000; font-size: 10pt; }
+      .skip-link, .status, .routes-section, .filters, .itineraries, .methodology-section, footer, .card-actions { display: none !important; }
+      .hero { padding: 1rem 0; color: #000; background: #fff; }
+      .hero h1 { max-width: none; font-size: 3rem; }
+      .hero p, .hero__facts span { color: #000; }
+      .card-grid { display: block; }
+      .place-card { display: grid; grid-template-columns: 28% 1fr; margin: 0 0 .8rem; break-inside: avoid; box-shadow: none; }
+      .place-card__media { width: auto; min-height: 12rem; margin: 0; aspect-ratio: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#resultsHeading">跳至景点列表</a>
+  <header class="hero">
+    <div class="container hero__inner">
+      <h1>湾区到西雅图 Road Trip Top 100</h1>
+      <p>沿太平洋海岸与 I-5 向北，串联红杉、Oregon Coast、火山、Olympic Peninsula 与 Seattle；不包含逐日路线规划。</p>
+      <div class="hero__facts" aria-label="路线摘要">
+        <span>100 个停靠点</span><span>80 个主线</span><span>20 个合理绕行</span><span>20% 季节限定</span><span>资料核对：2026-07-13</span>
+      </div>
+    </div>
+  </header>
+  <aside class="status" aria-label="道路状态提醒"><div class="container"><p><strong>出发前复查：</strong>三州道路、火山和海岸公园会因雪、野火、风暴或施工改变开放。查看 <a href="https://quickmap.dot.ca.gov/" target="_blank" rel="noopener noreferrer">Caltrans QuickMap</a>、<a href="https://tripcheck.com/" target="_blank" rel="noopener noreferrer">Oregon TripCheck</a> 与 <a href="https://wsdot.com/travel/real-time/" target="_blank" rel="noopener noreferrer">WSDOT 实时路况</a>。</p></div></aside>
+  <main>
+    <section class="routes-section" aria-labelledby="routesHeading">
+      <div class="container">
+        <div class="section-heading"><h2 id="routesHeading">选择一条走廊</h2><p>七个路线入口覆盖北加州海岸、Oregon Coast、I-5、Olympic Peninsula、Cascades 与 Seattle。</p></div>
+        <div id="routeSummary" class="route-summary" aria-label="路线总览"></div>
+      </div>
+    </section>
+    <section class="filters" aria-label="筛选景点">
+      <div class="container">
+        <div class="filter-grid">
+          <div class="control"><label for="searchInput">关键词</label><input id="searchInput" type="search" placeholder="搜索景点、区域或特色"></div>
+          <div class="control"><label for="routeClassFilter">路线类型</label><select id="routeClassFilter"><option value="">全部</option><option value="mainline">主线</option><option value="detour">绕行点</option></select></div>
+          <div class="control"><label for="roadFilter">公路</label><select id="roadFilter"><option value="">全部公路</option><option>CA-1</option><option>US-101</option><option>OR-101</option><option>I-5</option><option>WA-101</option><option>Cascades</option><option>Seattle</option></select></div>
+          <div class="control"><label for="regionFilter">区域</label><select id="regionFilter"><option value="">全部区域</option></select></div>
+          <div class="control"><label for="seasonFilter">季节</label><select id="seasonFilter"><option value="">全年</option><option value="spring">春</option><option value="summer">夏</option><option value="fall">秋</option><option value="winter">冬</option></select></div>
+          <div class="control"><label for="typeFilter">景点类型</label><select id="typeFilter"><option value="">全部类型</option><option value="coast">海岸自然景观</option><option value="culture">小镇·建筑·文化</option><option value="park-trail">步道·州立/国家公园</option><option value="seasonal">季节限定景观</option></select></div>
+          <div class="control"><label for="feeFilter">费用</label><select id="feeFilter"><option value="">全部</option><option value="free">免费</option><option value="paid">付费</option><option value="variable">费用视项目而定</option></select></div>
+          <div class="control"><label for="durationFilter">停留时长</label><select id="durationFilter"><option value="">不限</option><option value="short">60 分钟内</option><option value="medium">61–120 分钟</option><option value="long">120 分钟以上</option></select></div>
+          <div class="control"><label for="sortOrder">排序</label><select id="sortOrder"><option value="southbound">南向北（湾区→西雅图）</option><option value="northbound">北向南（西雅图→湾区）</option><option value="rank">综合排名</option><option value="season">最佳季节</option><option value="duration">停留时长</option></select></div>
+        </div>
+        <div class="filter-actions">
+          <label class="check"><input id="savedOnly" type="checkbox"> 仅看收藏</label>
+          <button id="resetButton" type="button">清除筛选</button>
+          <button id="printButton" type="button">打印当前结果</button>
+        </div>
+      </div>
+    </section>
+    <section class="results-section" aria-labelledby="resultsHeading">
+      <div class="container">
+        <div class="results-header"><h2 id="resultsHeading" tabindex="-1">沿途景点</h2><p id="resultCount" role="status" aria-live="polite">正在整理 100 个景点…</p></div>
+        <div id="results" class="card-grid"></div>
+        <div id="emptyState" class="empty-state" hidden><strong>没有符合条件的景点</strong><p>试着减少筛选条件或清除搜索关键词。</p></div>
+      </div>
+    </section>
+    <section class="itineraries seasonal-guide" aria-labelledby="seasonalHeading"><div class="container"><div class="section-heading"><h2 id="seasonalHeading">季节窗口与三州安全</h2><p>20 个季节限定地点按自然或活动窗口筛选；任何花期、鲸群、积雪消融、洄游或道路开放都不是保证。</p></div><div class="safety-guide"><dl class="safety-grid"><div><dt>加州道路</dt><dd>查看 <a href="https://quickmap.dot.ca.gov/" target="_blank" rel="noopener noreferrer">Caltrans QuickMap</a> 与 NPS/State Parks 公告。</dd></div><div><dt>Oregon Coast</dt><dd>查看 <a href="https://tripcheck.com/" target="_blank" rel="noopener noreferrer">TripCheck</a>；冬季风暴浪和山体滑坡会改变通行。</dd></div><div><dt>Washington</dt><dd>查看 <a href="https://wsdot.com/travel/real-time/" target="_blank" rel="noopener noreferrer">WSDOT</a>、Olympic/Mount Rainier道路和轮渡公告。</dd></div><div><dt>潮汐与巨浪</dt><dd>潮池、海洞和沙嘴只在安全潮窗进入；不背对海浪，不在湿滑礁石边缘停留。</dd></div><div><dt>雪、野火与烟雾</dt><dd>Cascades绕行携带规定链条；火险或烟雾恶化时取消山区行程并遵守疏散命令。</dd></div><div><dt>野生动物</dt><dd>使用长焦、保持现场规定距离，不接近幼崽、不喂食；鲸类和候鸟出现均不保证。</dd></div></dl></div></div></section><section class="methodology-section" aria-labelledby="methodHeading">
+      <div class="container methodology">
+        <div><h2 id="methodHeading">排序与资料方法</h2><p>Top 100 为编辑型综合排序，结合路线代表性、景观与文化价值、季节特色、停车可达性和停留回报，不代表任何平台的实时榜单。本页不缓存外部平台分数；请通过每张卡片的链接实时查看最新评分。</p></div>
+        <div><h2>来源与时效</h2><p>道路、门票、许可和开放规则优先参考 Caltrans、Oregon TripCheck、WSDOT、NPS、三州公园与管理机构官网。图片来自官方机构或 Wikimedia Commons；所有会变化的信息均应在出发前复查。</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">湾区到西雅图 Road Trip Top 100 · 单文件景点指南 · 不提供路线规划、实时交通或开放保证</div></footer>
+  <script>
+const places = /* SEATTLE_PLACES_START */[
+  {
+    "id": "ST001",
+    "rank": 1,
+    "directionIndex": 1,
+    "nameZh": "金门大桥观景区",
+    "nameEn": "Golden Gate Overlook",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Bay Area",
+    "type": "coast",
+    "subtype": "海峡观景",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "日出后或日落前90分钟",
+    "durationMinutes": 75,
+    "feature": "金门海峡、桥塔和Marin岬角同框，是北上旅程的自然起点。",
+    "address": "Golden Gate Overlook, Bay Area",
+    "lat": 37.8297,
+    "lng": -122.4834,
+    "parking": "Langdon Court正式停车区；周末清晨较易找到车位。",
+    "fees": "观景免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Golden%20Gate%20Overlook/@37.8297,-122.4834,13z",
+    "officialUrl": "https://www.nps.gov/places/000/golden-gate-overlook.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Golden%20Gate%20Overlook/@37.8297,-122.4834,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Overlooking_Dawn_at_the_Golden_Gate_Bridge.jpg/1280px-Overlooking_Dawn_at_the_Golden_Gate_Bridge.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Overlooking_Dawn_at_the_Golden_Gate_Bridge.jpg",
+    "imageCredit": "Daniel Rindner",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST002",
+    "rank": 2,
+    "directionIndex": 2,
+    "nameZh": "缪尔红杉林国家纪念地",
+    "nameEn": "Muir Woods National Monument",
+    "routeClass": "detour",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Bay Area",
+    "type": "park-trail",
+    "subtype": "海岸红杉",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年；雨季林色更浓",
+    "bestTime": "首个预约时段或工作日下午",
+    "durationMinutes": 150,
+    "feature": "平缓木栈道穿行古老海岸红杉，适合在进入Sonoma Coast前热身。",
+    "address": "Muir Woods National Monument, Bay Area",
+    "lat": 37.8954,
+    "lng": -122.578,
+    "parking": "必须使用已预约的Muir Woods停车位或官方接驳车。",
+    "fees": "公园门票及停车/接驳分别收费。",
+    "reservation": "停车或接驳车必须提前预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Muir%20Woods%20National%20Monument/@37.8954,-122.578,13z",
+    "officialUrl": "https://www.nps.gov/muwo/index.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Muir%20Woods%20National%20Monument/@37.8954,-122.578,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Muir_Woods_National_Monument",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Muir_Woods_National_Monument_1.jpg/1280px-Muir_Woods_National_Monument_1.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Muir_Woods_National_Monument_1.jpg",
+    "imageCredit": "Sarbjit Bahga",
+    "verifiedOn": "2026-07-13",
+    "junction": "CA-1/US-101",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST003",
+    "rank": 3,
+    "directionIndex": 3,
+    "nameZh": "塔玛佩斯山东峰",
+    "nameEn": "Mount Tamalpais East Peak",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Bay Area",
+    "type": "park-trail",
+    "subtype": "山顶全景",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "春秋最清晰；夏季常越过雾层",
+    "bestTime": "上午9点前或日落前",
+    "durationMinutes": 150,
+    "feature": "短距离即可俯瞰San Francisco Bay、太平洋和雾海。",
+    "address": "Mount Tamalpais East Peak, Bay Area",
+    "lat": 37.9236,
+    "lng": -122.5965,
+    "parking": "East Peak山顶收费停车场容量有限；禁止停在消防通道。",
+    "fees": "车辆日用停车收费。",
+    "reservation": "日用通常无需预约，营地另行预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Mount%20Tamalpais%20East%20Peak/@37.9236,-122.5965,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=471",
+    "reviewUrl": "https://www.google.com/maps/place/Mount%20Tamalpais%20East%20Peak/@37.9236,-122.5965,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Mount_Tamalpais",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/View_of_Mt._Tamalpais%27_East_Peak._The_Old_Railroad_Grade_fire_road_is_visible_below_Ridgecrest_Blvd_-_Bolinas_Ridge_Road._-_panoramio.jpg/1280px-View_of_Mt._Tamalpais%27_East_Peak._The_Old_Railroad_Grade_fire_road_is_visible_below_Ridgecrest_Blvd_-_Bolinas_Ridge_Road._-_panoramio.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Mt._Tamalpais%27_East_Peak._The_Old_Railroad_Grade_fire_road_is_visible_below_Ridgecrest_Blvd_-_Bolinas_Ridge_Road._-_panoramio.jpg",
+    "imageCredit": "Richard Wood",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST004",
+    "rank": 4,
+    "directionIndex": 4,
+    "nameZh": "雷耶斯角灯塔",
+    "nameEn": "Point Reyes Lighthouse",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "coast",
+    "subtype": "海岬灯塔",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月风较稳定",
+    "bestTime": "上午开放后；避开强风关闭时段",
+    "durationMinutes": 75,
+    "feature": "通往灯塔的313级台阶俯瞰大陆架和灰鲸迁徙通道。",
+    "address": "Point Reyes Lighthouse, North Coast California",
+    "lat": 37.9955,
+    "lng": -123.0232,
+    "parking": "Lighthouse Visitor Center停车区后仍需步行约0.45英里。",
+    "fees": "国家海岸无普通入园费。",
+    "reservation": "灯塔楼梯开放取决于风况和人员安排。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Point%20Reyes%20Lighthouse/@37.9955,-123.0232,13z",
+    "officialUrl": "https://www.nps.gov/pore/planyourvisit/lighthouse.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Point%20Reyes%20Lighthouse/@37.9955,-123.0232,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Point_Reyes_Lighthouse",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Point_Reyes_Lighthouse_%28April_2012%29.jpg/1280px-Point_Reyes_Lighthouse_%28April_2012%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Point_Reyes_Lighthouse_(April_2012).jpg",
+    "imageCredit": "Frank Schulenburg",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST005",
+    "rank": 5,
+    "directionIndex": 5,
+    "nameZh": "烟囱岩步道",
+    "nameEn": "Chimney Rock Trail",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "seasonal",
+    "subtype": "野花与象海豹",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "bestMonths": "2–5月野花与繁殖季",
+    "bestTime": "上午风小、能见度好时",
+    "durationMinutes": 120,
+    "feature": "春季野花、海鸟和象海豹繁殖活动集中，但花期和野生动物不可保证。",
+    "address": "Chimney Rock Trail, North Coast California",
+    "lat": 38.0309,
+    "lng": -122.9717,
+    "parking": "Chimney Rock trailhead小型停车区；繁忙季可能实施接驳。",
+    "fees": "步道免费。",
+    "reservation": "象海豹季可能有交通管制，出发前查NPS。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Chimney%20Rock%20Trail/@38.0309,-122.9717,13z",
+    "officialUrl": "https://www.nps.gov/thingstodo/hike-the-chimney-rock-trail.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Chimney%20Rock%20Trail/@38.0309,-122.9717,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Point_Reyes",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Chimney_Rock_Trail_Point_Reyes_December_2016_panorama_1.jpg/1280px-Chimney_Rock_Trail_Point_Reyes_December_2016_panorama_1.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chimney_Rock_Trail_Point_Reyes_December_2016_panorama_1.jpg",
+    "imageCredit": "King of Hearts",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST006",
+    "rank": 6,
+    "directionIndex": 6,
+    "nameZh": "博德加岬",
+    "nameEn": "Bodega Head",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "seasonal",
+    "subtype": "灰鲸迁徙",
+    "seasons": [
+      "winter",
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "12–5月灰鲸迁徙；夏秋看日落",
+    "bestTime": "清晨无风或日落前",
+    "durationMinutes": 120,
+    "feature": "冬春灰鲸沿岸迁徙，海岬步道也适合观察海鸟与风暴浪。",
+    "address": "Bodega Head, North Coast California",
+    "lat": 38.3099,
+    "lng": -123.0663,
+    "parking": "Westshore Road尽头设多个正式观景停车区。",
+    "fees": "日用观景免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Bodega%20Head/@38.3099,-123.0663,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=451",
+    "reviewUrl": "https://www.google.com/maps/place/Bodega%20Head/@38.3099,-123.0663,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Bodega_Head",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Brown_pelican_in_flight_%28Bodega_Bay%29.jpg/1280px-Brown_pelican_in_flight_%28Bodega_Bay%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Brown_pelican_in_flight_(Bodega_Bay).jpg",
+    "imageCredit": "Frank Schulenburg",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST007",
+    "rank": 7,
+    "directionIndex": 7,
+    "nameZh": "山羊岩海滩",
+    "nameEn": "Goat Rock Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "coast",
+    "subtype": "河口海滩",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "低潮前后且浪况温和时",
+    "durationMinutes": 75,
+    "feature": "Russian River河口、海蚀岩和宽阔沙滩组合，巨浪季需远离水线。",
+    "address": "Goat Rock Beach, North Coast California",
+    "lat": 38.4475,
+    "lng": -123.1279,
+    "parking": "Goat Rock Road尽头州立海滩停车场；河口附近遵守封闭线。",
+    "fees": "车辆日用费可能适用。",
+    "reservation": "无需预约；恶劣海况会临时限制。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Goat%20Rock%20Beach/@38.4475,-123.1279,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=451",
+    "reviewUrl": "https://www.google.com/maps/place/Goat%20Rock%20Beach/@38.4475,-123.1279,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Goat_Rock_Beach",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Goat_Rock_Beach%2C_Sonoma_County%2C_California_%2802-11-2012%29.jpg/1280px-Goat_Rock_Beach%2C_Sonoma_County%2C_California_%2802-11-2012%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Goat_Rock_Beach,_Sonoma_County,_California_(02-11-2012).jpg",
+    "imageCredit": "Frank Schulenburg",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST008",
+    "rank": 8,
+    "directionIndex": 8,
+    "nameZh": "罗斯堡州立历史公园",
+    "nameEn": "Fort Ross State Historic Park",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "culture",
+    "subtype": "海岸历史",
+    "seasons": [
+      "winter"
+    ],
+    "bestMonths": "全年；冬季开放日较短",
+    "bestTime": "开园后首两小时",
+    "durationMinutes": 90,
+    "feature": "重建的俄美公司堡垒讲述原住民、俄国与加州海岸贸易史。",
+    "address": "Fort Ross State Historic Park, North Coast California",
+    "lat": 38.5147,
+    "lng": -123.2466,
+    "parking": "CA-1旁Fort Ross游客中心停车场。",
+    "fees": "车辆日用费；博物馆通常含在日用范围。",
+    "reservation": "团体活动和特定导览需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Fort%20Ross%20State%20Historic%20Park/@38.5147,-123.2466,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=449",
+    "reviewUrl": "https://www.google.com/maps/place/Fort%20Ross%20State%20Historic%20Park/@38.5147,-123.2466,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Fort_Ross%2C_California",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/SS_Pomona_display%2C_Fort_Ross_State_Historic_Park%2C_Fort_Ross%2C_CA_7-5-2010_5-23-24_PM.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:SS_Pomona_display,_Fort_Ross_State_Historic_Park,_Fort_Ross,_CA_7-5-2010_5-23-24_PM.JPG",
+    "imageCredit": "Sanfranman59",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST009",
+    "rank": 9,
+    "directionIndex": 9,
+    "nameZh": "盐角州立公园",
+    "nameEn": "Salt Point State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "coast",
+    "subtype": "砂岩海岸",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–11月",
+    "bestTime": "上午低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "蜂窝状砂岩、海蚀台地和海藻林保护区呈现Sonoma最粗犷海岸。",
+    "address": "Salt Point State Park, North Coast California",
+    "lat": 38.5686,
+    "lng": -123.3315,
+    "parking": "Gerstle Cove或Stump Beach正式日用停车区。",
+    "fees": "车辆日用费；露营另计。",
+    "reservation": "露营需ReserveCalifornia预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Salt%20Point%20State%20Park/@38.5686,-123.3315,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=453",
+    "reviewUrl": "https://www.google.com/maps/place/Salt%20Point%20State%20Park/@38.5686,-123.3315,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Salt_Point_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Gerstle_Cove_Salt_Point_State_Park_CA.jpg/1280px-Gerstle_Cove_Salt_Point_State_Park_CA.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Gerstle_Cove_Salt_Point_State_Park_CA.jpg",
+    "imageCredit": "Kglavin",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST010",
+    "rank": 10,
+    "directionIndex": 10,
+    "nameZh": "海牧场礼拜堂",
+    "nameEn": "Sea Ranch Chapel",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "North Coast California",
+    "type": "culture",
+    "subtype": "有机建筑",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午柔光或工作日",
+    "durationMinutes": 90,
+    "feature": "贝壳般曲面屋顶和手工木作浓缩Sea Ranch的有机现代主义。",
+    "address": "Sea Ranch Chapel, North Coast California",
+    "lat": 38.5186,
+    "lng": -123.247,
+    "parking": "CA-1旁礼拜堂小型专用停车区，请勿占私人道路。",
+    "fees": "参观免费，接受捐赠。",
+    "reservation": "私人仪式期间可能关闭。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Sea%20Ranch%20Chapel/@38.5186,-123.247,13z",
+    "officialUrl": "https://searanchchapel.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Sea%20Ranch%20Chapel/@38.5186,-123.247,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Sea_Ranch%2C_California",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sea_Ranch_Chapel.jpg/1280px-Sea_Ranch_Chapel.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sea_Ranch_Chapel.jpg",
+    "imageCredit": "ingridtaylar (Ingrid Taylar)",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST011",
+    "rank": 11,
+    "directionIndex": 11,
+    "nameZh": "阿里纳角灯塔",
+    "nameEn": "Point Arena Lighthouse",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "coast",
+    "subtype": "灯塔海岬",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "bestMonths": "全年；冬春观鲸",
+    "bestTime": "上午开放后",
+    "durationMinutes": 75,
+    "feature": "太平洋沿岸最高灯塔之一，塔顶360度海岬景观非常突出。",
+    "address": "Point Arena Lighthouse, Mendocino Coast",
+    "lat": 38.9548,
+    "lng": -123.7408,
+    "parking": "Lighthouse Road尽头游客停车场。",
+    "fees": "塔楼与博物馆参观需购票。",
+    "reservation": "常规参观无需预约，团体导览需联系。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Point%20Arena%20Lighthouse/@38.9548,-123.7408,13z",
+    "officialUrl": "https://www.pointarenalighthouse.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Point%20Arena%20Lighthouse/@38.9548,-123.7408,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Point_Arena_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Point_Arena_Light_Station_1870_tower.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Point_Arena_Light_Station_1870_tower.JPG",
+    "imageCredit": "Unknown authorUnknown author",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST012",
+    "rank": 12,
+    "directionIndex": 12,
+    "nameZh": "保龄球海滩",
+    "nameEn": "Bowling Ball Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "seasonal",
+    "subtype": "负潮地貌",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "bestMonths": "春夏负潮日",
+    "bestTime": "潮表最低潮前60分钟",
+    "durationMinutes": 120,
+    "feature": "近乎等大的砂岩结核只有在足够低潮时完整显露，窗口短且不可强求。",
+    "address": "Bowling Ball Beach, Mendocino Coast",
+    "lat": 38.869,
+    "lng": -123.656,
+    "parking": "Schooner Gulch State Beach路侧正式停车湾；下坡步道湿滑。",
+    "fees": "海滩免费。",
+    "reservation": "无需预约，必须先查潮汐和浪高。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Bowling%20Ball%20Beach/@38.869,-123.656,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=446",
+    "reviewUrl": "https://www.google.com/maps/place/Bowling%20Ball%20Beach/@38.869,-123.656,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Schooner_Gulch_State_Beach",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Bowling_Balls_Beach_California_1.jpg/1280px-Bowling_Balls_Beach_California_1.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bowling_Balls_Beach_California_1.jpg",
+    "imageCredit": "Brocken Inaglory",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST013",
+    "rank": 13,
+    "directionIndex": 13,
+    "nameZh": "门多西诺岬角州立公园",
+    "nameEn": "Mendocino Headlands State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "coast",
+    "subtype": "岬角步道",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "岬角环抱维多利亚小镇，短步道串联海洞、拱门和野花草坡。",
+    "address": "Mendocino Headlands State Park, Mendocino Coast",
+    "lat": 39.3075,
+    "lng": -123.8034,
+    "parking": "Mendocino村街边停车或Heeser Drive观景停车位。",
+    "fees": "步道免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Mendocino%20Headlands%20State%20Park/@39.3075,-123.8034,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=442",
+    "reviewUrl": "https://www.google.com/maps/place/Mendocino%20Headlands%20State%20Park/@39.3075,-123.8034,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Mendocino_Headlands_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mendocino_Headlands_State_Park_-_DSC01832.JPG/1280px-Mendocino_Headlands_State_Park_-_DSC01832.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mendocino_Headlands_State_Park_-_DSC01832.JPG",
+    "imageCredit": "Daderot",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST014",
+    "rank": 14,
+    "directionIndex": 14,
+    "nameZh": "门多西诺村",
+    "nameEn": "Mendocino Village",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "culture",
+    "subtype": "历史小镇",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午10点前或傍晚",
+    "durationMinutes": 90,
+    "feature": "木结构水塔、艺廊和海岬步道形成北加州最完整的海岸小镇景观。",
+    "address": "Mendocino Village, Mendocino Coast",
+    "lat": 39.3077,
+    "lng": -123.7995,
+    "parking": "主街及Heeser Drive公共车位；不要占用旅馆专位。",
+    "fees": "街区漫步免费，商店和博物馆另计。",
+    "reservation": "餐厅和住宿旺季建议预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Mendocino%20Village/@39.3077,-123.7995,13z",
+    "officialUrl": "https://www.visitmendocino.com/listing/mendocino-village/",
+    "reviewUrl": "https://www.google.com/maps/place/Mendocino%20Village/@39.3077,-123.7995,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Mendocino%2C_California",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/BigRiver.jpg/1280px-BigRiver.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:BigRiver.jpg",
+    "imageCredit": "David Eppstein",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST015",
+    "rank": 15,
+    "directionIndex": 15,
+    "nameZh": "俄罗斯峡谷州立公园",
+    "nameEn": "Russian Gulch State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "park-trail",
+    "subtype": "瀑布峡谷",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "bestMonths": "冬末至春季瀑布水量好",
+    "bestTime": "上午进园",
+    "durationMinutes": 150,
+    "feature": "蕨类峡谷、36英尺瀑布与海岸Devil’s Punchbowl可在同一公园组合。",
+    "address": "Russian Gulch State Park, Mendocino Coast",
+    "lat": 39.3305,
+    "lng": -123.8018,
+    "parking": "州立公园收费入口停车；桥外路边空间有限。",
+    "fees": "车辆日用费。",
+    "reservation": "露营需ReserveCalifornia预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Russian%20Gulch%20State%20Park/@39.3305,-123.8018,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=432",
+    "reviewUrl": "https://www.google.com/maps/place/Russian%20Gulch%20State%20Park/@39.3305,-123.8018,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Russian_Gulch_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Russian_Gulch_Beach.jpg/1280px-Russian_Gulch_Beach.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Russian_Gulch_Beach.jpg",
+    "imageCredit": "David Eppstein",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST016",
+    "rank": 16,
+    "directionIndex": 16,
+    "nameZh": "壶柄生态阶梯",
+    "nameEn": "Jug Handle Ecological Staircase",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "park-trail",
+    "subtype": "生态阶地",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月步道较干",
+    "bestTime": "上午9点前",
+    "durationMinutes": 150,
+    "feature": "五级海岸阶地从沙滩、红杉过渡到矮化森林，是经典生态演替步道。",
+    "address": "Jug Handle Ecological Staircase, Mendocino Coast",
+    "lat": 39.3741,
+    "lng": -123.8152,
+    "parking": "CA-1西侧Jug Handle State Natural Reserve小型停车区。",
+    "fees": "保护区免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Jug%20Handle%20Ecological%20Staircase/@39.3741,-123.8152,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=441",
+    "reviewUrl": "https://www.google.com/maps/place/Jug%20Handle%20Ecological%20Staircase/@39.3741,-123.8152,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Jug_Handle_State_Natural_Reserve",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Jug_Handle_Ecological_Staircase_Pygmy_Forest_%285063026514%29.jpg/1280px-Jug_Handle_Ecological_Staircase_Pygmy_Forest_%285063026514%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Jug_Handle_Ecological_Staircase_Pygmy_Forest_(5063026514).jpg",
+    "imageCredit": "Bjorn",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST017",
+    "rank": 17,
+    "directionIndex": 17,
+    "nameZh": "臭鼬火车",
+    "nameEn": "Skunk Train Fort Bragg",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "culture",
+    "subtype": "森林铁路",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年；节庆列车按季",
+    "bestTime": "预订班次前45分钟",
+    "durationMinutes": 90,
+    "feature": "历史窄轨列车沿Pudding Creek进入红杉峡谷，适合不徒步的森林体验。",
+    "address": "Skunk Train Fort Bragg, Mendocino Coast",
+    "lat": 39.4457,
+    "lng": -123.8053,
+    "parking": "Fort Bragg车站收费或街边停车，按票面指示报到。",
+    "fees": "观光列车按线路和日期收费。",
+    "reservation": "热门班次必须提前购票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Skunk%20Train%20Fort%20Bragg/@39.4457,-123.8053,13z",
+    "officialUrl": "https://www.skunktrain.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Skunk%20Train%20Fort%20Bragg/@39.4457,-123.8053,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/California_Western_Railroad",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Skunk_Train_-_August_2018_-_Stierch_01.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Skunk_Train_-_August_2018_-_Stierch_01.jpg",
+    "imageCredit": "Missvain",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST018",
+    "rank": 18,
+    "directionIndex": 18,
+    "nameZh": "玻璃海滩",
+    "nameEn": "Glass Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "coast",
+    "subtype": "海玻璃海岸",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮且上午人少时",
+    "durationMinutes": 75,
+    "feature": "回收历史形成的海玻璃与新建海岸步道并存，重点是观察而非采集。",
+    "address": "Glass Beach, Mendocino Coast",
+    "lat": 39.4524,
+    "lng": -123.8138,
+    "parking": "Noyo Headlands北端公共停车区；按标线停车。",
+    "fees": "公园免费。",
+    "reservation": "无需预约；禁止带走玻璃和自然物。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Glass%20Beach/@39.4524,-123.8138,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=436",
+    "reviewUrl": "https://www.google.com/maps/place/Glass%20Beach/@39.4524,-123.8138,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Glass_Beach_(Fort_Bragg%2C_California)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Glass_Beach_Fort_Bragg_2.jpg/1280px-Glass_Beach_Fort_Bragg_2.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Glass_Beach_Fort_Bragg_2.jpg",
+    "imageCredit": "Jef Poskanzer",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST019",
+    "rank": 19,
+    "directionIndex": 19,
+    "nameZh": "麦凯里彻州立公园",
+    "nameEn": "MacKerricher State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "CA-1"
+    ],
+    "corridor": "CA-1",
+    "region": "Mendocino Coast",
+    "type": "coast",
+    "subtype": "潮池与沙丘",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "栈道通往海豹岩、潮池和海岸沙丘，冬春也常见迁徙鲸。",
+    "address": "MacKerricher State Park, Mendocino Coast",
+    "lat": 39.4888,
+    "lng": -123.7903,
+    "parking": "Laguna Point或Lake Cleone正式停车区。",
+    "fees": "日用通常免费；露营收费。",
+    "reservation": "露营需预约，Laguna Point栈道无需预约。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/MacKerricher%20State%20Park/@39.4888,-123.7903,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=436",
+    "reviewUrl": "https://www.google.com/maps/place/MacKerricher%20State%20Park/@39.4888,-123.7903,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/MacKerricher_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/MacKerricher_Beach.jpg/1280px-MacKerricher_Beach.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:MacKerricher_Beach.jpg",
+    "imageCredit": "J.smith",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST020",
+    "rank": 20,
+    "directionIndex": 20,
+    "nameZh": "巨人大道",
+    "nameEn": "Avenue of the Giants",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Humboldt Redwoods",
+    "type": "park-trail",
+    "subtype": "红杉景观公路",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "清晨车少时",
+    "durationMinutes": 150,
+    "feature": "31英里旧101公路穿过世界级海岸红杉林，车行与短步道可灵活组合。",
+    "address": "Avenue of the Giants, Humboldt Redwoods",
+    "lat": 40.354,
+    "lng": -123.923,
+    "parking": "沿线使用Founders Grove等正式停车区，不在窄路肩急停。",
+    "fees": "公路通行免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Avenue%20of%20the%20Giants/@40.354,-123.923,13z",
+    "officialUrl": "https://avenueofthegiants.net/",
+    "reviewUrl": "https://www.google.com/maps/place/Avenue%20of%20the%20Giants/@40.354,-123.923,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Avenue_of_the_Giants",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Avenue_of_the_Giants_-_California_-_7402236352.jpg/1280px-Avenue_of_the_Giants_-_California_-_7402236352.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Avenue_of_the_Giants_-_California_-_7402236352.jpg",
+    "imageCredit": "Dougtone",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST021",
+    "rank": 21,
+    "directionIndex": 21,
+    "nameZh": "创始人红杉林",
+    "nameEn": "Founders Grove",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Humboldt Redwoods",
+    "type": "park-trail",
+    "subtype": "古树环线",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午柔光",
+    "durationMinutes": 150,
+    "feature": "平坦环线经过Founders Tree和倒伏的Dyerville Giant，信息牌完整。",
+    "address": "Founders Grove, Humboldt Redwoods",
+    "lat": 40.3516,
+    "lng": -123.9236,
+    "parking": "Dyerville Loop Road旁Founders Grove停车区。",
+    "fees": "短步道免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Founders%20Grove/@40.3516,-123.9236,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=425",
+    "reviewUrl": "https://www.google.com/maps/place/Founders%20Grove/@40.3516,-123.9236,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Humboldt_Redwoods_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Founders_Grove_Loop_Trail_-_Humboldt_Redwoods_State_Park_-_DSC02496.JPG/1280px-Founders_Grove_Loop_Trail_-_Humboldt_Redwoods_State_Park_-_DSC02496.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Founders_Grove_Loop_Trail_-_Humboldt_Redwoods_State_Park_-_DSC02496.JPG",
+    "imageCredit": "Daderot",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST022",
+    "rank": 22,
+    "directionIndex": 22,
+    "nameZh": "芬代尔维多利亚村",
+    "nameEn": "Ferndale Victorian Village",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Humboldt County",
+    "type": "culture",
+    "subtype": "维多利亚小镇",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午商店开门后",
+    "durationMinutes": 90,
+    "feature": "保存完整的维多利亚商街、乳业历史和通往Lost Coast的门户气质。",
+    "address": "Ferndale Victorian Village, Humboldt County",
+    "lat": 40.5762,
+    "lng": -124.2639,
+    "parking": "Main Street和侧街公共停车位；留意住宅入口。",
+    "fees": "街区漫步免费。",
+    "reservation": "节庆周末住宿和餐厅建议预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Ferndale%20Victorian%20Village/@40.5762,-124.2639,13z",
+    "officialUrl": "https://www.visitferndale.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Ferndale%20Victorian%20Village/@40.5762,-124.2639,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Ferndale%2C_California",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/425-431_Main_Ferndale_CA.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:425-431_Main_Ferndale_CA.jpg",
+    "imageCredit": "Ellin Beltz",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST023",
+    "rank": 23,
+    "directionIndex": 23,
+    "nameZh": "尤里卡老城",
+    "nameEn": "Old Town Eureka",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Humboldt County",
+    "type": "culture",
+    "subtype": "滨水历史区",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午至午后",
+    "durationMinutes": 90,
+    "feature": "Carson Mansion外观、砖砌商街和Humboldt Bay木栈道集中在步行范围。",
+    "address": "Old Town Eureka, Humboldt County",
+    "lat": 40.8021,
+    "lng": -124.1637,
+    "parking": "C Street Market Square及街边计时车位。",
+    "fees": "街区免费，博物馆另计。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Old%20Town%20Eureka/@40.8021,-124.1637,13z",
+    "officialUrl": "https://www.eurekaca.gov/",
+    "reviewUrl": "https://www.google.com/maps/place/Old%20Town%20Eureka/@40.8021,-124.1637,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Old_Town_Eureka",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Eureka_Old_Town_and_Clock.jpg/1280px-Eureka_Old_Town_and_Clock.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Eureka_Old_Town_and_Clock.jpg",
+    "imageCredit": "Jan Kronsell",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST024",
+    "rank": 24,
+    "directionIndex": 24,
+    "nameZh": "洪堡湾国家野生动物保护区",
+    "nameEn": "Humboldt Bay National Wildlife Refuge",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Humboldt County",
+    "type": "seasonal",
+    "subtype": "候鸟迁徙",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "10–4月水鸟高峰",
+    "bestTime": "涨潮前后或清晨",
+    "durationMinutes": 120,
+    "feature": "冬季成群黑雁、涉禽和猛禽利用潮滩，数量随潮汐和迁徙变化。",
+    "address": "Humboldt Bay National Wildlife Refuge, Humboldt County",
+    "lat": 40.6817,
+    "lng": -124.2203,
+    "parking": "Loleta附近visitor center和Shorebird Loop免费停车。",
+    "fees": "保护区免费。",
+    "reservation": "无需预约；部分区域按季封闭。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Humboldt%20Bay%20National%20Wildlife%20Refuge/@40.6817,-124.2203,13z",
+    "officialUrl": "https://www.fws.gov/refuge/humboldt-bay",
+    "reviewUrl": "https://www.google.com/maps/place/Humboldt%20Bay%20National%20Wildlife%20Refuge/@40.6817,-124.2203,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Humboldt_Bay_National_Wildlife_Refuge",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/King_Salmon_California_Canal.jpg/1280px-King_Salmon_California_Canal.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:King_Salmon_California_Canal.jpg",
+    "imageCredit": "Ellin Beltz",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST025",
+    "rank": 25,
+    "directionIndex": 25,
+    "nameZh": "特立尼达州立海滩",
+    "nameEn": "Trinidad State Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "coast",
+    "subtype": "海湾沙滩",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "上午低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "岩岛、渔港和短岬角步道构成Redwood Coast最紧凑的海景停靠。",
+    "address": "Trinidad State Beach, Redwood Coast",
+    "lat": 41.058,
+    "lng": -124.1488,
+    "parking": "Trinidad State Beach主停车区或镇内正式车位。",
+    "fees": "日用免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Trinidad%20State%20Beach/@41.058,-124.1488,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=418",
+    "reviewUrl": "https://www.google.com/maps/place/Trinidad%20State%20Beach/@41.058,-124.1488,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Trinidad_State_Beach",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Trinidad-ca-state-beach.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Trinidad-ca-state-beach.jpg",
+    "imageCredit": "TrinidadMike",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST026",
+    "rank": 26,
+    "directionIndex": 26,
+    "nameZh": "苏梅格州立公园",
+    "nameEn": "Sue-meg State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "coast",
+    "subtype": "海蚀岩岬角",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午至日落前",
+    "durationMinutes": 75,
+    "feature": "密集海蚀柱、Wedding Rock和Yurok文化展示结合，旧名Patrick’s Point。",
+    "address": "Sue-meg State Park, Redwood Coast",
+    "lat": 41.1372,
+    "lng": -124.1557,
+    "parking": "主入口购票后使用Patrick’s Point或Wedding Rock停车区。",
+    "fees": "车辆日用费。",
+    "reservation": "露营需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Sue-meg%20State%20Park/@41.1372,-124.1557,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=417",
+    "reviewUrl": "https://www.google.com/maps/place/Sue-meg%20State%20Park/@41.1372,-124.1557,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Sue-meg_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/PatricksPtStatePark.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:PatricksPtStatePark.jpg",
+    "imageCredit": "Travisthurston",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST027",
+    "rank": 27,
+    "directionIndex": 27,
+    "nameZh": "草原溪红杉州立公园",
+    "nameEn": "Prairie Creek Redwoods State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "park-trail",
+    "subtype": "红杉草原",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午麋鹿活跃时",
+    "durationMinutes": 150,
+    "feature": "古红杉林与常有Roosevelt麋鹿出现的草原相邻，路线选择丰富。",
+    "address": "Prairie Creek Redwoods State Park, Redwood Coast",
+    "lat": 41.3639,
+    "lng": -124.0227,
+    "parking": "Prairie Creek Visitor Center正式停车场。",
+    "fees": "日用多为免费；Gold Bluffs Beach车辆费另计。",
+    "reservation": "露营和部分Gold Bluffs/Fern Canyon访问需许可。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Prairie%20Creek%20Redwoods%20State%20Park/@41.3639,-124.0227,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=415",
+    "reviewUrl": "https://www.google.com/maps/place/Prairie%20Creek%20Redwoods%20State%20Park/@41.3639,-124.0227,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Prairie_Creek_Redwoods_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Cathedral_Tree_-_Prairie_Creek_Redwoods_State_Park.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cathedral_Tree_-_Prairie_Creek_Redwoods_State_Park.jpg",
+    "imageCredit": "rachel_thecat",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST028",
+    "rank": 28,
+    "directionIndex": 28,
+    "nameZh": "蕨类峡谷",
+    "nameEn": "Fern Canyon",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "seasonal",
+    "subtype": "夏季峡谷许可",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "5–9月道路较稳且需许可",
+    "bestTime": "最早许可时段",
+    "durationMinutes": 120,
+    "feature": "高墙覆满蕨类的狭窄溪谷极具电影感，但道路和许可窗口受季节限制。",
+    "address": "Fern Canyon, Redwood Coast",
+    "lat": 41.4018,
+    "lng": -124.0655,
+    "parking": "Gold Bluffs Beach土路尽头停车；涉水和坑洼需要高底盘判断。",
+    "fees": "Gold Bluffs车辆费可能适用。",
+    "reservation": "旺季日用车辆必须提前取得Fern Canyon许可。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Fern%20Canyon/@41.4018,-124.0655,13z",
+    "officialUrl": "https://www.nps.gov/redw/planyourvisit/ferncanyonpermits.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Fern%20Canyon/@41.4018,-124.0655,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Prairie_Creek_Redwoods_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Fern_canyon.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Fern_canyon.jpg",
+    "imageCredit": "NPS Photo",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST029",
+    "rank": 29,
+    "directionIndex": 29,
+    "nameZh": "约翰逊夫人红杉林",
+    "nameEn": "Lady Bird Johnson Grove",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "park-trail",
+    "subtype": "雾林环线",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "清晨雾气尚在时",
+    "durationMinutes": 150,
+    "feature": "海拔较高的红杉林常有雾气和杜鹃，1.5英里环线强度温和。",
+    "address": "Lady Bird Johnson Grove, Redwood Coast",
+    "lat": 41.3041,
+    "lng": -124.0186,
+    "parking": "Bald Hills Road旁专用停车区，车辆长于规定时需谨慎。",
+    "fees": "步道免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Lady%20Bird%20Johnson%20Grove/@41.3041,-124.0186,13z",
+    "officialUrl": "https://www.nps.gov/redw/planyourvisit/hiking-trails-south.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Lady%20Bird%20Johnson%20Grove/@41.3041,-124.0186,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Redwood_National_and_State_Parks",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dedication_of_Lady_Bird_Johnson_Grove_in_Redwood_National_Park%2C_California_-_NARA_-_194298.tif/lossy-page1-1280px-Dedication_of_Lady_Bird_Johnson_Grove_in_Redwood_National_Park%2C_California_-_NARA_-_194298.tif.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dedication_of_Lady_Bird_Johnson_Grove_in_Redwood_National_Park,_California_-_NARA_-_194298.tif",
+    "imageCredit": "Robert LeRoy Knudsen",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST030",
+    "rank": 30,
+    "directionIndex": 30,
+    "nameZh": "克拉马斯河观景台",
+    "nameEn": "Klamath River Overlook",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "coast",
+    "subtype": "河口海景",
+    "seasons": [
+      "fall"
+    ],
+    "bestMonths": "全年；秋季可观察河口活动",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "高处俯瞰Klamath河口、海崖和鲸类活动，天气快速变化。",
+    "address": "Klamath River Overlook, Redwood Coast",
+    "lat": 41.5476,
+    "lng": -124.0826,
+    "parking": "Requa Road尽头观景停车区。",
+    "fees": "观景免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Klamath%20River%20Overlook/@41.5476,-124.0826,13z",
+    "officialUrl": "https://www.nps.gov/places/klamathriveroverlook.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Klamath%20River%20Overlook/@41.5476,-124.0826,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Klamath%2C_California",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Klamath_River_Overlook.JPG/1280px-Klamath_River_Overlook.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Klamath_River_Overlook.JPG",
+    "imageCredit": "Zandcee",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST031",
+    "rank": 31,
+    "directionIndex": 31,
+    "nameZh": "神秘树木公园",
+    "nameEn": "Trees of Mystery",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "culture",
+    "subtype": "公路地标",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "开园后首小时",
+    "durationMinutes": 90,
+    "feature": "Paul Bunyan公路文化、红杉步道和空中缆车组成经典北加州roadside stop。",
+    "address": "Trees of Mystery, Redwood Coast",
+    "lat": 41.584,
+    "lng": -124.0867,
+    "parking": "US-101旁大型游客停车场。",
+    "fees": "森林步道和SkyTrail缆车需购票。",
+    "reservation": "旺季可提前购票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Trees%20of%20Mystery/@41.584,-124.0867,13z",
+    "officialUrl": "https://treesofmystery.net/",
+    "reviewUrl": "https://www.google.com/maps/place/Trees%20of%20Mystery/@41.584,-124.0867,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Trees_of_Mystery",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Trees_of_Mystery%2C_an_attraction_in_Klamath_Falls%2C_CA._Photo_taken_in_1950..JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Trees_of_Mystery,_an_attraction_in_Klamath_Falls,_CA._Photo_taken_in_1950..JPG",
+    "imageCredit": "Bob Duthie",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST032",
+    "rank": 32,
+    "directionIndex": 32,
+    "nameZh": "炮台角灯塔",
+    "nameEn": "Battery Point Lighthouse",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "seasonal",
+    "subtype": "低潮步行灯塔",
+    "seasons": [
+      "winter"
+    ],
+    "bestMonths": "全年低潮日；冬季风浪更大",
+    "bestTime": "仅在潮表允许的低潮窗口",
+    "durationMinutes": 120,
+    "feature": "小岛灯塔只能在安全低潮时步行到达，潮水决定访问窗口。",
+    "address": "Battery Point Lighthouse, Redwood Coast",
+    "lat": 41.7444,
+    "lng": -124.203,
+    "parking": "Crescent City海滨公共停车区，之后步行穿越潮间带。",
+    "fees": "外观观察免费，开放导览接受捐赠或收费。",
+    "reservation": "导览日期和低潮开放需提前核对。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Battery%20Point%20Lighthouse/@41.7444,-124.203,13z",
+    "officialUrl": "https://www.delnortehistory.org/battery-point-lighthouse",
+    "reviewUrl": "https://www.google.com/maps/place/Battery%20Point%20Lighthouse/@41.7444,-124.203,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Battery_Point_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Battery_Point_Lighthouse_-_Crescent_City_CA.jpg/1280px-Battery_Point_Lighthouse_-_Crescent_City_CA.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Battery_Point_Lighthouse_-_Crescent_City_CA.jpg",
+    "imageCredit": "Kathleen Franklin from Marysville, CA, USA",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST033",
+    "rank": 33,
+    "directionIndex": 33,
+    "nameZh": "杰迪代亚·史密斯红杉州立公园",
+    "nameEn": "Jedediah Smith Redwoods State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "US-101"
+    ],
+    "corridor": "US-101",
+    "region": "Redwood Coast",
+    "type": "park-trail",
+    "subtype": "原始红杉林",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午",
+    "durationMinutes": 150,
+    "feature": "Smith River碧水与未被大规模采伐的红杉林相邻，Stout Grove尤其出色。",
+    "address": "Jedediah Smith Redwoods State Park, Redwood Coast",
+    "lat": 41.7957,
+    "lng": -124.0867,
+    "parking": "Simpson-Reed或Stout Grove正式停车区；Howland Hill Road狭窄。",
+    "fees": "多数日用区域免费；露营收费。",
+    "reservation": "露营需预约，长车不宜走Howland Hill Road。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Jedediah%20Smith%20Redwoods%20State%20Park/@41.7957,-124.0867,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=413",
+    "reviewUrl": "https://www.google.com/maps/place/Jedediah%20Smith%20Redwoods%20State%20Park/@41.7957,-124.0867,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Jedediah_Smith_Redwoods_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/US_199_Redwood_Highway.jpg/1280px-US_199_Redwood_Highway.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:US_199_Redwood_Highway.jpg",
+    "imageCredit": "Acroterion",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST034",
+    "rank": 34,
+    "directionIndex": 34,
+    "nameZh": "伯尼瀑布州立公园",
+    "nameEn": "McArthur-Burney Falls Memorial State Park",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Northern California Cascades",
+    "type": "coast",
+    "subtype": "火山泉瀑布",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "bestMonths": "4–6月水汽与绿意最佳",
+    "bestTime": "开园后首小时",
+    "durationMinutes": 75,
+    "feature": "地下泉水从玄武岩壁多点涌出，形成恒流水帘和强烈水汽。",
+    "address": "McArthur-Burney Falls Memorial State Park, Northern California Cascades",
+    "lat": 41.0118,
+    "lng": -121.6508,
+    "parking": "主入口车辆收费停车；满位可能实施临时关闭。",
+    "fees": "车辆日用费。",
+    "reservation": "露营需预约，旺季日用不保证入园。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/McArthur-Burney%20Falls%20Memorial%20State%20Park/@41.0118,-121.6508,13z",
+    "officialUrl": "https://www.parks.ca.gov/?page_id=455",
+    "reviewUrl": "https://www.google.com/maps/place/McArthur-Burney%20Falls%20Memorial%20State%20Park/@41.0118,-121.6508,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Burney_Falls",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/McArthur-Burney_Falls_Memorial_State_Park.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:McArthur-Burney_Falls_Memorial_State_Park.jpg",
+    "imageCredit": "Manuel Calavera",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST035",
+    "rank": 35,
+    "directionIndex": 35,
+    "nameZh": "邦帕斯地狱步道",
+    "nameEn": "Bumpass Hell Trail",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Northern California Cascades",
+    "type": "seasonal",
+    "subtype": "雪季后地热步道",
+    "seasons": [
+      "winter",
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "通常7–10月无雪开放",
+    "bestTime": "上午雷暴前",
+    "durationMinutes": 120,
+    "feature": "木栈道穿过沸泥锅和蒸汽喷口，积雪常使开放季明显晚于山下。",
+    "address": "Bumpass Hell Trail, Northern California Cascades",
+    "lat": 40.4574,
+    "lng": -121.3049,
+    "parking": "Lassen Park Highway的Bumpass Hell停车区；开放日期随积雪变化。",
+    "fees": "Lassen国家公园入园费。",
+    "reservation": "无需步道预约，但道路和步道必须开放。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Bumpass%20Hell%20Trail/@40.4574,-121.3049,13z",
+    "officialUrl": "https://www.nps.gov/thingstodo/hikebumpasshell.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Bumpass%20Hell%20Trail/@40.4574,-121.3049,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Bumpass_Hell",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/BumpassHell_8345.jpg/1280px-BumpassHell_8345.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:BumpassHell_8345.jpg",
+    "imageCredit": "BumpassHell 8345.jpg",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST036",
+    "rank": 36,
+    "directionIndex": 36,
+    "nameZh": "麦克劳德河瀑布群",
+    "nameEn": "McCloud River Falls",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Northern California Cascades",
+    "type": "park-trail",
+    "subtype": "三层瀑布",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "5–10月",
+    "bestTime": "上午",
+    "durationMinutes": 150,
+    "feature": "三座玄武岩瀑布由河岸步道相连，可按体力选择单点或全程。",
+    "address": "McCloud River Falls, Northern California Cascades",
+    "lat": 41.2416,
+    "lng": -122.0238,
+    "parking": "Lower、Middle、Upper Falls各有正式停车区，Middle最紧张。",
+    "fees": "日用通常免费。",
+    "reservation": "无需预约；冬季道路可能积雪。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/McCloud%20River%20Falls/@41.2416,-122.0238,13z",
+    "officialUrl": "https://www.fs.usda.gov/media/134219",
+    "reviewUrl": "https://www.google.com/maps/place/McCloud%20River%20Falls/@41.2416,-122.0238,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/McCloud_River_Falls",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/MiddleMcCloudFalls.jpg/1280px-MiddleMcCloudFalls.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:MiddleMcCloudFalls.jpg",
+    "imageCredit": "MiddleMcCloudFalls.jpg",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST037",
+    "rank": 37,
+    "directionIndex": 37,
+    "nameZh": "沙斯塔山兔子坪",
+    "nameEn": "Bunny Flat Mount Shasta",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Northern California Cascades",
+    "type": "park-trail",
+    "subtype": "高山雪景",
+    "seasons": [
+      "winter",
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "6–10月徒步；冬春雪上活动",
+    "bestTime": "上午天气稳定时",
+    "durationMinutes": 150,
+    "feature": "无需登顶即可近距离感受Mount Shasta雪线、针叶林和高山天气。",
+    "address": "Bunny Flat Mount Shasta, Northern California Cascades",
+    "lat": 41.3505,
+    "lng": -122.228,
+    "parking": "Everitt Memorial Highway尽头大型停车区；冬季需雪地装备。",
+    "fees": "日用停车通常免费；登顶许可另计。",
+    "reservation": "高海拔过夜或登顶需相应许可。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Bunny%20Flat%20Mount%20Shasta/@41.3505,-122.228,13z",
+    "officialUrl": "https://www.shastaavalanche.org/trailhead/bunny-flat",
+    "reviewUrl": "https://www.google.com/maps/place/Bunny%20Flat%20Mount%20Shasta/@41.3505,-122.228,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Mount_Shasta",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Mont-Shasta.jpg/1280px-Mont-Shasta.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mont-Shasta.jpg",
+    "imageCredit": "Poupouille",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST038",
+    "rank": 38,
+    "directionIndex": 38,
+    "nameZh": "日晷桥",
+    "nameEn": "Sundial Bridge",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Northern California I-5",
+    "type": "culture",
+    "subtype": "现代桥梁",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "清晨或蓝调时刻",
+    "durationMinutes": 90,
+    "feature": "Calatrava白色斜塔跨越Sacramento River，也是大型日晷和Redding城市地标。",
+    "address": "Sundial Bridge, Northern California I-5",
+    "lat": 40.5923,
+    "lng": -122.377,
+    "parking": "Turtle Bay Exploration Park与Convention Center公共停车区。",
+    "fees": "步行过桥免费；博物馆另收费。",
+    "reservation": "桥面无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Sundial%20Bridge/@40.5923,-122.377,13z",
+    "officialUrl": "https://www.turtlebay.org/sundial-bridge",
+    "reviewUrl": "https://www.google.com/maps/place/Sundial%20Bridge/@40.5923,-122.377,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Sundial_Bridge_at_Turtle_Bay",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Sundial_Bridge_and_cables_%2835034359904%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sundial_Bridge_and_cables_(35034359904).jpg",
+    "imageCredit": "quinn norton",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST039",
+    "rank": 39,
+    "directionIndex": 39,
+    "nameZh": "俄勒冈莎士比亚戏剧节",
+    "nameEn": "Oregon Shakespeare Festival",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Southern Oregon",
+    "type": "seasonal",
+    "subtype": "剧场演出季",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "通常3–10月演出季",
+    "bestTime": "下午场前或晚场前两小时",
+    "durationMinutes": 120,
+    "feature": "多剧场轮演让Ashland在演出季成为美国西岸最有分量的戏剧小镇之一。",
+    "address": "Oregon Shakespeare Festival, Southern Oregon",
+    "lat": 42.1958,
+    "lng": -122.7135,
+    "parking": "Ashland市中心公共车库和计时街位；演出夜提早到达。",
+    "fees": "剧目按座位和日期售票。",
+    "reservation": "热门剧目需提前购票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Oregon%20Shakespeare%20Festival/@42.1958,-122.7135,13z",
+    "officialUrl": "https://www.osfashland.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Oregon%20Shakespeare%20Festival/@42.1958,-122.7135,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Oregon_Shakespeare_Festival",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Oregon_Shakespeare_Festival_%28Jackson_County%2C_Oregon_scenic_images%29_%28jacD0059%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Oregon_Shakespeare_Festival_(Jackson_County,_Oregon_scenic_images)_(jacD0059).jpg",
+    "imageCredit": "Gary Halvorson, Oregon State Archives",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST040",
+    "rank": 40,
+    "directionIndex": 40,
+    "nameZh": "杰克逊维尔历史街区",
+    "nameEn": "Jacksonville Historic District",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Southern Oregon",
+    "type": "culture",
+    "subtype": "淘金小镇",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午商店开门后",
+    "durationMinutes": 90,
+    "feature": "保存良好的淘金时代砖石商街、葡萄酒餐饮和林荫住宅区适合慢走。",
+    "address": "Jacksonville Historic District, Southern Oregon",
+    "lat": 42.3135,
+    "lng": -122.9661,
+    "parking": "California Street及公共停车场；活动日外围停车。",
+    "fees": "街区漫步免费，博物馆活动另计。",
+    "reservation": "节庆音乐会可能需票。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Jacksonville%20Historic%20District/@42.3135,-122.9661,13z",
+    "officialUrl": "https://jacksonvilleoregon.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Jacksonville%20Historic%20District/@42.3135,-122.9661,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Jacksonville%2C_Oregon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Jacksonville_Oregon_Museum.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Jacksonville_Oregon_Museum.jpg",
+    "imageCredit": "Geographer at English Wikipedia",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST041",
+    "rank": 41,
+    "directionIndex": 41,
+    "nameZh": "俄勒冈洞穴国家纪念地",
+    "nameEn": "Oregon Caves National Monument",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Southern Oregon",
+    "type": "park-trail",
+    "subtype": "大理石洞穴",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "通常春末至秋季导览",
+    "bestTime": "已预约导览前45分钟",
+    "durationMinutes": 150,
+    "feature": "罕见大理石洞穴与历史山庄位于Siskiyou山中，山路本身需预留时间。",
+    "address": "Oregon Caves National Monument, Southern Oregon",
+    "lat": 42.1002,
+    "lng": -123.4073,
+    "parking": "弯曲山路尽头visitor center停车区；拖车不宜上山。",
+    "fees": "洞穴导览收费。",
+    "reservation": "洞穴只能参加预约导览。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Oregon%20Caves%20National%20Monument/@42.1002,-123.4073,13z",
+    "officialUrl": "https://www.nps.gov/orca/index.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Oregon%20Caves%20National%20Monument/@42.1002,-123.4073,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Oregon_Caves_National_Monument_and_Preserve",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Oregon_Caves_p1080458_1024.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Oregon_Caves_p1080458_1024.jpg",
+    "imageCredit": "David Monniaux",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST042",
+    "rank": 42,
+    "directionIndex": 42,
+    "nameZh": "火山口湖环湖公路",
+    "nameEn": "Crater Lake Rim Drive",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Southern Oregon Cascades",
+    "type": "seasonal",
+    "subtype": "高山道路开放季",
+    "seasons": [
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "通常7–9月全环开放",
+    "bestTime": "上午风小且烟雾少时",
+    "durationMinutes": 120,
+    "feature": "深蓝火山湖和高海拔环湖公路只有在积雪清除后才能完整体验。",
+    "address": "Crater Lake Rim Drive, Southern Oregon Cascades",
+    "lat": 42.9119,
+    "lng": -122.1483,
+    "parking": "Rim Village及开放观景点停车区；不得停在雪墙旁行车道。",
+    "fees": "Crater Lake国家公园入园费。",
+    "reservation": "无需日用预约，但道路开放受积雪和山火影响。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Crater%20Lake%20Rim%20Drive/@42.9119,-122.1483,13z",
+    "officialUrl": "https://www.nps.gov/crla/planyourvisit/conditions.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Crater%20Lake%20Rim%20Drive/@42.9119,-122.1483,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Crater_Lake_National_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Rim_Drive_from_Watchman_-_Crater_Lake_NP_Oregon.jpg/1280px-Rim_Drive_from_Watchman_-_Crater_Lake_NP_Oregon.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Rim_Drive_from_Watchman_-_Crater_Lake_NP_Oregon.jpg",
+    "imageCredit": "Ian Poellet",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST043",
+    "rank": 43,
+    "directionIndex": 43,
+    "nameZh": "俄勒冈天然桥观景点",
+    "nameEn": "Natural Bridges Oregon",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "海蚀桥",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "上午柔光且步道干燥时",
+    "durationMinutes": 75,
+    "feature": "多个海蚀桥隐藏在密林海崖下，应只从正式观景台观察。",
+    "address": "Natural Bridges Oregon, South Oregon Coast",
+    "lat": 42.1874,
+    "lng": -124.3611,
+    "parking": "Samuel H. Boardman走廊Natural Bridges小型停车区。",
+    "fees": "观景免费。",
+    "reservation": "无需预约；非正式陡坡禁止进入。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Natural%20Bridges%20Oregon/@42.1874,-124.3611,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=56",
+    "reviewUrl": "https://www.google.com/maps/place/Natural%20Bridges%20Oregon/@42.1874,-124.3611,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Samuel_H._Boardman_State_Scenic_Corridor",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Natural_Bridges_Cove_-_Boardman_State_Park%2C_Oregon.jpg/1280px-Natural_Bridges_Cove_-_Boardman_State_Park%2C_Oregon.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Natural_Bridges_Cove_-_Boardman_State_Park,_Oregon.jpg",
+    "imageCredit": "Rick McCharles",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST044",
+    "rank": 44,
+    "directionIndex": 44,
+    "nameZh": "俄勒冈秘密海滩",
+    "nameEn": "Secret Beach Oregon",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "隐蔽海湾",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "低潮前后",
+    "durationMinutes": 75,
+    "feature": "短而陡的林间路下降到海蚀柱围绕的沙湾，潮位会压缩可走区域。",
+    "address": "Secret Beach Oregon, South Oregon Coast",
+    "lat": 42.1931,
+    "lng": -124.3736,
+    "parking": "US-101附近标示停车湾容量极小；不要占行车道。",
+    "fees": "步道免费。",
+    "reservation": "无需预约，雨后陡坡泥滑。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Secret%20Beach%20Oregon/@42.1931,-124.3736,13z",
+    "officialUrl": "https://traveloregon.com/things-to-do/destinations/parks-forests-wildlife-areas/samuel-h-boardman-state-scenic-corridor/",
+    "reviewUrl": "https://www.google.com/maps/place/Secret%20Beach%20Oregon/@42.1931,-124.3736,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Samuel_H._Boardman_State_Scenic_Corridor",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Coast_trail_at_Boardman_SP_P4176a.jpeg/1280px-Coast_trail_at_Boardman_SP_P4176a.jpeg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Coast_trail_at_Boardman_SP_P4176a.jpeg",
+    "imageCredit": "EncMstr",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST045",
+    "rank": 45,
+    "directionIndex": 45,
+    "nameZh": "哈里斯海滩州立公园",
+    "nameEn": "Harris Beach State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "海蚀柱海滩",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "Arch Rock等近岸岛屿、宽沙滩和方便入口使它适合作为Oregon Coast第一站。",
+    "address": "Harris Beach State Park, South Oregon Coast",
+    "lat": 42.071,
+    "lng": -124.3146,
+    "parking": "Brookings北侧日用停车区；露营区车位不作日用。",
+    "fees": "日用通常免费；露营收费。",
+    "reservation": "露营需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Harris%20Beach%20State%20Park/@42.071,-124.3146,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=58",
+    "reviewUrl": "https://www.google.com/maps/place/Harris%20Beach%20State%20Park/@42.071,-124.3146,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Harris_Beach_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Harris_Beach_SP.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Harris_Beach_SP.jpg",
+    "imageCredit": "Dan Hershman",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST046",
+    "rank": 46,
+    "directionIndex": 46,
+    "nameZh": "切特科角公园",
+    "nameEn": "Chetco Point Park",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "港口岬角",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "短步道通向港口外侧岩岬，可同时看Brookings海岸和Chetco河口。",
+    "address": "Chetco Point Park, South Oregon Coast",
+    "lat": 42.0467,
+    "lng": -124.2834,
+    "parking": "Chetco Point Park尽头免费停车区。",
+    "fees": "市立公园免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Chetco%20Point%20Park/@42.0467,-124.2834,13z",
+    "officialUrl": "https://www.brookings.or.us/Facilities/Facility/Details/Chetco-Point-Park-6",
+    "reviewUrl": "https://www.google.com/maps/place/Chetco%20Point%20Park/@42.0467,-124.2834,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Brookings%2C_Oregon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Chetco_Point_Park%2C_Brookings_-_DPLA_-_9094be5607c6b56e748f3b361748499c.jpg/1280px-Chetco_Point_Park%2C_Brookings_-_DPLA_-_9094be5607c6b56e748f3b361748499c.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Chetco_Point_Park,_Brookings_-_DPLA_-_9094be5607c6b56e748f3b361748499c.jpg",
+    "imageCredit": "Gary Halvorson, Oregon State Archives",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST047",
+    "rank": 47,
+    "directionIndex": 47,
+    "nameZh": "罗格河喷射船",
+    "nameEn": "Rogue River Jet Boats",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "seasonal",
+    "subtype": "河流喷射船季",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "通常5–10月",
+    "bestTime": "上午班次",
+    "durationMinutes": 120,
+    "feature": "喷射船从河口深入Rogue峡谷，野生动物和水量随季节明显变化。",
+    "address": "Rogue River Jet Boats, South Oregon Coast",
+    "lat": 42.4214,
+    "lng": -124.4218,
+    "parking": "Gold Beach码头按运营商指示停车并提前报到。",
+    "fees": "不同里程线路按日期收费。",
+    "reservation": "旺季必须提前订位。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Rogue%20River%20Jet%20Boats/@42.4214,-124.4218,13z",
+    "officialUrl": "https://www.roguejets.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Rogue%20River%20Jet%20Boats/@42.4214,-124.4218,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Rogue_River_(Oregon)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rogue_River_rafting_--_Wild_and_Scenic_Rogue_River_%2821854973361%29.jpg/1280px-Rogue_River_rafting_--_Wild_and_Scenic_Rogue_River_%2821854973361%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Rogue_River_rafting_--_Wild_and_Scenic_Rogue_River_(21854973361).jpg",
+    "imageCredit": "Bureau of Land Management Oregon and Washington from Portland, America",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST048",
+    "rank": 48,
+    "directionIndex": 48,
+    "nameZh": "塞巴斯蒂安角",
+    "nameEn": "Cape Sebastian State Scenic Corridor",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "高海岬",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "上午能见度好时",
+    "durationMinutes": 75,
+    "feature": "700英尺高岬角可远眺Oregon南部海岸，风大时体感显著下降。",
+    "address": "Cape Sebastian State Scenic Corridor, South Oregon Coast",
+    "lat": 42.3331,
+    "lng": -124.4248,
+    "parking": "US-101山顶正式停车区；步道入口在停车区旁。",
+    "fees": "日用免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Sebastian%20State%20Scenic%20Corridor/@42.3331,-124.4248,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=49",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Sebastian%20State%20Scenic%20Corridor/@42.3331,-124.4248,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Sebastian_State_Scenic_Corridor",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cape_Sebastian_looking_north.jpg/1280px-Cape_Sebastian_looking_north.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Sebastian_looking_north.jpg",
+    "imageCredit": "Adbar",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST049",
+    "rank": 49,
+    "directionIndex": 49,
+    "nameZh": "奥福德港岬角州立公园",
+    "nameEn": "Port Orford Heads State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "海岸救生史",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午至午后",
+    "durationMinutes": 75,
+    "feature": "岬角步道连接旧海岸警卫队救生站、海湾和鲸类观景点。",
+    "address": "Port Orford Heads State Park, South Oregon Coast",
+    "lat": 42.7411,
+    "lng": -124.4975,
+    "parking": "Port Orford Heads入口小型免费停车区。",
+    "fees": "日用免费。",
+    "reservation": "博物馆开放时段季节性变化。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Port%20Orford%20Heads%20State%20Park/@42.7411,-124.4975,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=72",
+    "reviewUrl": "https://www.google.com/maps/place/Port%20Orford%20Heads%20State%20Park/@42.7411,-124.4975,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Port_Orford_Heads_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Picea_sitchensis%2C_Port_Orford_Heads.jpg/1280px-Picea_sitchensis%2C_Port_Orford_Heads.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Picea_sitchensis,_Port_Orford_Heads.jpg",
+    "imageCredit": "Jami Dwyer from Portland, OR, USA",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST050",
+    "rank": 50,
+    "directionIndex": 50,
+    "nameZh": "布兰科角灯塔",
+    "nameEn": "Cape Blanco Lighthouse",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "西端灯塔",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月导览较稳定",
+    "bestTime": "开放日上午",
+    "durationMinutes": 75,
+    "feature": "Oregon最西端岬角之一，灯塔、牧场和强风草坡构成开阔景观。",
+    "address": "Cape Blanco Lighthouse, South Oregon Coast",
+    "lat": 42.8365,
+    "lng": -124.5634,
+    "parking": "Cape Blanco岬角正式停车区；灯塔最后一段步行。",
+    "fees": "州立公园日用免费，导览可能收费。",
+    "reservation": "灯塔导览按季节和志愿者安排。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Blanco%20Lighthouse/@42.8365,-124.5634,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=44",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Blanco%20Lighthouse/@42.8365,-124.5634,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Blanco_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cape_Blanco_Lighthouse_1871.jpg/1280px-Cape_Blanco_Lighthouse_1871.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Blanco_Lighthouse_1871.jpg",
+    "imageCredit": "Eadweard Muybridge (1930-1904)",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST051",
+    "rank": 51,
+    "directionIndex": 51,
+    "nameZh": "人脸岩观景点",
+    "nameEn": "Face Rock State Scenic Viewpoint",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "coast",
+    "subtype": "海蚀柱",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "Face Rock和一系列海蚀柱在低潮时可从沙滩近看，日落剪影尤其出色。",
+    "address": "Face Rock State Scenic Viewpoint, South Oregon Coast",
+    "lat": 43.1046,
+    "lng": -124.4345,
+    "parking": "Bandon Beach Loop Road观景停车区。",
+    "fees": "观景免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Face%20Rock%20State%20Scenic%20Viewpoint/@43.1046,-124.4345,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=47",
+    "reviewUrl": "https://www.google.com/maps/place/Face%20Rock%20State%20Scenic%20Viewpoint/@43.1046,-124.4345,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Face_Rock_State_Scenic_Viewpoint",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Face_Rock_%28Bandon%2C_Oregon%29.jpg/1280px-Face_Rock_%28Bandon%2C_Oregon%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Face_Rock_(Bandon,_Oregon).jpg",
+    "imageCredit": "Visitor7",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST052",
+    "rank": 52,
+    "directionIndex": 52,
+    "nameZh": "班登老城",
+    "nameEn": "Bandon Old Town",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "South Oregon Coast",
+    "type": "culture",
+    "subtype": "港口老城",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午商店开门后",
+    "durationMinutes": 90,
+    "feature": "Coquille河口木栈道、海鲜店和小型历史街区适合与Face Rock组合。",
+    "address": "Bandon Old Town, South Oregon Coast",
+    "lat": 43.119,
+    "lng": -124.4084,
+    "parking": "Old Town公共停车区及1st Street车位。",
+    "fees": "街区和木栈道免费。",
+    "reservation": "餐厅和节庆活动可提前预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Bandon%20Old%20Town/@43.119,-124.4084,13z",
+    "officialUrl": "https://bandon.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Bandon%20Old%20Town/@43.119,-124.4084,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Bandon%2C_Oregon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Old_Town_Marketplace_%28Bandon%2C_Oregon%29.jpg/1280px-Old_Town_Marketplace_%28Bandon%2C_Oregon%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Old_Town_Marketplace_(Bandon,_Oregon).jpg",
+    "imageCredit": "Visitor7",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST053",
+    "rank": 53,
+    "directionIndex": 53,
+    "nameZh": "岸边庄园州立公园",
+    "nameEn": "Shore Acres State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "seasonal",
+    "subtype": "冬季风暴与灯展",
+    "seasons": [
+      "winter",
+      "fall"
+    ],
+    "bestMonths": "11–12月灯展；冬季观浪",
+    "bestTime": "白天观浪或预约灯展时段",
+    "durationMinutes": 120,
+    "feature": "悬崖花园在冬季同时拥有巨浪观景和节日灯展，但恶劣天气会影响开放。",
+    "address": "Shore Acres State Park, Central Oregon Coast",
+    "lat": 43.3221,
+    "lng": -124.3824,
+    "parking": "Shore Acres收费日用停车区；灯展按指定入口排队。",
+    "fees": "车辆日用费；节日灯展规则另行公布。",
+    "reservation": "Holiday Lights通常需要定时预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Shore%20Acres%20State%20Park/@43.3221,-124.3824,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=68",
+    "reviewUrl": "https://www.google.com/maps/place/Shore%20Acres%20State%20Park/@43.3221,-124.3824,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Shore_Acres_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Garden_at_Shore_Acres_State_Park.jpg/1280px-Garden_at_Shore_Acres_State_Park.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Garden_at_Shore_Acres_State_Park.jpg",
+    "imageCredit": "Finetooth",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST054",
+    "rank": 54,
+    "directionIndex": 54,
+    "nameZh": "阿拉戈角州立公园",
+    "nameEn": "Cape Arago State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "coast",
+    "subtype": "海狮与岬角",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午风小或迁徙季",
+    "durationMinutes": 75,
+    "feature": "高岬角可听见近岸海狮群，并远眺南北海岸线。",
+    "address": "Cape Arago State Park, Central Oregon Coast",
+    "lat": 43.3062,
+    "lng": -124.4024,
+    "parking": "Cape Arago公路尽头免费停车区。",
+    "fees": "日用免费。",
+    "reservation": "部分步道可能因安全或野生动物封闭。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Arago%20State%20Park/@43.3062,-124.4024,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=70",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Arago%20State%20Park/@43.3062,-124.4024,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Arago_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Cape_Arago_South_Trail%2C_Cape_Arago_State_Park_-_DPLA_-_e175d10b1c19eddc97187efa81db98c9.jpg/1280px-Cape_Arago_South_Trail%2C_Cape_Arago_State_Park_-_DPLA_-_e175d10b1c19eddc97187efa81db98c9.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Arago_South_Trail,_Cape_Arago_State_Park_-_DPLA_-_e175d10b1c19eddc97187efa81db98c9.jpg",
+    "imageCredit": "Gary Halvorson, Oregon State Archives",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST055",
+    "rank": 55,
+    "directionIndex": 55,
+    "nameZh": "俄勒冈沙丘国家休闲区",
+    "nameEn": "Oregon Dunes National Recreation Area",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "park-trail",
+    "subtype": "海岸沙丘",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "5–10月较干",
+    "bestTime": "上午风小",
+    "durationMinutes": 150,
+    "feature": "绵延数十英里的海岸沙丘、森林岛和湖泊形成北美最大温带沙丘之一。",
+    "address": "Oregon Dunes National Recreation Area, Central Oregon Coast",
+    "lat": 43.7243,
+    "lng": -124.1796,
+    "parking": "使用Oregon Dunes Day Use或Honeyman等正式入口，OHV区分开。",
+    "fees": "部分日用入口需Northwest Forest Pass。",
+    "reservation": "特定露营和OHV活动需预约或许可。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Oregon%20Dunes%20National%20Recreation%20Area/@43.7243,-124.1796,13z",
+    "officialUrl": "https://www.fs.usda.gov/recarea/siuslaw/recarea/?recid=42465",
+    "reviewUrl": "https://www.google.com/maps/place/Oregon%20Dunes%20National%20Recreation%20Area/@43.7243,-124.1796,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Oregon_Dunes_National_Recreation_Area",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Oregon_Dunes_National_Recreation_Area_%2832882955525%29.jpg/1280px-Oregon_Dunes_National_Recreation_Area_%2832882955525%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Oregon_Dunes_National_Recreation_Area_(32882955525).jpg",
+    "imageCredit": "Theo Crazzolara",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST056",
+    "rank": 56,
+    "directionIndex": 56,
+    "nameZh": "安普夸河灯塔",
+    "nameEn": "Umpqua River Lighthouse",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "coast",
+    "subtype": "红白灯塔",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年；导览按季",
+    "bestTime": "下午灯塔开放时",
+    "durationMinutes": 75,
+    "feature": "独特红白Fresnel透镜、海岸警卫队历史和沙丘湖泊集中在小范围内。",
+    "address": "Umpqua River Lighthouse, Central Oregon Coast",
+    "lat": 43.6637,
+    "lng": -124.1984,
+    "parking": "Umpqua Lighthouse State Park及博物馆停车区。",
+    "fees": "外观免费，博物馆与塔楼导览可能收费。",
+    "reservation": "塔楼导览需按当日场次报名。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Umpqua%20River%20Lighthouse/@43.6637,-124.1984,13z",
+    "officialUrl": "https://www.douglascountyor.gov/parks/view/umpqua-river-lighthouse-museum",
+    "reviewUrl": "https://www.google.com/maps/place/Umpqua%20River%20Lighthouse/@43.6637,-124.1984,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Umpqua_River_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Umpqua_River_lighthouse.jpg/1280px-Umpqua_River_lighthouse.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Umpqua_River_lighthouse.jpg",
+    "imageCredit": "Adbar",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST057",
+    "rank": 57,
+    "directionIndex": 57,
+    "nameZh": "佛罗伦萨老城",
+    "nameEn": "Historic Old Town Florence",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "culture",
+    "subtype": "河港老城",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午至午后",
+    "durationMinutes": 90,
+    "feature": "Siuslaw河木栈道、老桥和本地店铺是Oregon Dunes之间最适合休息的小镇。",
+    "address": "Historic Old Town Florence, Central Oregon Coast",
+    "lat": 43.9665,
+    "lng": -124.1096,
+    "parking": "Bay Street公共停车区及侧街车位。",
+    "fees": "街区漫步免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Historic%20Old%20Town%20Florence/@43.9665,-124.1096,13z",
+    "officialUrl": "https://florencechamber.com/visit-florence/",
+    "reviewUrl": "https://www.google.com/maps/place/Historic%20Old%20Town%20Florence/@43.9665,-124.1096,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Florence%2C_Oregon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Siuslaw_River_Bridge_%28Florence%2C_Oregon%29.jpg/1280px-Siuslaw_River_Bridge_%28Florence%2C_Oregon%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Siuslaw_River_Bridge_(Florence,_Oregon).jpg",
+    "imageCredit": "Visitor7",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST058",
+    "rank": 58,
+    "directionIndex": 58,
+    "nameZh": "赫西塔角灯塔",
+    "nameEn": "Heceta Head Lighthouse",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "coast",
+    "subtype": "悬崖灯塔",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "白色灯塔位于森林海岬高处，是Oregon Coast最经典的公路视角之一。",
+    "address": "Heceta Head Lighthouse, Central Oregon Coast",
+    "lat": 44.1374,
+    "lng": -124.1277,
+    "parking": "Devil’s Elbow州立日用停车区，过桥后步行上坡。",
+    "fees": "车辆日用费。",
+    "reservation": "塔楼导览按季开放。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Heceta%20Head%20Lighthouse/@44.1374,-124.1277,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=86",
+    "reviewUrl": "https://www.google.com/maps/place/Heceta%20Head%20Lighthouse/@44.1374,-124.1277,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Heceta_Head_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/HecetaHeadLighthouse.jpg/1280px-HecetaHeadLighthouse.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:HecetaHeadLighthouse.jpg",
+    "imageCredit": "HISE Studios, resized and color corrected by Howcheng",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST059",
+    "rank": 59,
+    "directionIndex": 59,
+    "nameZh": "海狮洞",
+    "nameEn": "Sea Lion Caves",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "seasonal",
+    "subtype": "冬春洞内海狮",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "11–4月洞内数量通常较多",
+    "bestTime": "上午开门后",
+    "durationMinutes": 120,
+    "feature": "海蚀洞可通过电梯进入，海狮是否在洞内取决于季节、海况和觅食。",
+    "address": "Sea Lion Caves, Central Oregon Coast",
+    "lat": 44.1227,
+    "lng": -124.1255,
+    "parking": "US-101旁专用游客停车区。",
+    "fees": "电梯和洞穴参观需购票。",
+    "reservation": "通常无需预约；海狮出现不保证。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Sea%20Lion%20Caves/@44.1227,-124.1255,13z",
+    "officialUrl": "https://www.sealioncaves.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Sea%20Lion%20Caves/@44.1227,-124.1255,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Sea_Lion_Caves",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sea-Lion-Caves.png/1280px-Sea-Lion-Caves.png",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sea-Lion-Caves.png",
+    "imageCredit": "Art Bromage from Seattle",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST060",
+    "rank": 60,
+    "directionIndex": 60,
+    "nameZh": "佩佩图阿角景区",
+    "nameEn": "Cape Perpetua Scenic Area",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "park-trail",
+    "subtype": "森林海岬",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或潮汐合适时",
+    "durationMinutes": 150,
+    "feature": "温带雨林从海岸抬升到800英尺观景台，短步道密集。",
+    "address": "Cape Perpetua Scenic Area, Central Oregon Coast",
+    "lat": 44.2845,
+    "lng": -124.1083,
+    "parking": "Cape Perpetua Visitor Center或山顶观景区停车。",
+    "fees": "多数停车区需Northwest Forest Pass。",
+    "reservation": "无需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Perpetua%20Scenic%20Area/@44.2845,-124.1083,13z",
+    "officialUrl": "https://www.fs.usda.gov/recarea/siuslaw/recarea/?recid=42265",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Perpetua%20Scenic%20Area/@44.2845,-124.1083,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Perpetua",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Devil%27s_Churn.JPEG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Devil%27s_Churn.JPEG",
+    "imageCredit": "United States Forest Service",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST061",
+    "rank": 61,
+    "directionIndex": 61,
+    "nameZh": "雷神之井",
+    "nameEn": "Thor’s Well",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "seasonal",
+    "subtype": "潮汐喷涌",
+    "seasons": [
+      "winter",
+      "fall"
+    ],
+    "bestMonths": "秋冬风浪季更壮观",
+    "bestTime": "中高潮前后但需保持远距",
+    "durationMinutes": 120,
+    "feature": "海水灌入玄武岩洞形成“无底井”错觉，高潮和涌浪同时也带来致命风险。",
+    "address": "Thor’s Well, Central Oregon Coast",
+    "lat": 44.2781,
+    "lng": -124.113,
+    "parking": "Cook’s Chasm正式停车区后走铺装步道。",
+    "fees": "停车可能需Northwest Forest Pass。",
+    "reservation": "无需预约；巨浪警报时不要靠近礁石。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Thor%E2%80%99s%20Well/@44.2781,-124.113,13z",
+    "officialUrl": "https://www.fs.usda.gov/recarea/siuslaw/recarea/?recid=42273",
+    "reviewUrl": "https://www.google.com/maps/place/Thor%E2%80%99s%20Well/@44.2781,-124.113,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Perpetua",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Thor%27s_Well_%2837402149210%29.jpg/1280px-Thor%27s_Well_%2837402149210%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Thor%27s_Well_(37402149210).jpg",
+    "imageCredit": "John Fowler from Placitas, NM, USA",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST062",
+    "rank": 62,
+    "directionIndex": 62,
+    "nameZh": "亚查茨村",
+    "nameEn": "Yachats Village",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "culture",
+    "subtype": "海岸步行镇",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午咖啡店开门后",
+    "durationMinutes": 90,
+    "feature": "小镇紧贴黑色玄武岩海岸，804 Trail、餐饮和住宿都可步行连接。",
+    "address": "Yachats Village, Central Oregon Coast",
+    "lat": 44.3112,
+    "lng": -124.1048,
+    "parking": "村中心公共停车位或Yachats State Recreation Area。",
+    "fees": "街区与海岸步道免费。",
+    "reservation": "餐厅周末可预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Yachats%20Village/@44.3112,-124.1048,13z",
+    "officialUrl": "https://www.yachats.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Yachats%20Village/@44.3112,-124.1048,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Yachats%2C_Oregon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Yachats_Ocean_Road_State_Natural_Site.jpg/1280px-Yachats_Ocean_Road_State_Natural_Site.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Yachats_Ocean_Road_State_Natural_Site.jpg",
+    "imageCredit": "Finetooth",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST063",
+    "rank": 63,
+    "directionIndex": 63,
+    "nameZh": "亚奎纳角杰出自然区",
+    "nameEn": "Yaquina Head Outstanding Natural Area",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "coast",
+    "subtype": "潮池灯塔",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或上午开馆后",
+    "durationMinutes": 75,
+    "feature": "Oregon最高灯塔、卵石海滩潮池和海鸟峭壁集中在BLM保护区。",
+    "address": "Yaquina Head Outstanding Natural Area, Central Oregon Coast",
+    "lat": 44.6766,
+    "lng": -124.0793,
+    "parking": "入口收费后使用灯塔或Cobble Beach停车区。",
+    "fees": "车辆入场费或联邦通票。",
+    "reservation": "灯塔导览可能需现场登记。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Yaquina%20Head%20Outstanding%20Natural%20Area/@44.6766,-124.0793,13z",
+    "officialUrl": "https://www.blm.gov/learn/interpretive-centers/yaquina",
+    "reviewUrl": "https://www.google.com/maps/place/Yaquina%20Head%20Outstanding%20Natural%20Area/@44.6766,-124.0793,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Yaquina_Head_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Yaquina_Head_Lighthouse_%28Agate_Beach%2C_Oregon%29.jpg/1280px-Yaquina_Head_Lighthouse_%28Agate_Beach%2C_Oregon%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Yaquina_Head_Lighthouse_(Agate_Beach,_Oregon).jpg",
+    "imageCredit": "Visitor7",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST064",
+    "rank": 64,
+    "directionIndex": 64,
+    "nameZh": "俄勒冈海岸水族馆",
+    "nameEn": "Oregon Coast Aquarium",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "culture",
+    "subtype": "海洋馆",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "开馆首小时",
+    "durationMinutes": 90,
+    "feature": "海底隧道、海獭和本地海岸生态展览适合雨天补充自然观察背景。",
+    "address": "Oregon Coast Aquarium, Central Oregon Coast",
+    "lat": 44.6187,
+    "lng": -124.047,
+    "parking": "South Beach园区专用停车场。",
+    "fees": "按日期购买水族馆门票。",
+    "reservation": "旺季建议提前购票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Oregon%20Coast%20Aquarium/@44.6187,-124.047,13z",
+    "officialUrl": "https://aquarium.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Oregon%20Coast%20Aquarium/@44.6187,-124.047,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Oregon_Coast_Aquarium",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Oregon_Coast_Aquarium_entrance.JPG/1280px-Oregon_Coast_Aquarium_entrance.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Oregon_Coast_Aquarium_entrance.JPG",
+    "imageCredit": "M.O. Stevens",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST065",
+    "rank": 65,
+    "directionIndex": 65,
+    "nameZh": "奈伊海滩",
+    "nameEn": "Nye Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "coast",
+    "subtype": "艺术海滩街区",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "宽沙滩与书店、咖啡馆、艺术空间相连，是Newport最适合步行的街区。",
+    "address": "Nye Beach, Central Oregon Coast",
+    "lat": 44.6388,
+    "lng": -124.0611,
+    "parking": "Nye Beach turnaround及街区公共车位。",
+    "fees": "海滩免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Nye%20Beach/@44.6388,-124.0611,13z",
+    "officialUrl": "https://discovernewport.com/nyebeach/",
+    "reviewUrl": "https://www.google.com/maps/place/Nye%20Beach/@44.6388,-124.0611,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Nye_Beach",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Nye_Beach_march_2010.jpg/1280px-Nye_Beach_march_2010.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Nye_Beach_march_2010.jpg",
+    "imageCredit": "Hrare",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST066",
+    "rank": 66,
+    "directionIndex": 66,
+    "nameZh": "迪波湾观鲸中心",
+    "nameEn": "Depoe Bay Whale Watching Center",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Central Oregon Coast",
+    "type": "seasonal",
+    "subtype": "灰鲸观测",
+    "seasons": [
+      "winter",
+      "spring",
+      "summer"
+    ],
+    "bestMonths": "12–1月南迁；3–6月北迁",
+    "bestTime": "上午开馆后或鲸群通过时",
+    "durationMinutes": 120,
+    "feature": "工作人员、望远镜和高海墙使这里成为Oregon官方灰鲸监测中心。",
+    "address": "Depoe Bay Whale Watching Center, Central Oregon Coast",
+    "lat": 44.8104,
+    "lng": -124.0637,
+    "parking": "Depoe Bay海墙沿线公共停车位；旺季很快满。",
+    "fees": "中心免费。",
+    "reservation": "开放时段依志愿者和天气，鲸类不保证。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Depoe%20Bay%20Whale%20Watching%20Center/@44.8104,-124.0637,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=183",
+    "reviewUrl": "https://www.google.com/maps/place/Depoe%20Bay%20Whale%20Watching%20Center/@44.8104,-124.0637,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Depoe_Bay_Whale_Watching_Center",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/OSP_whale_watching_center_P1891.jpeg/1280px-OSP_whale_watching_center_P1891.jpeg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:OSP_whale_watching_center_P1891.jpeg",
+    "imageCredit": "EncMstr",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST067",
+    "rank": 67,
+    "directionIndex": 67,
+    "nameZh": "锅炉湾观景点",
+    "nameEn": "Boiler Bay State Scenic Viewpoint",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "coast",
+    "subtype": "礁岩海湾",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "方便的高位草地可观察海鸟、鲸类和风暴浪，适合短停。",
+    "address": "Boiler Bay State Scenic Viewpoint, North Oregon Coast",
+    "lat": 44.8308,
+    "lng": -124.0714,
+    "parking": "US-101西侧大型观景停车区。",
+    "fees": "观景免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Boiler%20Bay%20State%20Scenic%20Viewpoint/@44.8308,-124.0714,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=137",
+    "reviewUrl": "https://www.google.com/maps/place/Boiler%20Bay%20State%20Scenic%20Viewpoint/@44.8308,-124.0714,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Boiler_Bay_State_Scenic_Viewpoint",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Boiler_bay_viewpoint_oregon.jpg/1280px-Boiler_bay_viewpoint_oregon.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Boiler_bay_viewpoint_oregon.jpg",
+    "imageCredit": "Finetooth",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST068",
+    "rank": 68,
+    "directionIndex": 68,
+    "nameZh": "基万达角",
+    "nameEn": "Cape Kiwanda",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "coast",
+    "subtype": "砂岩海岬",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "金色砂岩海岬、巨型沙丘与Haystack Rock形成北海岸独特地貌。",
+    "address": "Cape Kiwanda, North Oregon Coast",
+    "lat": 45.2149,
+    "lng": -123.9708,
+    "parking": "Pacific City海滩入口收费停车；遵守沙丘封线。",
+    "fees": "停车收费。",
+    "reservation": "无需预约；危险悬崖区永久封闭。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Kiwanda/@45.2149,-123.9708,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=130",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Kiwanda/@45.2149,-123.9708,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Kiwanda_State_Natural_Area",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Cape_Kiwanda.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Kiwanda.jpg",
+    "imageCredit": "Ennetws",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST069",
+    "rank": 69,
+    "directionIndex": 69,
+    "nameZh": "蒂拉穆克奶酪工厂",
+    "nameEn": "Tillamook Creamery",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "culture",
+    "subtype": "乳业参观",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "开馆首小时",
+    "durationMinutes": 90,
+    "feature": "透明生产线、乳业历史和冰淇淋大厅提供Oregon Coast经典雨天停靠。",
+    "address": "Tillamook Creamery, North Oregon Coast",
+    "lat": 45.4866,
+    "lng": -123.8465,
+    "parking": "Creamery大型免费游客停车场，房车按标识停放。",
+    "fees": "自助参观免费；餐饮另购。",
+    "reservation": "团体和特殊体验需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Tillamook%20Creamery/@45.4866,-123.8465,13z",
+    "officialUrl": "https://www.tillamook.com/visit-us/creamery",
+    "reviewUrl": "https://www.google.com/maps/place/Tillamook%20Creamery/@45.4866,-123.8465,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Tillamook_Creamery",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Tillamook_creamery_interior_P2549.jpeg/1280px-Tillamook_creamery_interior_P2549.jpeg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tillamook_creamery_interior_P2549.jpeg",
+    "imageCredit": "EncMstr",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST070",
+    "rank": 70,
+    "directionIndex": 70,
+    "nameZh": "米尔斯角",
+    "nameEn": "Cape Meares State Scenic Viewpoint",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "park-trail",
+    "subtype": "短灯塔森林",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午",
+    "durationMinutes": 150,
+    "feature": "短步道连接八角形灯塔、Octopus Tree和海鸟崖观景台。",
+    "address": "Cape Meares State Scenic Viewpoint, North Oregon Coast",
+    "lat": 45.4862,
+    "lng": -123.9781,
+    "parking": "Cape Meares道路尽头免费停车区；先核对道路开放。",
+    "fees": "日用免费。",
+    "reservation": "无需预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Meares%20State%20Scenic%20Viewpoint/@45.4862,-123.9781,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=131",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Meares%20State%20Scenic%20Viewpoint/@45.4862,-123.9781,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Meares_Light",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Beautiful_cape_meares.jpg/1280px-Beautiful_cape_meares.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Beautiful_cape_meares.jpg",
+    "imageCredit": "Merzperson at English Wikipedia",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST071",
+    "rank": 71,
+    "directionIndex": 71,
+    "nameZh": "欧申赛德海滩",
+    "nameEn": "Oceanside Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "coast",
+    "subtype": "隧道海滩",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮且上午人少时",
+    "durationMinutes": 75,
+    "feature": "Three Arch Rocks外海保护区和步行隧道让小海湾层次丰富。",
+    "address": "Oceanside Beach, North Oregon Coast",
+    "lat": 45.4602,
+    "lng": -123.9684,
+    "parking": "Oceanside Wayside停车区及镇内标示车位。",
+    "fees": "海滩免费。",
+    "reservation": "无需预约；隧道另一侧受潮汐影响。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Oceanside%20Beach/@45.4602,-123.9684,13z",
+    "officialUrl": "https://www.oregon.gov/oprd/pcb/pages/pcb.aspx",
+    "reviewUrl": "https://www.google.com/maps/place/Oceanside%20Beach/@45.4602,-123.9684,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Oceanside%2C_Oregon",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Oceanside_beach_-_53534230844.jpg/1280px-Oceanside_beach_-_53534230844.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Oceanside_beach_-_53534230844.jpg",
+    "imageCredit": "Casey Helton Photography",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST072",
+    "rank": 72,
+    "directionIndex": 72,
+    "nameZh": "坎农海滩草垛岩",
+    "nameEn": "Haystack Rock Cannon Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "coast",
+    "subtype": "潮池地标",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "235英尺海蚀岩、海鹦繁殖地和低潮潮池是Oregon Coast代表画面。",
+    "address": "Haystack Rock Cannon Beach, North Oregon Coast",
+    "lat": 45.884,
+    "lng": -123.9687,
+    "parking": "Cannon Beach市中心公共停车场，步行到海滩。",
+    "fees": "海滩免费。",
+    "reservation": "潮池志愿解说按季，禁止触摸和采集。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Haystack%20Rock%20Cannon%20Beach/@45.884,-123.9687,13z",
+    "officialUrl": "https://www.cannonbeach.org/things-to-do/beaches-and-parks/haystack-rock/",
+    "reviewUrl": "https://www.google.com/maps/place/Haystack%20Rock%20Cannon%20Beach/@45.884,-123.9687,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Haystack_Rock",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Haystack_Rock_Tidepools%2C_Cannon_Beach_-_53060660817.jpg/1280px-Haystack_Rock_Tidepools%2C_Cannon_Beach_-_53060660817.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Haystack_Rock_Tidepools,_Cannon_Beach_-_53060660817.jpg",
+    "imageCredit": "John Manard",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST073",
+    "rank": 73,
+    "directionIndex": 73,
+    "nameZh": "埃科拉州立公园",
+    "nameEn": "Ecola State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "North Oregon Coast",
+    "type": "park-trail",
+    "subtype": "森林海岬",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月步道较干",
+    "bestTime": "上午能见度好时",
+    "durationMinutes": 150,
+    "feature": "Sitka spruce森林、Tillamook Rock Lighthouse远景和海岸步道高度集中。",
+    "address": "Ecola State Park, North Oregon Coast",
+    "lat": 45.9195,
+    "lng": -123.9743,
+    "parking": "Ecola Point收费停车区；入园道路狭窄不适合大型房车。",
+    "fees": "车辆日用费。",
+    "reservation": "无需预约，风暴后可能临时关闭。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Ecola%20State%20Park/@45.9195,-123.9743,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=136",
+    "reviewUrl": "https://www.google.com/maps/place/Ecola%20State%20Park/@45.9195,-123.9743,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Ecola_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Oregon_coastline_looking_south_from_Ecola_State_Park.jpg/1280px-Oregon_coastline_looking_south_from_Ecola_State_Park.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Oregon_coastline_looking_south_from_Ecola_State_Park.jpg",
+    "imageCredit": "Cacophony",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST074",
+    "rank": 74,
+    "directionIndex": 74,
+    "nameZh": "阿斯托里亚纪念柱",
+    "nameEn": "Astoria Column",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Columbia River",
+    "type": "coast",
+    "subtype": "城市制高点",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或日落前",
+    "durationMinutes": 75,
+    "feature": "螺旋壁画塔顶俯瞰Columbia河口、Astoria和远处海岸山脉。",
+    "address": "Astoria Column, Columbia River",
+    "lat": 46.181,
+    "lng": -123.8174,
+    "parking": "Coxcomb Hill山顶收费停车场。",
+    "fees": "停车通行证收费，登塔本身免费。",
+    "reservation": "无需预约；大风时塔内楼梯可能关闭。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Astoria%20Column/@46.181,-123.8174,13z",
+    "officialUrl": "https://astoriacolumn.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Astoria%20Column/@46.181,-123.8174,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Astoria_Column",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Astoria_Column_e.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Astoria_Column_e.jpg",
+    "imageCredit": "The original uploader was Decumanus at English Wikipedia.",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST075",
+    "rank": 75,
+    "directionIndex": 75,
+    "nameZh": "哥伦比亚河海事博物馆",
+    "nameEn": "Columbia River Maritime Museum",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Columbia River",
+    "type": "culture",
+    "subtype": "河口航海史",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "开馆首小时",
+    "durationMinutes": 90,
+    "feature": "沉船、领港和“太平洋墓场”展览解释Columbia河口为何危险。",
+    "address": "Columbia River Maritime Museum, Columbia River",
+    "lat": 46.1907,
+    "lng": -123.8237,
+    "parking": "Museum Way专用停车区。",
+    "fees": "博物馆门票收费。",
+    "reservation": "通常无需预约，3D电影场次另排。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Columbia%20River%20Maritime%20Museum/@46.1907,-123.8237,13z",
+    "officialUrl": "https://www.crmm.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Columbia%20River%20Maritime%20Museum/@46.1907,-123.8237,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Columbia_River_Maritime_Museum",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Maritime_Museum_%28Clatsop_County%2C_Oregon_scenic_images%29_%28clatDA0081a%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Maritime_Museum_(Clatsop_County,_Oregon_scenic_images)_(clatDA0081a).jpg",
+    "imageCredit": "Gary Halvorson, Oregon State Archives",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST076",
+    "rank": 76,
+    "directionIndex": 76,
+    "nameZh": "彼得·艾尔代尔沉船",
+    "nameEn": "Peter Iredale Shipwreck",
+    "routeClass": "mainline",
+    "roads": [
+      "OR-101"
+    ],
+    "corridor": "OR-101",
+    "region": "Columbia River",
+    "type": "coast",
+    "subtype": "海滩沉船",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "1906年帆船残骸骨架立在宽阔海滩，是Columbia河口航海史的直观遗迹。",
+    "address": "Peter Iredale Shipwreck, Columbia River",
+    "lat": 46.1747,
+    "lng": -123.9793,
+    "parking": "Fort Stevens内Peter Iredale海滩停车区。",
+    "fees": "车辆日用费可能适用。",
+    "reservation": "无需预约。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Peter%20Iredale%20Shipwreck/@46.1747,-123.9793,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=129",
+    "reviewUrl": "https://www.google.com/maps/place/Peter%20Iredale%20Shipwreck/@46.1747,-123.9793,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Peter_Iredale",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Peter_iredale_sunset_edited1.jpg/1280px-Peter_iredale_sunset_edited1.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_iredale_sunset_edited1.jpg",
+    "imageCredit": "Robert Bradshaw (user Robertwb)",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST077",
+    "rank": 77,
+    "directionIndex": 77,
+    "nameZh": "十瀑布步道",
+    "nameEn": "Trail of Ten Falls",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Oregon Cascades",
+    "type": "seasonal",
+    "subtype": "春季瀑布群",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "2–5月水量最佳；秋季有叶色",
+    "bestTime": "上午8点前",
+    "durationMinutes": 120,
+    "feature": "峡谷环线经过十座主要瀑布并从数座水帘后方穿行，水量随雨季变化。",
+    "address": "Trail of Ten Falls, Oregon Cascades",
+    "lat": 44.8778,
+    "lng": -122.6556,
+    "parking": "Silver Falls South Falls Day-use Area收费停车。",
+    "fees": "车辆日用费。",
+    "reservation": "无需日用预约；长环线需预留半天。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Trail%20of%20Ten%20Falls/@44.8778,-122.6556,13z",
+    "officialUrl": "https://stateparks.oregon.gov/index.cfm?do=park.profile&parkId=151",
+    "reviewUrl": "https://www.google.com/maps/place/Trail%20of%20Ten%20Falls/@44.8778,-122.6556,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Silver_Falls_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Trail_of_Ten_Falls_%28Marion_County%2C_Oregon_scenic_images%29_%28marDA0092%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Trail_of_Ten_Falls_(Marion_County,_Oregon_scenic_images)_(marDA0092).jpg",
+    "imageCredit": "Gary Halvorson, Oregon State Archives",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST078",
+    "rank": 78,
+    "directionIndex": 78,
+    "nameZh": "马尔特诺马瀑布",
+    "nameEn": "Multnomah Falls",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Columbia River Gorge",
+    "type": "park-trail",
+    "subtype": "峡谷瀑布",
+    "seasons": [
+      "spring"
+    ],
+    "bestMonths": "全年；春季水量大",
+    "bestTime": "上午8点前",
+    "durationMinutes": 150,
+    "feature": "620英尺双层瀑布和Benson Bridge是Columbia Gorge最具代表性的停靠。",
+    "address": "Multnomah Falls, Columbia River Gorge",
+    "lat": 45.5762,
+    "lng": -122.1158,
+    "parking": "I-84 Exit 31或Historic Highway停车；旺季按当年规则预约。",
+    "fees": "观景免费，旺季停车/许可规则可能变化。",
+    "reservation": "夏季可能需要定时许可。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Multnomah%20Falls/@45.5762,-122.1158,13z",
+    "officialUrl": "https://www.fs.usda.gov/recarea/crgnsa/recarea/?recid=30026",
+    "reviewUrl": "https://www.google.com/maps/place/Multnomah%20Falls/@45.5762,-122.1158,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Multnomah_Falls",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Multnomah_Falls_OR.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Multnomah_Falls_OR.jpg",
+    "imageCredit": "Marshman at English Wikipedia / Eric Guinther",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST079",
+    "rank": 79,
+    "directionIndex": 79,
+    "nameZh": "波特兰日本庭园",
+    "nameEn": "Portland Japanese Garden",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Portland",
+    "type": "culture",
+    "subtype": "山坡庭园",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "全年；春花与秋色突出",
+    "bestTime": "开园首小时",
+    "durationMinutes": 90,
+    "feature": "山坡庭园以借景Mount Hood、苔庭和现代文化村著称。",
+    "address": "Portland Japanese Garden, Portland",
+    "lat": 45.5186,
+    "lng": -122.7084,
+    "parking": "Washington Park车位收费且紧张，MAX+园区接驳更稳妥。",
+    "fees": "庭园门票收费。",
+    "reservation": "旺季建议提前购票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Portland%20Japanese%20Garden/@45.5186,-122.7084,13z",
+    "officialUrl": "https://japanesegarden.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Portland%20Japanese%20Garden/@45.5186,-122.7084,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Portland_Japanese_Garden",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Portland_Japanese_Garden_maple.jpg/1280px-Portland_Japanese_Garden_maple.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Portland_Japanese_Garden_maple.jpg",
+    "imageCredit": "Jeremy Reding from Seattle, USA",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST080",
+    "rank": 80,
+    "directionIndex": 80,
+    "nameZh": "国际玫瑰试验园",
+    "nameEn": "International Rose Test Garden",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Portland",
+    "type": "seasonal",
+    "subtype": "玫瑰花季",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "5–9月；6月常为高峰",
+    "bestTime": "上午露水未干或傍晚",
+    "durationMinutes": 120,
+    "feature": "上万株玫瑰在夏季集中开花，可远眺城市与Mount Hood，花期不保证。",
+    "address": "International Rose Test Garden, Portland",
+    "lat": 45.5191,
+    "lng": -122.7069,
+    "parking": "Washington Park收费车位；建议MAX和免费园区接驳。",
+    "fees": "花园免费。",
+    "reservation": "无需预约，花况受天气影响。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/International%20Rose%20Test%20Garden/@45.5191,-122.7069,13z",
+    "officialUrl": "https://www.portland.gov/parks/washington-park-international-rose-test-garden",
+    "reviewUrl": "https://www.google.com/maps/place/International%20Rose%20Test%20Garden/@45.5191,-122.7069,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/International_Rose_Test_Garden",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/International_Rose_Test_Garden_pano.jpg/1280px-International_Rose_Test_Garden_pano.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:International_Rose_Test_Garden_pano.jpg",
+    "imageCredit": "PiccoloNamek",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST081",
+    "rank": 81,
+    "directionIndex": 81,
+    "nameZh": "圣海伦火山冷水湖",
+    "nameEn": "Mount St. Helens Coldwater Lake",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Washington Cascades",
+    "type": "seasonal",
+    "subtype": "火山道路开放季",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "通常5–10月道路较稳定",
+    "bestTime": "上午云层形成前",
+    "durationMinutes": 120,
+    "feature": "1980年喷发地貌、倒木区和火山湖沿Spirit Lake Highway展开。",
+    "address": "Mount St. Helens Coldwater Lake, Washington Cascades",
+    "lat": 46.2914,
+    "lng": -122.265,
+    "parking": "SR-504沿线Coldwater Lake正式停车区；先查WSDOT和USFS。",
+    "fees": "部分设施需森林通票。",
+    "reservation": "道路和观景设施开放随季节、维修变化。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Mount%20St.%20Helens%20Coldwater%20Lake/@46.2914,-122.265,13z",
+    "officialUrl": "https://www.fs.usda.gov/recarea/giffordpinchot/recarea/?recid=34143",
+    "reviewUrl": "https://www.google.com/maps/place/Mount%20St.%20Helens%20Coldwater%20Lake/@46.2914,-122.265,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Mount_St._Helens_National_Volcanic_Monument",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Coldwater_lake_3381.jpg/1280px-Coldwater_lake_3381.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Coldwater_lake_3381.jpg",
+    "imageCredit": "Chris Light",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST082",
+    "rank": 82,
+    "directionIndex": 82,
+    "nameZh": "雷尼尔山天堂区",
+    "nameEn": "Paradise Mount Rainier",
+    "routeClass": "detour",
+    "roads": [
+      "Cascades"
+    ],
+    "corridor": "Cascades",
+    "region": "Washington Cascades",
+    "type": "seasonal",
+    "subtype": "高山野花与雪季",
+    "seasons": [
+      "winter",
+      "summer"
+    ],
+    "bestMonths": "7–8月野花；冬季雪景",
+    "bestTime": "夏季7点前或工作日",
+    "durationMinutes": 120,
+    "feature": "高山草甸、冰川和Mount Rainier近景在短夏集中开放，秋冬条件转严。",
+    "address": "Paradise Mount Rainier, Washington Cascades",
+    "lat": 46.7864,
+    "lng": -121.735,
+    "parking": "Paradise主停车场和溢出区极易满；冬季需链条。",
+    "fees": "Mount Rainier国家公园入园费。",
+    "reservation": "按当年政策核对定时入园；野花和道路不保证。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Paradise%20Mount%20Rainier/@46.7864,-121.735,13z",
+    "officialUrl": "https://www.nps.gov/mora/planyourvisit/paradise.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Paradise%20Mount%20Rainier/@46.7864,-121.735,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Paradise%2C_Washington",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Paradise_Inn.jpg/1280px-Paradise_Inn.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Paradise_Inn.jpg",
+    "imageCredit": "Unknown authorUnknown author",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5最近出口",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST083",
+    "rank": 83,
+    "directionIndex": 83,
+    "nameZh": "尼斯夸利国家野生动物保护区",
+    "nameEn": "Billy Frank Jr. Nisqually National Wildlife Refuge",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "South Puget Sound",
+    "type": "coast",
+    "subtype": "河口湿地",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "涨潮前后或清晨",
+    "durationMinutes": 75,
+    "feature": "木栈道跨越淡水湿地和潮汐河口，水鸟与Mount Rainier视角兼具。",
+    "address": "Billy Frank Jr. Nisqually National Wildlife Refuge, South Puget Sound",
+    "lat": 47.0729,
+    "lng": -122.7131,
+    "parking": "Visitor Center收费停车区，I-5出口后按保护区标识。",
+    "fees": "停车/日用费或联邦通票。",
+    "reservation": "无需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Billy%20Frank%20Jr.%20Nisqually%20National%20Wildlife%20Refuge/@47.0729,-122.7131,13z",
+    "officialUrl": "https://www.fws.gov/refuge/billy-frank-jr-nisqually",
+    "reviewUrl": "https://www.google.com/maps/place/Billy%20Frank%20Jr.%20Nisqually%20National%20Wildlife%20Refuge/@47.0729,-122.7131,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Billy_Frank_Jr._Nisqually_National_Wildlife_Refuge",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Billy_Frank_Jr_Nisqually_National_Wildlife_Refuge_%2852572190496%29.jpg/1280px-Billy_Frank_Jr_Nisqually_National_Wildlife_Refuge_%2852572190496%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Billy_Frank_Jr_Nisqually_National_Wildlife_Refuge_(52572190496).jpg",
+    "imageCredit": "USFWS Pacific",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST084",
+    "rank": 84,
+    "directionIndex": 84,
+    "nameZh": "华盛顿州议会大厦",
+    "nameEn": "Washington State Capitol",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Olympia",
+    "type": "culture",
+    "subtype": "州府建筑",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "工作日上午",
+    "durationMinutes": 90,
+    "feature": "圆顶议会大厦、园林和Puget Sound州府历史适合I-5短停。",
+    "address": "Washington State Capitol, Olympia",
+    "lat": 47.0353,
+    "lng": -122.9058,
+    "parking": "Capitol Campus访客车位或市中心车库，工作日多为计时收费。",
+    "fees": "校园漫步免费，公共导览免费。",
+    "reservation": "团体导览需预约，个人按公布场次。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Washington%20State%20Capitol/@47.0353,-122.9058,13z",
+    "officialUrl": "https://des.wa.gov/services/facilities-and-leasing-management/capitol-campus",
+    "reviewUrl": "https://www.google.com/maps/place/Washington%20State%20Capitol/@47.0353,-122.9058,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Washington_State_Capitol",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Capitol_at_Dusk_2.jpg/1280px-Capitol_at_Dusk_2.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Capitol_at_Dusk_2.jpg",
+    "imageCredit": "Martin Falbisoner",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST085",
+    "rank": 85,
+    "directionIndex": 85,
+    "nameZh": "玻璃博物馆",
+    "nameEn": "Museum of Glass",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "Tacoma",
+    "type": "culture",
+    "subtype": "当代玻璃艺术",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "开馆首小时或热工坊演示前",
+    "durationMinutes": 90,
+    "feature": "热工坊现场吹制、Chihuly Bridge of Glass和Thea Foss水道集中相连。",
+    "address": "Museum of Glass, Tacoma",
+    "lat": 47.2457,
+    "lng": -122.4345,
+    "parking": "Museum District收费车库及街边车位。",
+    "fees": "博物馆门票收费。",
+    "reservation": "热门活动可提前购票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Museum%20of%20Glass/@47.2457,-122.4345,13z",
+    "officialUrl": "https://www.museumofglass.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Museum%20of%20Glass/@47.2457,-122.4345,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Museum_of_Glass",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tacoma_Link%2C_Washington_State_History_Museum%2C_Museum_of_Glass.jpg/1280px-Tacoma_Link%2C_Washington_State_History_Museum%2C_Museum_of_Glass.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Tacoma_Link,_Washington_State_History_Museum,_Museum_of_Glass.jpg",
+    "imageCredit": "Robert Scheuerman",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST086",
+    "rank": 86,
+    "directionIndex": 86,
+    "nameZh": "失望角州立公园",
+    "nameEn": "Cape Disappointment State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Washington Coast",
+    "type": "coast",
+    "subtype": "河口灯塔海岬",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午或风暴较弱时",
+    "durationMinutes": 75,
+    "feature": "Columbia河口双灯塔、海崖和“太平洋墓场”历史构成Washington Coast门户。",
+    "address": "Cape Disappointment State Park, Washington Coast",
+    "lat": 46.2835,
+    "lng": -124.0567,
+    "parking": "North Head Lighthouse、Lewis and Clark Interpretive Center等停车区需Discover Pass。",
+    "fees": "Discover Pass或日用通行证。",
+    "reservation": "露营需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Cape%20Disappointment%20State%20Park/@46.2835,-124.0567,13z",
+    "officialUrl": "https://parks.wa.gov/find-parks/state-parks/cape-disappointment-state-park",
+    "reviewUrl": "https://www.google.com/maps/place/Cape%20Disappointment%20State%20Park/@46.2835,-124.0567,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Cape_Disappointment_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Cape_Disappointment_and_Cape_Disappointment_Light.jpg/1280px-Cape_Disappointment_and_Cape_Disappointment_Light.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Disappointment_and_Cape_Disappointment_Light.jpg",
+    "imageCredit": "Adbar",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST087",
+    "rank": 87,
+    "directionIndex": 87,
+    "nameZh": "长滩半岛",
+    "nameEn": "Long Beach Peninsula",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Washington Coast",
+    "type": "coast",
+    "subtype": "超长沙滩",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "绵长沙滩、木栈道和风筝文化适合轻松停留，冬季风浪强。",
+    "address": "Long Beach Peninsula, Washington Coast",
+    "lat": 46.3523,
+    "lng": -124.0543,
+    "parking": "Bolstad Avenue等正式海滩入口；先确认车辆海滩规则。",
+    "fees": "多数海滩入口免费。",
+    "reservation": "节庆住宿需提前预订。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Long%20Beach%20Peninsula/@46.3523,-124.0543,13z",
+    "officialUrl": "https://www.visitlongbeachpeninsula.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Long%20Beach%20Peninsula/@46.3523,-124.0543,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Long_Beach_Peninsula",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/The_Beach_at_Long_Beach_Peninsula_WA.JPG/1280px-The_Beach_at_Long_Beach_Peninsula_WA.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:The_Beach_at_Long_Beach_Peninsula_WA.JPG",
+    "imageCredit": "Lihagen",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST088",
+    "rank": 88,
+    "directionIndex": 88,
+    "nameZh": "威拉帕国家野生动物保护区",
+    "nameEn": "Willapa National Wildlife Refuge",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Washington Coast",
+    "type": "park-trail",
+    "subtype": "潮湾湿地",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "清晨或涨潮前后",
+    "durationMinutes": 150,
+    "feature": "古老西部红柏、潮湾、沙丘和候鸟栖息地围绕Willapa Bay展开。",
+    "address": "Willapa National Wildlife Refuge, Washington Coast",
+    "lat": 46.43,
+    "lng": -123.948,
+    "parking": "Art Trail或Leadbetter Point正式停车区；部分道路未铺装。",
+    "fees": "保护区免费。",
+    "reservation": "部分区域为保护野生动物按季关闭。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Willapa%20National%20Wildlife%20Refuge/@46.43,-123.948,13z",
+    "officialUrl": "https://www.fws.gov/refuge/willapa",
+    "reviewUrl": "https://www.google.com/maps/place/Willapa%20National%20Wildlife%20Refuge/@46.43,-123.948,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Willapa_National_Wildlife_Refuge",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Willapa_National_Wildlife_Refuge.jpg/1280px-Willapa_National_Wildlife_Refuge.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Willapa_National_Wildlife_Refuge.jpg",
+    "imageCredit": "Sam Beebe",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST089",
+    "rank": 89,
+    "directionIndex": 89,
+    "nameZh": "韦斯特波特灯塔州立公园",
+    "nameEn": "Westport Light State Park",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Washington Coast",
+    "type": "coast",
+    "subtype": "海岸步道",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "日落前或冲浪时段",
+    "durationMinutes": 75,
+    "feature": "沙丘步道连接海滩、冲浪区和Grays Harbor Lighthouse周边。",
+    "address": "Westport Light State Park, Washington Coast",
+    "lat": 46.8926,
+    "lng": -124.128,
+    "parking": "Westport Light主停车区需Discover Pass。",
+    "fees": "Discover Pass或日用通行证。",
+    "reservation": "无需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Westport%20Light%20State%20Park/@46.8926,-124.128,13z",
+    "officialUrl": "https://parks.wa.gov/find-parks/state-parks/westport-light-state-park",
+    "reviewUrl": "https://www.google.com/maps/place/Westport%20Light%20State%20Park/@46.8926,-124.128,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Westport_Light_State_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/GraysHarborWestportLightNpsPhoto2000.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:GraysHarborWestportLightNpsPhoto2000.jpg",
+    "imageCredit": "National Park Service photo by Candace Clifford, 2000",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST090",
+    "rank": 90,
+    "directionIndex": 90,
+    "nameZh": "奎诺尔特湖",
+    "nameEn": "Lake Quinault",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "park-trail",
+    "subtype": "温带雨林湖泊",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午湖面平静时",
+    "durationMinutes": 150,
+    "feature": "冰川湖、巨树和Quinault雨林环路提供Olympic西南侧较安静入口。",
+    "address": "Lake Quinault, Olympic Peninsula",
+    "lat": 47.4662,
+    "lng": -123.848,
+    "parking": "Lake Quinault Lodge或雨林步道入口按标识停车。",
+    "fees": "部分USFS入口需通票，NPS区域规则各异。",
+    "reservation": "住宿和露营旺季需预约。",
+    "feeCategory": "variable",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Lake%20Quinault/@47.4662,-123.848,13z",
+    "officialUrl": "https://www.nps.gov/olym/planyourvisit/quinault-area-brochure.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Lake%20Quinault/@47.4662,-123.848,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Lake_Quinault",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Lake_Quinault_Lodge.jpg/1280px-Lake_Quinault_Lodge.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Quinault_Lodge.jpg",
+    "imageCredit": "Wildcat Dunny from Redmond, WA, USA",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST091",
+    "rank": 91,
+    "directionIndex": 91,
+    "nameZh": "红宝石海滩",
+    "nameEn": "Ruby Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "coast",
+    "subtype": "漂流木海蚀柱",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮或日落前",
+    "durationMinutes": 75,
+    "feature": "大量漂流木、海蚀柱和黑色矿物沙构成Olympic Coast标志画面。",
+    "address": "Ruby Beach, Olympic Peninsula",
+    "lat": 47.7106,
+    "lng": -124.4156,
+    "parking": "US-101旁Ruby Beach停车区，之后走下坡步道。",
+    "fees": "Olympic国家公园海岸无单独日用停车费。",
+    "reservation": "无需预约；风暴和潮汐会影响进入。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Ruby%20Beach/@47.7106,-124.4156,13z",
+    "officialUrl": "https://www.nps.gov/places/000/ruby-beach.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Ruby%20Beach/@47.7106,-124.4156,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Ruby_Beach",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Rock_face%2C_Ruby_Beach%2C_Olympic_National_Park%2C_Washington_State%2C_1992.JPG/1280px-Rock_face%2C_Ruby_Beach%2C_Olympic_National_Park%2C_Washington_State%2C_1992.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Rock_face,_Ruby_Beach,_Olympic_National_Park,_Washington_State,_1992.JPG",
+    "imageCredit": "Michael Gäbler",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST092",
+    "rank": 92,
+    "directionIndex": 92,
+    "nameZh": "霍河雨林",
+    "nameEn": "Hoh Rain Forest",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "park-trail",
+    "subtype": "温带雨林",
+    "seasons": [
+      "winter",
+      "spring"
+    ],
+    "bestMonths": "全年；冬春苔藓最湿润",
+    "bestTime": "夏季7点前；淡季上午",
+    "durationMinutes": 150,
+    "feature": "苔藓披覆的Hall of Mosses和Hoh River Trail展示全球代表性温带雨林。",
+    "address": "Hoh Rain Forest, Olympic Peninsula",
+    "lat": 47.8609,
+    "lng": -123.9348,
+    "parking": "Hoh Rain Forest Visitor Center停车区；夏季入口排队可达数小时。",
+    "fees": "Olympic国家公园入园费。",
+    "reservation": "无需日用预约，但旺季需极早到达。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Hoh%20Rain%20Forest/@47.8609,-123.9348,13z",
+    "officialUrl": "https://www.nps.gov/olym/planyourvisit/visiting-the-hoh.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Hoh%20Rain%20Forest/@47.8609,-123.9348,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Hoh_Rain_Forest",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hoh_Rain_Forest_-_54019463021.jpg/1280px-Hoh_Rain_Forest_-_54019463021.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hoh_Rain_Forest_-_54019463021.jpg",
+    "imageCredit": "Roller Coaster Philosophy",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST093",
+    "rank": 93,
+    "directionIndex": 93,
+    "nameZh": "里亚尔托海滩",
+    "nameEn": "Rialto Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "coast",
+    "subtype": "荒野海滩",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "退潮窗口；日落前返程",
+    "durationMinutes": 75,
+    "feature": "巨型漂流木、海蚀柱和通往Hole-in-the-Wall的潮汐步道展现Olympic荒野海岸。",
+    "address": "Rialto Beach, Olympic Peninsula",
+    "lat": 47.921,
+    "lng": -124.638,
+    "parking": "Mora Road尽头Rialto Beach停车区。",
+    "fees": "日用海滩免费；过夜需许可。",
+    "reservation": "海岸背包过夜需wilderness permit和防熊罐。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Rialto%20Beach/@47.921,-124.638,13z",
+    "officialUrl": "https://www.nps.gov/places/000/rialto-beach.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Rialto%20Beach/@47.921,-124.638,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Rialto_Beach",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Driftwood_along_Rialto_Beach_2022.jpg/1280px-Driftwood_along_Rialto_Beach_2022.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Driftwood_along_Rialto_Beach_2022.jpg",
+    "imageCredit": "Sea Cow",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST094",
+    "rank": 94,
+    "directionIndex": 94,
+    "nameZh": "第二海滩",
+    "nameEn": "Second Beach",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "coast",
+    "subtype": "森林入海步道",
+    "seasons": [
+      "winter",
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "4–10月",
+    "bestTime": "低潮前后",
+    "durationMinutes": 75,
+    "feature": "短森林步道下降到拥有海蚀柱、潮池和巨大漂流木的宽阔海滩。",
+    "address": "Second Beach, Olympic Peninsula",
+    "lat": 47.8983,
+    "lng": -124.6239,
+    "parking": "La Push Second Beach Trailhead停车区；尊重Quileute土地标识。",
+    "fees": "日用步道免费。",
+    "reservation": "过夜需Olympic wilderness permit。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Second%20Beach/@47.8983,-124.6239,13z",
+    "officialUrl": "https://www.nps.gov/places/000/second-beach-trailhead.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Second%20Beach/@47.8983,-124.6239,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Olympic_National_Park",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/La_Push_Beach.jpg/1280px-La_Push_Beach.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:La_Push_Beach.jpg",
+    "imageCredit": "Pascal WEBER from Paris, France",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST095",
+    "rank": 95,
+    "directionIndex": 95,
+    "nameZh": "索尔杜克瀑布",
+    "nameEn": "Sol Duc Falls",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "coast",
+    "subtype": "雨林瀑布",
+    "seasons": [
+      "spring",
+      "fall"
+    ],
+    "bestMonths": "春至秋道路开放时",
+    "bestTime": "上午",
+    "durationMinutes": 75,
+    "feature": "多股瀑布跌入狭窄绿色峡谷，短步道穿过成熟雨林。",
+    "address": "Sol Duc Falls, Olympic Peninsula",
+    "lat": 47.9554,
+    "lng": -123.8359,
+    "parking": "Sol Duc Road尽头步道停车区；冬季道路可能关闭。",
+    "fees": "Olympic国家公园入园费。",
+    "reservation": "温泉度假村和露营另需预约。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Sol%20Duc%20Falls/@47.9554,-123.8359,13z",
+    "officialUrl": "https://www.nps.gov/places/000/sol-duc-falls.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Sol%20Duc%20Falls/@47.9554,-123.8359,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Sol_Duc_Falls",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sol_Duc_Falls_3.jpg/1280px-Sol_Duc_Falls_3.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sol_Duc_Falls_3.jpg",
+    "imageCredit": "Kimon Berlin",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST096",
+    "rank": 96,
+    "directionIndex": 96,
+    "nameZh": "飓风岭",
+    "nameEn": "Hurricane Ridge",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "seasonal",
+    "subtype": "高山道路与野花",
+    "seasons": [
+      "winter",
+      "summer",
+      "fall"
+    ],
+    "bestMonths": "7–9月野花与步道；冬季限期开路",
+    "bestTime": "夏季7点前；冬季仅开放日",
+    "durationMinutes": 120,
+    "feature": "短夏可见Olympic群峰、野花和海峡，冬季道路开放非常有限。",
+    "address": "Hurricane Ridge, Olympic Peninsula",
+    "lat": 47.969,
+    "lng": -123.498,
+    "parking": "Port Angeles上山后使用Hurricane Ridge停车区；满位会限流。",
+    "fees": "Olympic国家公园入园费。",
+    "reservation": "冬季开放、轮胎链和天气要求每日变化。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Hurricane%20Ridge/@47.969,-123.498,13z",
+    "officialUrl": "https://www.nps.gov/olym/planyourvisit/hurricane-ridge.htm",
+    "reviewUrl": "https://www.google.com/maps/place/Hurricane%20Ridge/@47.969,-123.498,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Hurricane_Ridge",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Hurricane_Ridge_-_Olympic_National_Park_-_Washington_State_%289779945775%29_%283%29.jpg/1280px-Hurricane_Ridge_-_Olympic_National_Park_-_Washington_State_%289779945775%29_%283%29.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Hurricane_Ridge_-_Olympic_National_Park_-_Washington_State_(9779945775)_(3).jpg",
+    "imageCredit": "Doug Kerr from Albany, NY, United States",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST097",
+    "rank": 97,
+    "directionIndex": 97,
+    "nameZh": "邓杰内斯沙嘴",
+    "nameEn": "Dungeness Spit",
+    "routeClass": "mainline",
+    "roads": [
+      "WA-101"
+    ],
+    "corridor": "WA-101",
+    "region": "Olympic Peninsula",
+    "type": "coast",
+    "subtype": "狭长沙嘴",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "低潮且风小的上午",
+    "durationMinutes": 75,
+    "feature": "天然沙嘴向海峡延伸近七英里，远望Olympic Mountains和New Dungeness Lighthouse。",
+    "address": "Dungeness Spit, Olympic Peninsula",
+    "lat": 48.1816,
+    "lng": -123.1389,
+    "parking": "Dungeness National Wildlife Refuge入口收费停车区。",
+    "fees": "保护区入场小额收费。",
+    "reservation": "无需日用预约；到灯塔往返约10英里。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Dungeness%20Spit/@48.1816,-123.1389,13z",
+    "officialUrl": "https://www.fws.gov/refuge/dungeness",
+    "reviewUrl": "https://www.google.com/maps/place/Dungeness%20Spit/@48.1816,-123.1389,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Dungeness_Spit",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Dungeness_Spit_NWR.jpg/1280px-Dungeness_Spit_NWR.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dungeness_Spit_NWR.jpg",
+    "imageCredit": "laffertyryan",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST098",
+    "rank": 98,
+    "directionIndex": 98,
+    "nameZh": "斯卡吉特谷郁金香节",
+    "nameEn": "Skagit Valley Tulip Festival",
+    "routeClass": "detour",
+    "roads": [
+      "I-5"
+    ],
+    "corridor": "I-5",
+    "region": "North Puget Sound",
+    "type": "seasonal",
+    "subtype": "郁金香花季",
+    "seasons": [
+      "spring"
+    ],
+    "bestMonths": "通常4月；花期随气温",
+    "bestTime": "工作日开园后首小时",
+    "durationMinutes": 120,
+    "feature": "大片郁金香田和Mount Baker远景只在短暂花期出现，具体峰值不保证。",
+    "address": "Skagit Valley Tulip Festival, North Puget Sound",
+    "lat": 48.419,
+    "lng": -122.335,
+    "parking": "各花田使用各自收费停车区，不在农路路肩停车。",
+    "fees": "花田门票与停车按农场收费。",
+    "reservation": "热门周末需提前购买定时票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Skagit%20Valley%20Tulip%20Festival/@48.419,-122.335,13z",
+    "officialUrl": "https://tulipfestival.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Skagit%20Valley%20Tulip%20Festival/@48.419,-122.335,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Skagit_Valley_Tulip_Festival",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Skagit_Valley_1.JPG/1280px-Skagit_Valley_1.JPG",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Skagit_Valley_1.JPG",
+    "imageCredit": "Gina from Kent, WA, USA",
+    "verifiedOn": "2026-07-13",
+    "junction": "I-5主线",
+    "detourMinutes": 90,
+    "seasonalRisk": "山区天气、积雪、野火或活动日期可能改变开放与车程，出发前查官方状态。"
+  },
+  {
+    "id": "ST099",
+    "rank": 99,
+    "directionIndex": 99,
+    "nameZh": "派克市场",
+    "nameEn": "Pike Place Market",
+    "routeClass": "mainline",
+    "roads": [
+      "Seattle"
+    ],
+    "corridor": "Seattle",
+    "region": "Seattle",
+    "type": "culture",
+    "subtype": "公共市场",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "上午9点前",
+    "durationMinutes": 90,
+    "feature": "鱼市、花摊、手工艺和Elliott Bay景观浓缩Seattle城市文化。",
+    "address": "Pike Place Market, Seattle",
+    "lat": 47.6095,
+    "lng": -122.3425,
+    "parking": "Market Garage收费停车；也可从轻轨Westlake步行。",
+    "fees": "市场入场免费，购物餐饮另计。",
+    "reservation": "热门餐厅可预约。",
+    "feeCategory": "free",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Pike%20Place%20Market/@47.6095,-122.3425,13z",
+    "officialUrl": "https://www.pikeplacemarket.org/",
+    "reviewUrl": "https://www.google.com/maps/place/Pike%20Place%20Market/@47.6095,-122.3425,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Pike_Place_Market",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Pike-place-market.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Pike-place-market.jpg",
+    "imageCredit": "photographed by wac at en.wikipedia",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  },
+  {
+    "id": "ST100",
+    "rank": 100,
+    "directionIndex": 100,
+    "nameZh": "太空针塔",
+    "nameEn": "Space Needle",
+    "routeClass": "mainline",
+    "roads": [
+      "Seattle"
+    ],
+    "corridor": "Seattle",
+    "region": "Seattle",
+    "type": "culture",
+    "subtype": "城市地标",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "bestMonths": "全年",
+    "bestTime": "日落前60分钟至蓝调时刻",
+    "durationMinutes": 90,
+    "feature": "旋转玻璃地板和520英尺观景层俯瞰Seattle、Puget Sound与远山。",
+    "address": "Space Needle, Seattle",
+    "lat": 47.6205,
+    "lng": -122.3493,
+    "parking": "Seattle Center 5th Avenue或Mercer Street收费车库。",
+    "fees": "观景台按日期和时段收费。",
+    "reservation": "建议提前购买定时票。",
+    "feeCategory": "paid",
+    "score": null,
+    "scoreScale": 5,
+    "ratingPlatform": "Google Maps",
+    "ratingSource": "Google Maps（查看最新评分，非缓存分数）",
+    "ratingUrl": "https://www.google.com/maps/place/Space%20Needle/@47.6205,-122.3493,13z",
+    "officialUrl": "https://www.spaceneedle.com/",
+    "reviewUrl": "https://www.google.com/maps/place/Space%20Needle/@47.6205,-122.3493,13z",
+    "articleUrl": "https://en.wikipedia.org/wiki/Space_Needle",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/SpaceNeedleTopClose.jpg/1280px-SpaceNeedleTopClose.jpg",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:SpaceNeedleTopClose.jpg",
+    "imageCredit": "MyName (Cacophony)",
+    "verifiedOn": "2026-07-13",
+    "junction": "",
+    "detourMinutes": 0,
+    "seasonalRisk": ""
+  }
+]/* SEATTLE_PLACES_END */;
+
+const routeDefinitions = [
+  { corridor:'CA-1', icon:'≈', title:'CA-1 北加州海岸', note:'Marin、Sonoma与Mendocino' },
+  { corridor:'US-101', icon:'↟', title:'US-101 红杉海岸', note:'Humboldt与Redwood Coast' },
+  { corridor:'OR-101', icon:'◒', title:'OR-101 Oregon Coast', note:'海蚀柱、灯塔与港口镇' },
+  { corridor:'I-5', icon:'⇧', title:'I-5 城市与山谷', note:'Southern Oregon、Portland与Puget Sound' },
+  { corridor:'WA-101', icon:'◇', title:'WA-101 Olympic', note:'雨林、荒野海滩与海峡' },
+  { corridor:'Cascades', icon:'▲', title:'Cascades 火山绕行', note:'Lassen、Crater Lake、St. Helens与Rainier' },
+  { corridor:'Seattle', icon:'✦', title:'Seattle 城市段', note:'市场、建筑与城市景观' }
+];
+const favoritesStorageKey = 'bay-area-seattle-top-100-favorites-v1';
+const seasonOrder = ['spring', 'summer', 'fall', 'winter'];
+const typeLabels = { coast: '海岸自然景观', culture: '小镇·建筑·文化', 'park-trail': '步道·州立/国家公园', seasonal: '季节限定景观' };
+
+function normalizeText(value) {
+  return String(value ?? '')
+    .normalize('NFKD')
+    .toLocaleLowerCase('zh-CN')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildMapUrl(place) {
+  const destination = `${Number(place.lat)},${Number(place.lng)}`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}&travelmode=driving`;
+}
+
+function filterPlaces(records, state = {}) {
+  const query = normalizeText(state.query);
+  const favorites = state.favorites instanceof Set ? state.favorites : new Set(state.favorites || []);
+  return records.filter((place) => {
+    const searchable = normalizeText([
+      place.nameZh, place.nameEn, place.roads.join(' '), place.region,
+      place.feature, place.parking, place.fees, place.reservation, place.subtype, place.seasonalRisk
+    ].join(' '));
+    const durationMatches = !state.duration
+      || (state.duration === 'short' && place.durationMinutes <= 60)
+      || (state.duration === 'medium' && place.durationMinutes > 60 && place.durationMinutes <= 120)
+      || (state.duration === 'long' && place.durationMinutes > 120);
+    return (!query || searchable.includes(query))
+      && (!state.routeClass || place.routeClass === state.routeClass)
+      && (!state.road || place.roads.includes(state.road))
+      && (!state.region || place.region === state.region)
+      && (!state.season || place.seasons.includes(state.season))
+      && (!state.type || place.type === state.type)
+      && (!state.feeCategory || place.feeCategory === state.feeCategory)
+      && durationMatches
+      && (!state.savedOnly || favorites.has(place.id));
+  });
+}
+
+function sortPlaces(records, order = 'southbound') {
+  const sorted = [...records];
+  if (order === 'northbound') return sorted.sort((a, b) => b.directionIndex - a.directionIndex);
+  if (order === 'rank') return sorted.sort((a, b) => a.rank - b.rank);
+  if (order === 'season') {
+    return sorted.sort((a, b) => {
+      const aSeason = seasonOrder.indexOf(a.seasons[0]);
+      const bSeason = seasonOrder.indexOf(b.seasons[0]);
+      return aSeason - bSeason || a.directionIndex - b.directionIndex;
+    });
+  }
+  if (order === 'duration') return sorted.sort((a, b) => a.durationMinutes - b.durationMinutes || a.directionIndex - b.directionIndex);
+  return sorted.sort((a, b) => a.directionIndex - b.directionIndex);
+}
+
+function readFavorites() {
+  let stored;
+  try {
+    stored = JSON.parse(localStorage.getItem(favoritesStorageKey) || '[]');
+  } catch {
+    stored = [];
+  }
+  const validIds = new Set(places.map((place) => place.id));
+  const favorites = [...new Set(Array.isArray(stored) ? stored : [])]
+    .filter((id) => typeof id === 'string' && validIds.has(id));
+  try {
+    localStorage.setItem(favoritesStorageKey, JSON.stringify(favorites));
+  } catch {
+    // The guide still works when storage is unavailable.
+  }
+  return new Set(favorites);
+}
+
+let favoriteIds = readFavorites();
+
+function currentState() {
+  return {
+    query: document.getElementById('searchInput').value,
+    routeClass: document.getElementById('routeClassFilter').value,
+    road: document.getElementById('roadFilter').value,
+    region: document.getElementById('regionFilter').value,
+    season: document.getElementById('seasonFilter').value,
+    type: document.getElementById('typeFilter').value,
+    feeCategory: document.getElementById('feeFilter').value,
+    duration: document.getElementById('durationFilter').value,
+    savedOnly: document.getElementById('savedOnly').checked,
+    favorites: favoriteIds
+  };
+}
+
+function updateResults() {
+  const filtered = filterPlaces(places, currentState());
+  renderPlaces(sortPlaces(filtered, document.getElementById('sortOrder').value));
+}
+
+function corridorFor(place) {
+  return place.corridor;
+}
+
+function makeElement(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text !== undefined) element.textContent = text;
+  return element;
+}
+
+function makeExternalLink(label, url) {
+  const link = makeElement('a', '', label);
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  return link;
+}
+
+function renderRouteSummary() {
+  const summary = document.getElementById('routeSummary');
+  const fragment = document.createDocumentFragment();
+  for (const route of routeDefinitions) {
+    const button = makeElement('button', 'route-button');
+    button.type = 'button';
+    button.dataset.corridor = route.corridor;
+    button.setAttribute('aria-label', `${route.title}：${route.note}`);
+    button.append(makeElement('strong', '', `${route.icon} ${route.title}`), makeElement('span', '', route.note));
+    button.addEventListener('click', () => {
+      const routeClassFilter = document.getElementById('routeClassFilter');
+      const roadFilter = document.getElementById('roadFilter');
+      if (route.corridor === 'all-detours') {
+        routeClassFilter.value = 'detour';
+        roadFilter.value = '';
+      } else {
+        routeClassFilter.value = '';
+        roadFilter.value = route.corridor;
+      }
+      updateResults();
+      document.getElementById('resultsHeading').scrollIntoView({ block: 'start' });
+    });
+    fragment.append(button);
+  }
+  summary.replaceChildren(fragment);
+}
+
+function addDetail(list, term, description) {
+  const wrapper = makeElement('div');
+  wrapper.append(makeElement('dt', '', term), makeElement('dd', '', description));
+  list.append(wrapper);
+}
+
+function createImage(place) {
+  const sourceLink = makeExternalLink('', place.imageSourceUrl);
+  sourceLink.className = 'place-card__media';
+  sourceLink.setAttribute('aria-label', `查看${place.nameZh}图片来源`);
+  const image = makeElement('img');
+  image.src = place.imageUrl;
+  image.alt = `${place.nameZh}（${place.nameEn}）`;
+  image.loading = 'lazy';
+  image.decoding = 'async';
+  image.addEventListener('error', () => {
+    const fallback = makeElement('span', 'image-fallback');
+    fallback.append(makeElement('strong', '', place.nameZh), makeElement('span', '', place.nameEn));
+    image.replaceWith(fallback);
+  }, { once: true });
+  sourceLink.append(image, makeElement('span', 'image-credit', place.imageCredit));
+  return sourceLink;
+}
+
+function createPlaceCard(place) {
+  const corridor = corridorFor(place);
+  const card = makeElement('article', 'place-card');
+  card.dataset.corridor = corridor;
+  card.dataset.placeId = place.id;
+  card.append(createImage(place));
+
+  const body = makeElement('div', 'place-card__body');
+  const meta = makeElement('div', 'card-meta');
+  meta.append(makeElement('span', 'rank', `#${place.rank}`));
+  const routeLabels = makeElement('span', 'route-labels');
+  routeLabels.append(makeElement('span', 'route-label', place.routeClass === 'mainline' ? '主线' : '绕行点'));
+  for (const road of place.roads) routeLabels.append(makeElement('span', 'route-label', road));
+  meta.append(routeLabels);
+
+  const heading = makeElement('h3', '', place.nameZh);
+  heading.append(makeElement('span', '', place.nameEn));
+  const details = makeElement('dl', 'details');
+  addDetail(details, '区域 / 类型', `${place.region} · ${typeLabels[place.type]} · ${place.subtype}`);
+  addDetail(details, '最佳月份', place.bestMonths);
+  addDetail(details, '最佳时段', place.bestTime);
+  addDetail(details, '建议停留', `${place.durationMinutes} 分钟`);
+  addDetail(details, '停车', place.parking);
+  addDetail(details, '费用', place.fees);
+  addDetail(details, '预约', place.reservation);
+  const ratingDetail = makeElement('div');
+  const ratingValue = makeElement('dd');
+  const ratingLink = makeExternalLink(`查看 ${place.ratingPlatform} 最新评分`, place.ratingUrl);
+  ratingLink.setAttribute('aria-label', `查看${place.nameZh} ${place.ratingPlatform} 最新评分`);
+  ratingValue.append(ratingLink);
+  ratingDetail.append(makeElement('dt', '', '外部评分'), ratingValue);
+  details.append(ratingDetail);
+
+  body.append(meta, heading, makeElement('p', 'feature', place.feature), details);
+  if (place.routeClass === 'detour') {
+    body.append(makeElement(
+      'p',
+      'detour-note',
+      `绕行提示：从 ${place.junction} 接入，预计额外驾驶 ${place.detourMinutes} 分钟。${place.seasonalRisk}`
+    ));
+  }
+
+  const actions = makeElement('div', 'card-actions');
+  actions.append(
+    makeExternalLink('地图导航', buildMapUrl(place)),
+    makeExternalLink('官方网站', place.officialUrl),
+    makeExternalLink('游客评价', place.reviewUrl),
+    makeExternalLink('深度文章', place.articleUrl)
+  );
+  const favorite = makeElement('button', 'favorite-button', '加入我的路线');
+  favorite.type = 'button';
+  favorite.dataset.placeId = place.id;
+  const isFavorite = favoriteIds.has(place.id);
+  favorite.setAttribute('aria-pressed', String(isFavorite));
+  favorite.textContent = isFavorite ? '已加入我的路线' : '加入我的路线';
+  favorite.addEventListener('click', () => toggleFavorite(place.id));
+  actions.append(favorite);
+  body.append(actions);
+  card.append(body);
+  return card;
+}
+
+function renderPlaces(records) {
+  const results = document.getElementById('results');
+  const fragment = document.createDocumentFragment();
+  for (const place of records) fragment.append(createPlaceCard(place));
+  results.replaceChildren(fragment);
+  document.getElementById('resultCount').textContent = `显示 ${records.length} / ${places.length} 个景点`;
+  document.getElementById('emptyState').hidden = records.length !== 0;
+}
+
+function toggleFavorite(id) {
+  if (!places.some((place) => place.id === id)) return false;
+  const isSaved = favoriteIds.has(id);
+  if (isSaved) favoriteIds.delete(id);
+  else favoriteIds.add(id);
+  try {
+    localStorage.setItem(favoritesStorageKey, JSON.stringify([...favoriteIds]));
+  } catch {
+    // Keep the in-memory favorite state when storage is unavailable.
+  }
+  updateResults();
+  return !isSaved;
+}
+
+function resetFilters() {
+  for (const id of ['searchInput', 'routeClassFilter', 'roadFilter', 'regionFilter', 'seasonFilter', 'typeFilter', 'feeFilter', 'durationFilter']) {
+    document.getElementById(id).value = '';
+  }
+  document.getElementById('sortOrder').value = 'southbound';
+  document.getElementById('savedOnly').checked = false;
+  updateResults();
+}
+
+function populateSelect(id, values) {
+  const select = document.getElementById(id);
+  for (const value of [...new Set(values)].sort((a, b) => a.localeCompare(b, 'zh-CN'))) {
+    const option = makeElement('option', '', value);
+    option.value = value;
+    select.append(option);
+  }
+}
+
+renderRouteSummary();
+populateSelect('regionFilter', places.map((place) => place.region));
+for (const id of ['routeClassFilter', 'roadFilter', 'regionFilter', 'seasonFilter', 'typeFilter', 'feeFilter', 'durationFilter', 'sortOrder', 'savedOnly']) {
+  document.getElementById(id).addEventListener('change', updateResults);
+}
+document.getElementById('searchInput').addEventListener('input', updateResults);
+document.getElementById('resetButton').addEventListener('click', resetFilters);
+document.getElementById('printButton').addEventListener('click', () => window.print());
+updateResults();
+  </script>
+</body>
+</html>
