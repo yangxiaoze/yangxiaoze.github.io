@@ -32,15 +32,15 @@
 			box-sizing: border-box;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
 			min-height: 100vh;
+			min-height: 100svh;
 			padding: 48px 24px;
 			background: rgba(5, 8, 12, 0.46);
 		}
 
 		.content {
 			width: min(760px, 100%);
-			margin: 0 auto;
+			margin: auto;
 		}
 
 		h1 {
@@ -101,6 +101,46 @@
 			color: rgba(255, 255, 255, 0.68);
 			font-size: 13px;
 			overflow-wrap: anywhere;
+		}
+
+		/* 小屏适配 */
+		@media (max-width: 720px) {
+			.home {
+				padding: max(28px, env(safe-area-inset-top, 0px) + 16px) 18px max(28px, env(safe-area-inset-bottom, 0px) + 16px);
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 1.5;
+				margin-bottom: 24px;
+			}
+
+			.links {
+				gap: 10px;
+			}
+
+			a {
+				padding: 14px 16px;
+			}
+
+			h2 {
+				font-size: 20px;
+				margin: 26px 0 12px;
+			}
+		}
+
+		@media (max-width: 420px) {
+			h1 {
+				font-size: 40px;
+			}
+
+			.name {
+				font-size: 16px;
+			}
+
+			.url {
+				font-size: 12px;
+			}
 		}
 	</style>
 </head>
