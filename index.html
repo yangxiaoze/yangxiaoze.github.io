@@ -108,6 +108,28 @@
 			color: rgba(255, 255, 255, 0.55);
 		}
 
+		.avatar {
+			display: block;
+			width: 96px;
+			height: 96px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 2px solid rgba(255, 255, 255, 0.4);
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+			margin: 0 0 18px;
+		}
+
+		.sec-heading {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.sec-icon {
+			font-size: 30px;
+			line-height: 1;
+		}
+
 		.edit-titles {
 			position: fixed;
 			top: 14px;
@@ -197,6 +219,16 @@
 				display: none;
 			}
 
+			.avatar {
+				width: 72px;
+				height: 72px;
+				margin-bottom: 14px;
+			}
+
+			.sec-icon {
+				font-size: 26px;
+			}
+
 			/* 底部标签栏 */
 			.bottom-tabs {
 				position: fixed;
@@ -271,6 +303,7 @@
 	<main class="home">
 		<section class="content" aria-labelledby="page-title">
 			<section class="panel active" data-view="home">
+				<img class="avatar" src="/images/yangxiaoze-logo.png" alt="yangxiaoze logo">
 				<h1 id="page-title">yangxiaoze.cc</h1>
 				<p>Local tools and projects published through the Cloudflare tunnel.</p>
 				<nav class="links" aria-label="Services">
@@ -301,7 +334,7 @@
 				</nav>
 			</section>
 			<section class="panel" data-view="games">
-				<h2>Games</h2>
+				<h2 class="sec-heading"><span class="sec-icon" aria-hidden="true">🎮</span>Games</h2>
 				<nav class="links" aria-label="Games">
 					<a href="https://friends.yangxiaoze.cc">
 						<span class="name">Friends</span>
